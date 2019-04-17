@@ -2,7 +2,9 @@
 
 git add <dateiname> #zum Index hinzufügen
 git commit -m "Commit-Nachricht" #bestätigst deine Änderungen
-git pull origin master #änderungen hochladen
+git push #änderungen hochladen
+
+git pull origin master 
 
 git pull #neuesten Änderungen zu aktualisieren
 git fetch #Änderungen erst herunterzuladen
