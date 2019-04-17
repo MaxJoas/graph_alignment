@@ -1,0 +1,10 @@
+2
+1
+Nodes labelled	True
+Edges labelled	True
+Directed graph	True
+
+1	future	2
+2	past	1
+
+1	2	>	link
