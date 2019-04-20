@@ -29,8 +29,13 @@ def parseGraph(doc):
                     nodes[(splitList[0], splitList[1])] = splitList[2:]
                 else:   #if nodes are not labelled
                     nodes[(splitList[0], "")] = splitList[1:]
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 9e36204ffd39591de06b9274313df80ac90b4c87
 
 
                 if not checkList[3] and not checkList[4]:
