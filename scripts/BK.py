@@ -9,10 +9,10 @@ def BK(R,P,x):
 		print R		
 		return R				#R ist clique
 	else:
-		for v in P[:]:				#P[:] this will cause it to iterate over a copy of p instead.
-			Rr=Rr[::]
+		for v in P[:]:				#P[:] this will cause it to iterate over a copy of p instead. Iterate a Changing Dict
+			Rr=Rr[::]			#sliced das Rr
 			Rr.append(v)			#Rr=R or v    #or und and geht hier nicht
-			Pp=[v for v in p if v in N(v)]	#P and Neigbor(v) #intersection
+			Pp=[v for v in p if v in N(v)]	#P and Neigbor(v) #intersection #NEBEN ZAHL WURDE IDENTIFIER GEMACHT SO DAS WIR KEINE NAIGBORFKT BRAUCHEN
 			Xx=[v for v in x if v in N(v)]	#x and Neigbor(v) #alle 
 			BR(Rr,Pp,Xx)
 			P.pop(v)			#P=P \ {v}
@@ -20,7 +20,7 @@ def BK(R,P,x):
 			
 
 	 
-def N(v):
+def N(v):						#???????
 	c = 0
 	l = []
 	for i in graph[v]:
