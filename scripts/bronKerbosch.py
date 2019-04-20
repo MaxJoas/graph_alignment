@@ -1,7 +1,7 @@
 #!/bin/python3
 
 import sys
-from graphParser import parseGraph 
+from parseGraph import parseGraph
 
 
 def bk(p, r, x, graph):

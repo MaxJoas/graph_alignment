@@ -29,13 +29,6 @@ def parseGraph(doc):
                     nodes[(splitList[0], splitList[1])] = splitList[2:]
                 else:   #if nodes are not labelled
                     nodes[(splitList[0], "")] = splitList[1:]
-<<<<<<< HEAD
-
-
-=======
-
-
->>>>>>> 9e36204ffd39591de06b9274313df80ac90b4c87
 
 
                 if not checkList[3] and not checkList[4]:
@@ -60,9 +53,10 @@ def parseGraph(doc):
 
     pprint.pprint(checkList)
     pprint.pprint(nodes)
+    pprint(edges)
     #pprint.pprint(edges)
     print("Successfully parsed " + sys.argv[1].split("/")[-1])
-    return (checkList, nodes, edges)
+    return checkList, nodes, edges
 
 def createUndirectedEdges(nodes, edges):
     done = []
@@ -73,7 +67,7 @@ def createUndirectedEdges(nodes, edges):
                 edges[(node, neighbour)] = ["", ""]
         #done.append(node)
 
-#get neighbours in nodes labels
+#gives neighbours in nodes labels
 def makeNodesReal(nodes):
     tupelHelperList = list(nodes.keys()) #list of (id, label) for building dictionary
     tupelHelperDict = {}
@@ -93,4 +87,4 @@ def makeNodesReal(nodes):
 
 #EXECUTION ROAD#
 
-#parseGraph(sys.argv[1])
+parseGraph(sys.argv[1])
