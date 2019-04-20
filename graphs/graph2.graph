@@ -1,6 +1,8 @@
-#notes 8
+#nodes 8
 #edges 11
-#direction
+Nodes labelled True
+Edges labelled False
+Directed graph False
 
 1	e	2
 2	a	1	3	4	5
