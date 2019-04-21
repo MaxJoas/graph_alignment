@@ -1,4 +1,5 @@
-
+from parser_as_list import parse_graph
+import sys
 import edge
 import node
 
@@ -8,12 +9,48 @@ class Graph():
 
     def __init__( self,  doc ):
 
-        self.nodes =  parser[1] # future return value of our yet to be implemented parser method
-        self.checklist = parse[0]
-        self.doc = doc
+        doc = parse_graph(sys.argv[1])
 
+        raw_bools = doc[0]
+        raw_nodes = doc[1]
+        raw_edges = doc[2]
+        
+        self.nodes_are_labelled = raw_bools[2]
+        self.edges_are_labelled = raw_bools[3]
+        self.is_directed = raw_bools[4]
+
+        self.nodes = self.get_nodes(doc[1])
+        #self.edges = get_edges(doc[2])
+
+
+    def get_nodes( self, raw_nodes_list ):
+        
+        nodes = []
+        
+        for raw_node in raw_nodes_list:
+            nodes.append(node.Node( raw_node[0], raw_node[1] )) #0 is the id, 1 is the label
+             
+
+        self.deduce_neighbours( raw_nodes_list, nodes )
+        
+        return nodes
+
+    ''' doesn't work yet '''
+    def deduce_neighbours( self, raw_nodes_data, nodes_list_without_neighbours ):
+                
+        for node in nodes_list_without_neighbours:
+            neighbours = []
+            print(raw_nodes_data)
+            
+            # how do I make real nodes out of the raw nodes?
+
+            raw_neighbours = raw_nodes_data[raw_nodes_data.index(node.id)][2:]
+            
+            for raw_neighbour in raw_neighbours:
+                neighbours.append( nodes_list_without_neighbours[nodes_list_without_neighbours.index(raw_neighbour)] )
     
-    
+
+
     def get_edges ( self ):
 
         edges = []
@@ -23,10 +60,11 @@ class Graph():
                 cur_edge = Edge( node, neighbour, "direction", "label" )
                 reverse_edge = Edge( neighbour, node, "direction", "label" )
 
-                if reverse_edge not in edges: # prevents duplicates
+                if not reverse_edge in edges: # prevents duplicates
                     edges.append(cur_edge)
 
-    
-    def parser (  self ):
-        print("I want to be implemented by MICHEL")
-        return 1,2
+
+#EXECUTION ROAD#
+
+G = Graph(sys.argv[1])
+print(G)
