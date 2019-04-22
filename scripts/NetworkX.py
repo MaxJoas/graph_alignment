@@ -17,8 +17,13 @@ G.add_weighted_edges_from(elist)
 
 #___________________________________________________________________
 #funktioniert noch nicht die Darstellung
-G = nx.cubical_graph()
-plt.subplot(121)
-nx.draw(G)# default spring_layout
-plt.subplot(122)
-nx.draw(G, pos=nx.circular_layout(G), nodecolor='r', edge_color='b') #10.1  Matplotlib
+#G = nx.cubical_graph()
+#plt.subplot(121)
+nx.draw(G, with_labels = 1) # default spring_layout
+plt.show()
+#plt.subplot(122)
+#nx.draw(G, pos=nx.circular_layout(G), nodecolor='r', edge_color='b') #10.1  Matplotlib
+
+#nx.complete _graph(10) #all with all
+#.order() #Kanten
+#.size()  #Label
