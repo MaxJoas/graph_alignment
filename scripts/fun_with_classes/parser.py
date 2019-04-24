@@ -3,130 +3,140 @@
 import sys
 import pprint
 from node import Node
+from edge import Edge
+
 
 def parse_graph(doc):
+
     check_list = [] #contains #nodes #edges, if they are labelled and if graph is directed
     nodes = {}
-    edges = {}
+    edges = []
 
     with open(doc) as d:
-    
-        indicator = 0 #counts the empty lines to indicate which list/dict is being filled
-        made_nodes_real = False
+
+        indicator = 0 #counts the empty lines (0: check_list, 1: nodes, 2: edges)
+        made_neighbours_real = False    #checks if neighbours were converted to Node objects
+
         for line in d:
             line = line.replace("\n", "")
             split_list = line.split(";")
-   
+
+            #if line is empty
             if not line:
                 indicator += 1
                 continue
 
+
+
+            #building check_list
             elif indicator == 0:
+
                 try:
-                    check_list.append(int(split_list[1]))
+                    check_list.append(int(split_list[1])) #indicates number of nodes/edges
                 except:
                     check_list.append(split_list[-1] == "True")
-            
+
+
+
+            #building nodes
             elif indicator == 1:
+
                 if check_list[2]:    #if nodes are labelled
-                    cur_node = Node(split_list[0], split_list[1])   
+                    cur_node = Node(split_list[0], split_list[1])
                     nodes[cur_node] = split_list[2:]
+
                 else:   #if nodes are not labelled
                     cur_node = Node(split_list[0], "") 
                     nodes[cur_node] = split_list[1:]
             
-                            
-            elif check_list[3] == "False" and check_list[4] == "False":
-                #nodes = make_nodes_tupels(nodes)
-                createUndirectedEdges(nodes, edges)
-                break
 
-            elif indicator == 2:
-                break
-            
+
+            #building labeled and/or directed edges
+            elif indicator == 2: 
+                
+                if not made_neighbours_real:
+                    nodes = make_neighbours_real(nodes)
+                    made_neighbours_real = True
+                
+                #if edges are labelled but not directed a spare element must be inserted. 
+                if check_list[3] and not check_list[4]:
+                    cur_edge = Edge(split_list[0], split_list[1], "O", split_list[2]) #0:node1, 1:node1, 2:label
+                    edges.append(cur_edge)
+                else:    
+                    cur_edge = Edge(*split_list)   
+                    edges.append(cur_edge) 
+
+
             else:
                 print("Oh no, something went wrong here! File contains too many empty lines.")
                 return
-            '''
-                if not made_nodes_real:
-                        #nodes = make_nodes_tupels(nodes)
-                        made_nodes_real = True
-                    if check_list[3]:    #if edges are labelled
-                        if check_list[4]:    #if graph is directed and edges labelled
-                            edges[(split_list[0], split_list[1])] = split_list[2:]
-                        else:   #if graph is not directed but edges labelled
-                            edges[(split_list[0], split_list[1])] = ["", split_list[2]]
-                    else:
-                        if check_list[4]:    #if graph is directed but edges not labelled
-                            edges[(split_list[0], split_list[1])] = [split_list[2], ""]
-                        else:   #if graph is not directed and edges not labelled
-                            edges[(split_list[0], split_list[1])] = ["", ""]
-            '''
+    
+
+    if not made_neighbours_real:
+        nodes = make_neighbours_real(nodes)
+        made_neighbours_real = True
+    
+
+    #if edges are neither labeled nor directed, they are built from the nodes
+    if check_list[3] == False and check_list[4] == False:
             
+            edges = create_undirected_edges(nodes)
 
-
-    nodes = make_neighbours_real(nodes)
-    #irgendwas mit edges
-
-    #pprint.pprint(check_list)
-    #print(nodes[0])
-    #pprint.pprint(nodes)
-    #pprint.pprint(edges)
+    
+    
     print("Successfully parsed " + sys.argv[1].split("/")[-1])
     return (check_list, nodes, edges)
 
 
+
+
+
+#converts nodes neighbours (str) to list of Node objects
 def make_neighbours_real(nodes_with_stringlist):
     
     node_id_dict = {}
     final_list = []
-
-    for node in nodes_with_stringlist:
+    
+    for node in nodes_with_stringlist: #creates a dict {node.id : Node}
         node_id_dict[node.id] = node
+
 
     for node, neighbour_stringlist in nodes_with_stringlist.items():
         final_list.append(node)
+        
         for neighbour_id in neighbour_stringlist:
+            
             for node_id in node_id_dict.keys():
+                
                 if neighbour_id == node_id:
-                    node.add_neighbour(node_id_dict[node_id])
+                    node.add_neighbour(node_id_dict[node_id]) #converts str(neighbour.id) to Node object of neighbour
             
     return final_list
 
 
+#creates the edges from the nodes if edges are neither labelled nor directed
+def create_undirected_edges(nodes):
 
+    done = [] #already checked nodes, used to avoid including reverse edges
+    edges = []
 
-
-
-def createUndirectedEdges(nodes, edges):
-    done = []
     for node in nodes:
 
-        for neighbour in nodes[node]:
+        for neighbour in node.neighbours:
+
             if not neighbour in done:
-                edges[(node, neighbour)] = ["", ""]
+                cur_edge = Edge(node, neighbour)
+                edges.append(cur_edge)
+        
         done.append(node)
-
-
-#get neighbours in nodes labels
-def make_nodes_tupels(nodes): 
-    tupelHelperList = list(nodes.keys()) #list of (id, label) for building dictionary
-    tupelHelperDict = {}        
-
-    for node in tupelHelperList:    
-        tupelHelperDict[node[0]] = node[1] #dictionary which contains (id, label)
-    #changes the neighbours to labelled neighbours for every node in nodes
-    for node in nodes:
-        #d = nodes[node]
-        for neighbour in nodes[node]:
-            temp = (neighbour, tupelHelperDict[neighbour])
-            location = nodes[node].index(neighbour)
-            nodes[node][location] = temp
-    #pprint.pprint(nodes)
     
-    return nodes
+    return edges
 
 
-#EXECUTION ROAD#
-
-parse_graph(sys.argv[1])
+if __name__ == "__main__":
+    
+    test = parse_graph(sys.argv[1])
+    
+    pprint.pprint(test[0])
+    pprint.pprint(test[1])
+    pprint.pprint(test[2])
