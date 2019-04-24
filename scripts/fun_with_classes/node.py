@@ -9,5 +9,15 @@ class Node():
         self.label = label
         self.neighbours = []
 
-    def add_neighbour(node):
+    def add_neighbour(self, node):
         self.neighbours.append(node)
+
+    def __str__( self ):
+        neighbours_string = " "
+        for neighbour in self.neighbours:
+            neighbours_string += neighbour.id 
+            neighbours_string += " "
+        return "Node " + self.id + " '" + self.label + "' [" + str(neighbours_string) + "]"
+
+    def __repr__(self):
+        return self.__str__()
