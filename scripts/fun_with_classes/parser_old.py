@@ -5,7 +5,7 @@ import pprint
 
 def parse_graph(doc):
     checkList = [] #contains #nodes #edges, if they are labelled and if graph is directed
-    nodes = []
+    nodes = {}
     edges = {}
 
     with open(doc) as d:
@@ -27,19 +27,19 @@ def parse_graph(doc):
             
             elif indicator == 1:
                 if checkList[2]:    #if nodes are labelled
-                    nodes.append(splitList[0:])
+                    nodes[(splitList[0], splitList[1])] = splitList[2:]
                 else:   #if nodes are not labelled
-                    nodes.append(splitList[0], "", splitList[1:])
+                    nodes[(splitList[0], "")] = splitList[1:]
             
                             
             elif checkList[3] == "False" and checkList[4] == "False":
-                #nodes = makeNodesReal(nodes)
+                nodes = makeNodesReal(nodes)
                 createUndirectedEdges(nodes, edges)
                 break
 
             elif indicator == 2:
                     if not made_nodes_real:
-                        #nodes = makeNodesReal(nodes)
+                        nodes = makeNodesReal(nodes)
                         made_nodes_real = True
                     if checkList[3]:    #if edges are labelled
                         if checkList[4]:    #if graph is directed and edges labelled
@@ -56,22 +56,31 @@ def parse_graph(doc):
                 return
 
 
-    pprint.pprint(checkList)
-    pprint.pprint(nodes)
-    pprint.pprint(edges)
+    #pprint.pprint(checkList)
+    #pprint.pprint(nodes)
+    #pprint.pprint(edges)
     print("Successfully parsed " + sys.argv[1].split("/")[-1])
     return (checkList, nodes, edges)
 
-def createUndirectedEdges( nodes, edges ):
+
+
+
+
+
+
+
+
+
+def createUndirectedEdges(nodes, edges):
     done = []
-    for i in range( len(nodes) ):
-        for j in range( 2, len(nodes[i]) ):
-            if not nodes[i][j] in done:
-                edges[ (nodes[i][0], nodes[i][j]) ] = [ "", "" ]
-        done.append(nodes[i])
+    for node in nodes:
+
+        for neighbour in nodes[node]:
+            if not neighbour in done:
+                edges[(node, neighbour)] = ["", ""]
+        done.append(node)
 
 
-'''
 #get neighbours in nodes labels
 def makeNodesReal(nodes): 
     tupelHelperList = list(nodes.keys()) #list of (id, label) for building dictionary
@@ -81,15 +90,14 @@ def makeNodesReal(nodes):
         tupelHelperDict[node[0]] = node[1] #dictionary which contains (id, label)
     #changes the neighbours to labelled neighbours for every node in nodes
     for node in nodes:
-        d = nodes[node]
+        #d = nodes[node]
         for neighbour in nodes[node]:
             temp = (neighbour, tupelHelperDict[neighbour])
             location = nodes[node].index(neighbour)
             nodes[node][location] = temp
     #pprint.pprint(nodes)
     return nodes
-'''
 
 #EXECUTION ROAD#
 
-#parse_graph(sys.argv[1])
+#parseGraph(sys.argv[1])
