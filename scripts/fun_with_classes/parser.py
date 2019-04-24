@@ -65,11 +65,12 @@ def parse_graph(doc):
             
 
 
-    make_neighbours_real(nodes)
+    nodes = make_neighbours_real(nodes)
     #irgendwas mit edges
 
     pprint.pprint(check_list)
-    pprint.pprint(nodes)
+    print(nodes[0])
+    #pprint.pprint(nodes)
     #pprint.pprint(edges)
     print("Successfully parsed " + sys.argv[1].split("/")[-1])
     return (check_list, nodes, edges)
@@ -78,17 +79,19 @@ def parse_graph(doc):
 def make_neighbours_real(nodes_with_stringlist):
     
     node_id_dict = {}
-    final_dict = {}
+    final_list = []
 
     for node in nodes_with_stringlist:
         node_id_dict[node.id] = node
 
-    for node in nodes_with_stringlist:
-        for neighbour_id in nodes_with_stringlist[node]:
-            for  node_id in node_id_dict.keys():
+    for node, neighbour_stringlist in nodes_with_stringlist.items():
+        final_list.append(node)
+        for neighbour_id in neighbour_stringlist:
+            for node_id in node_id_dict.keys():
                 if neighbour_id == node_id:
                     node.add_neighbour(node_id_dict[node_id])
-
+            
+    return final_list
 
 
 
