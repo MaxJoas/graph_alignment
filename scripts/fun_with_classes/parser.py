@@ -68,8 +68,8 @@ def parse_graph(doc):
     nodes = make_neighbours_real(nodes)
     #irgendwas mit edges
 
-    pprint.pprint(check_list)
-    print(nodes[0])
+    #pprint.pprint(check_list)
+    #print(nodes[0])
     #pprint.pprint(nodes)
     #pprint.pprint(edges)
     print("Successfully parsed " + sys.argv[1].split("/")[-1])
