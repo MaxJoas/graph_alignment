@@ -7,5 +7,7 @@ class Node():
 
         self.id = id
         self.label = label
-        #self.neighbours = neighbours
+        self.neighbours = []
 
+    def add_neighbour(node):
+        self.neighbours.append(node)

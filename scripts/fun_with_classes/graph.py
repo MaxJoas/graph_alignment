@@ -1,4 +1,4 @@
-from parser_as_list import parse_graph
+from parser import parse_graph
 import sys
 import edge
 import node
@@ -9,35 +9,47 @@ class Graph():
 
     def __init__( self,  doc ):
 
-        doc = parse_graph(sys.argv[1])
+        parsed = parse_graph(doc)
 
-        raw_bools = doc[0]
-        raw_nodes = doc[1]
-        raw_edges = doc[2]
+        raw_bools = parsed[0]
+        raw_nodes = parsed[1]
+        raw_edges = parsed[2]
         
         self.nodes_are_labelled = raw_bools[2]
         self.edges_are_labelled = raw_bools[3]
         self.is_directed = raw_bools[4]
 
-        self.nodes = self.get_nodes(doc[1])
-        #self.edges = get_edges(doc[2])
+        self.nodes = self.get_nodes(parsed[1])
+        #self.edges = get_edges(parsed[2])
 
 
-    def get_nodes( self, raw_nodes_list ):
+    def get_nodes( self, raw_nodes_dict ):
         
         nodes = []
         
-        for raw_node in raw_nodes_list:
-            nodes.append(node.Node( raw_node[0], raw_node[1] )) #0 is the id, 1 is the label
-             
+        for key in raw_nodes_dict.keys():
+            cur_node = Node( raw_node[0], raw_node[1] )) #0 is the id, 1 is the label
+            nodes.append(cur_node)
 
-        self.deduce_neighbours( raw_nodes_list, nodes )
+        self.add_neighbours( raw_nodes_dict, nodes )
         
         return nodes
 
     ''' doesn't work yet '''
-    def deduce_neighbours( self, raw_nodes_data, nodes_list_without_neighbours ):
+    def add_neighbours( self, raw_nodes_data, nodes_list_without_neighbours ):
                 
+        tupelHelperList = nodes_list_without_neighbours
+        tupelHelperDict = {}
+
+        for node in raw_nodes_data:
+            for neighbour in raw_nodes_data[node]:
+                
+
+
+
+
+
+        
         for node in nodes_list_without_neighbours:
             neighbours = []
             print(raw_nodes_data)
