@@ -4,7 +4,7 @@ import sys
 import pprint
 import networkx as nx
 import matplotlib.pyplot as plt
-from graphParser import parseGraph
+from graph import Graph
 
 
 
@@ -18,17 +18,32 @@ yet to be implemented:
 '''
 def createGraph(nodes, edges):
     G = nx.Graph()
+    
     G.add_nodes_from(nodes)
-    G.add_edges_from(edges)
-    pos = nx.spring_layout(G)
+    
+    edge_label_dict = {}
+
+    for edge in edges:
+        G.add_edge( edge.node1, edge.node2 )
+        edge_label_dict[edge.node1, edge.node2] = edge.label
+
+    node_label_dict = {}
+    for node in nodes:
+        node_label_dict[node] = "{} '{}'".format(node.id, node.label)
+
+    pos = nx.kamada_kawai_layout(G)
+    #pos = nx.planar_layout(G) #no edge intersections
+
     #nx.draw_networkx_nodes(G, pos, cmap=plt.get_cmap('jet'), node_size=500)
-    nx.draw_networkx_nodes(G, pos, node_size=100)
-    #nx.draw_networkx_labels(G, pos)
-    nx.draw_networkx_edges(G, pos, edges)
+    nx.draw_networkx_nodes(G, pos, node_color='000000', cmap=plt.get_cmap('jet'), node_size=[len(node.id) * 500 for node in nodes])
+    nx.draw_networkx_labels(G, pos, labels=node_label_dict, font_size=9, font_color='w')
+    nx.draw_networkx_edges(G, pos)
+    #nx.draw_networkx_edge_labels(G, pos, edge_labels=node_label_dict)
     plt.show()
 
 
-#EXECUTION ROAD#
+if __name__ == "__main__":
 
-parsed_graph = parseGraph(sys.argv[1])
-createGraph(parsed_graph[1], parsed_graph[2])
+    g = Graph(sys.argv[1])
+    
+    createGraph(g.nodes, g.edges)
