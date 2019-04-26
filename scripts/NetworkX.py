@@ -19,7 +19,7 @@ G.add_weighted_edges_from(elist)
 #___________________________________________________________________________
 
 
-G = nx.fast_gnp_random_graph(10, 10, seed=None, directed=True) #fast_gnp_random_graph(n, p, seed=None, directed=False)[source]
+G = nx.fast_gnp_random_graph(30, 0.25, seed=None, directed=False) #fast_gnp_random_graph(n, p, seed=None, directed=False)[source]
 
 #G = nx.balanced_tree(3, 3) #balanced_tree(r, h[, create_using]) #nx.random_tree(6[, 1]) #nx.random_tree(n[, seed])
 #___________________________________________________________________
