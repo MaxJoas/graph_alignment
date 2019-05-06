@@ -19,20 +19,28 @@
 #    def add_neighbour(self, node):
 #        self.neighbours.append(node)
 
+from graph import Graph
+import sys
+import 
 
-
-def mProduct(G,H):
+def m_Product(g,h):
 	mP = []
+	#def __init__ ( mP, id, label ):
+	#mP.id = []
+	#mP.label = []
+	#mP.neighbours = []
 
-	def __init__ ( mP, id, label ):
-	mP.id = []
-	mP.label = []
-	mP.neighbours = []
+	for vertex_g in g:
+		for vertex_h in h:
+			if (g.nodes in h.neighbours and  h.nodes in h.neighbours) or (not g.nodes in h.neighbours and  not g.nodes in h.neighbours) :
+				mP.id.apppend ( vertex_g + vertex_h )
 
-	for i in G:
-		for j in H:
-			if (G[i] in H[j].neighbours and  G[i] in H[j].neighbours) or (not G[i] in H[j].neighbours and  not G[i] in H[j].neighbours) :
-				mP.id.apppend(G[i].id + H[j].id)
-				mP.label.apppend(G[i].label, H[j].label)
-				mP.neighbours.apppend(G[i].neighbours, H[j].neighbours)
 	return (mP)
+
+if __name__ == '__main__':
+	try: 
+		g=Graph(sys.argv[1])
+		h=Graph(sys.argv[2])
+		m_Product(g.nodes, h.nodes)
+	except:
+		print( ' please provide a graph file as argument \n example: python3 mProduct.py graph1.graph, graph2.graph' )
