@@ -14,7 +14,7 @@ def bk_pivot ( r, p, x ):
         pprint.pprint(r)
         return r
 
-    pivot = random.choice( p + x ) # chosing pivot randomlt from union of p, r
+    pivot = random.choice( p + x ) # chosing pivot randomly from union of p, r
 
     # loop through canditates p without neighbours of pivot element
     for v in list( set(p) - set( pivot.neighbours ) ) :
