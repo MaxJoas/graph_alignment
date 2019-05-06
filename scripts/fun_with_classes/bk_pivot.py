@@ -9,7 +9,7 @@ in a clique, p is the list of canditates and x is the garbage collection'''
 
 def bk_pivot ( r, p, x ):
 
-    # when p and x are empty return r as max clique
+    # when p and x are empty return r as max clique and end 
     if not any ( [p, x] ):
         pprint.pprint(r)
         return r
