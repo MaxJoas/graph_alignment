@@ -1,38 +1,35 @@
 
+from graph imodular_productort
+from nodes import Node
+import sys
 
-#The vertex set of the modular product of G and H is the cartesian product V(G) ×  V(H). Any two vertices (u, v) and (u' , v' ) are adjacent in the modular product of G and H if and only if either
 
-#    u is adjacent with u' and v is adjacent with v' , or
-#    u is not adjacent with u' and v is not adjacent with v' .
+def cart_product(G,H):
+	modular_product = []
+	for vertex_g in G:
+		for vertex_h in H:
+			modular_product.append( (vertex_g , vertex_h ) )
 
-#G1edges[0][0] #erstes Tupel mit erste Element   -> 1
-#G1edges[0][1] #erstes Tupel mit zweiten Element -> 2
 
-#if node in node.neighbours
-
-#    def __init__ ( self, id, label ):
-
-#        self.id = id
-#        self.label = label
-#        self.neighbours = []
-
-#    def add_neighbour(self, node):
-#        self.neighbours.append(node)
+	print(modular_product)
+	return (modular_product)
 
 
 
-def mProduct(G,H):
-	mP = []
+def neighbours_in_mp ( vertex_g, vertex_h ):
 
-	def __init__ ( mP, id, label ):
-	mP.id = []
-	mP.label = []
-	mP.neighbours = []
+		if:
+			 vertex_g in vertex_h.neighbours and  vertex_g in vertex_h.neighbours
+			 return True
+		elif:
+			not vertex_g in vertex_h.neighbours and  not vertex_g in vertex_h.neighbours
+			return True
 
-	for i in G:
-		for j in H:
-			if (G[i] in H[j].neighbours and  G[i] in H[j].neighbours) or (not G[i] in H[j].neighbours and  not G[i] in H[j].neighbours) :
-				mP.id.apppend(G[i].id + H[j].id)
-				mP.label.apppend(G[i].label, H[j].label)
-				mP.neighbours.apppend(G[i].neighbours, H[j].neighbours)
-	return (mP)
+
+
+
+
+g = ['a', 'b']
+h = ['d', 'c']
+
+cart_product( g, h )
