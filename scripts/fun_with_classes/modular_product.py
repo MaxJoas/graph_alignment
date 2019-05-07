@@ -41,18 +41,27 @@ node'''
 
 def mod_product( cartp ):
 
+	modular_list = list() # empty list for storing Node objects of modular product
 	for tup in cartp.keys():
-		for tup2 in cartp.keys():
 
-			# prevents that the node gets comparedwith itself
-			if not  (tup[0].id == tup2[0].id or tup[1].id == tup2[1].id):
-				if neighbours_in_mp(tup, tup2):
+		#consolidation fo nodes to one new node object
+		cur_node = Node( tup[0].id + tup[1].id, tup[0].label + tup[1].label )
 
-					cartp[tup].append(tup2)
-	pprint.pprint(cartp)
-	return cartp
+		for t in cartp.keys():
 
-# EXECUTION  ----------------------------------------------------
+			# prevents that the node gets compared with itself
+			if not  (tup[0].id == t[0].id or tup[1].id == t[1].id):
+				if neighbours_in_mp(tup, t):
+					cur_node.add_neighbour(Node( t[0].id + t[1].id, t[0].label + t[1].label))
+
+		# add complete node object at the end of first for loop
+		modular_list.append(cur_node)
+
+	# OUTPUT
+	pprint.pprint(modular_list)
+	return modular_list
+
+# EXECUTION  -------------------------------------------------------------------
 
 if __name__ == '__main__':
 
