@@ -11,6 +11,7 @@ def bk_pivot ( r, p, x ):
 
     # when p and x are empty return r as max clique and end
     if not any ( [p, x] ):
+        print('clique')
         pprint.pprint(r)
         return r
 
@@ -38,21 +39,24 @@ def bk ( r, p, x ):
 
     # when p and x are empty return r as max clique
     if not any ( [ p, x ] ):
+        print('clique')
         pprint.pprint(r)
         return r
 
     for v in p[:] :
-
+        print(p)
         r_ = r + [v] # concatenate r and v
-        print(r_)
+
         # intersection of x respectively p and neighbours of v
         x_ = [ v for v in v.neighbours if v in x ]
         p_ = [ v for v in v.neighbours if v in p ]
+        print("P_")
+        print(p_)
 
         bk ( r_, p_, x_ ) # recursive call of broknkerbosch
 
         p.remove(v) # taking current node out of canditates
-        x.add(v) # adding current node to garbage collection
+        x.append(v) # adding current node to garbage collection
 
 
 # EXECUTION (PIVOT VERSION) ----------------------------------------------------
