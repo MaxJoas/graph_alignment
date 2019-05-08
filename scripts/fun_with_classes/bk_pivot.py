@@ -1,9 +1,8 @@
-
+from parser import parse_graph
 from graph import Graph
 import sys
 import pprint
 import random
-from parser import parse_graph
 
 ''' implementing broknkerbosch algorithmn where r is the list of possible nodes
 in a clique, p is the list of canditates and x is the garbage collection'''
@@ -44,30 +43,29 @@ def bk ( r, p, x ):
 
     for v in p[:] :
 
-        r_ = r + [v] # concatenate r and v
-
+        r_ = r + v # concatenate r and v
+        print(r_)
         # intersection of x respectively p and neighbours of v
-        x_ = [ v for v in v.neighbours if v in x ]
-        p_ = [ v for v in v.neighbours if v in p ]
+        x_ = x & v.neighbours
+        p_ = p & v.neighbours
 
         bk ( r_, p_, x_ ) # recursive call of broknkerbosch
 
         p.remove(v) # taking current node out of canditates
-        x.append(v) # adding current node to garbage collection
+        x.add(v) # adding current node to garbage collection
 
 
 # EXECUTION (PIVOT VERSION) ----------------------------------------------------
 
 if __name__ == '__main__':
 
-    try:
+    #try:
 
         graph = parse_graph(sys.argv[1])
-        r = x = []
-        p = list(graph.nodes)
+        r = x = {}
+        p = graph.nodes
 
-        bk_pivot ( r, p, x )
+        bk ( r, p, x )
 
-    except Exception as e:
-        print(e)
+    #except:
         print( ' please provide a graph file as argument \n example: python3 bk_pivot.py graph.graph' )
