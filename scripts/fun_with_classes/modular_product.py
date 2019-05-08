@@ -41,7 +41,7 @@ node'''
 
 def mod_product( cartp ):
 
-	modular_list = list() # empty list for storing Node objects of modular product
+	modular_list = set() # empty list for storing Node objects of modular product
 	for tup in cartp.keys():
 
 		#consolidation fo nodes to one new node object
@@ -55,7 +55,7 @@ def mod_product( cartp ):
 					cur_node.add_neighbour(Node( t[0].id + t[1].id, t[0].label + t[1].label))
 
 		# add complete node object at the end of first for loop
-		modular_list.append(cur_node)
+		modular_list.add(cur_node)
 
 	# OUTPUT
 	pprint.pprint(modular_list)
