@@ -3,17 +3,18 @@ from graph import Graph
 from node import Node
 import sys
 import pprint
+from parser import parse_graph
 
 
 ''' building cartesian product of two graphs '''
 
 def cart_product(G,H):
 
-	# init empty dictionary to store nodes and later neighbours (in mod_product)
-	cart_product = dict()
+	# init empty set to store nodes
+	cart_product = []
 	for vertex_g in G:
 		for vertex_h in H:
-			cart_product[(vertex_g , vertex_h )] = []
+			cart_product.append( (vertex_g , vertex_h ) )
 
 	return cart_product
 
@@ -34,20 +35,18 @@ def neighbours_in_mp ( tup1, tup2 ):
 
 
 ''' this function build the modular product out of the cartesian product therfore
-we take each node ( here still a tupel of the two old nodes) and compare it which
-each node (tupel) except itself and check then neighobouring rules. In case we
-found a neughbour we add it to the list of values in the dict to the according
-node'''
+we take each node (here a Tuple of two nodes) and make a node object of the tupel
+and find neighbours of new nodes accoring to rules of modular prodcut'''
 
 def mod_product( cartp ):
 
-	modular_list = set() # empty list for storing Node objects of modular product
-	for tup in cartp.keys():
+	modular_set = set() # empty set for storing Node objects of modular product
+	for tup in cartp :
 
 		#consolidation fo nodes to one new node object
 		cur_node = Node( tup[0].id + tup[1].id, tup[0].label + tup[1].label )
 
-		for t in cartp.keys():
+		for t in cartp :
 
 			# prevents that the node gets compared with itself
 			if not  (tup[0].id == t[0].id or tup[1].id == t[1].id):
@@ -55,20 +54,21 @@ def mod_product( cartp ):
 					cur_node.add_neighbour(Node( t[0].id + t[1].id, t[0].label + t[1].label))
 
 		# add complete node object at the end of first for loop
-		modular_list.add(cur_node)
+		modular_set.add(cur_node)
 
 	# OUTPUT
-	pprint.pprint(modular_list)
-	return modular_list
+	pprint.pprint(modular_set)
+	return modular_set
 
 # EXECUTION  -------------------------------------------------------------------
 
 if __name__ == '__main__':
 
 	try:
-		g = Graph( sys.argv[1] )
-		h = Graph( sys.argv[2] )
+		g = parse_graph( sys.argv[1] )
+		h = parse_graph( sys.argv[2] )
 		modp = mod_product( cart_product( g.nodes, h.nodes ) )
 
-	except :
+	except Exception as e:
+		print(e)
 		print( "please provide the two graphs you want to build the modular product with \n example: python3 modular_product.py graph1.graph garph2.graph" )

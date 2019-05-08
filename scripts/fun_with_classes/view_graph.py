@@ -4,7 +4,7 @@ import sys
 import pprint
 import networkx as nx
 import matplotlib.pyplot as plt
-from graph import Graph
+from parser import parse_graph
 
 
 
@@ -16,7 +16,7 @@ yet to be implemented:
     graph name in pic
     graphs change their appearance upon recomputation (do we have to change that?) 
 '''
-def createGraph(nodes, edges):
+def create_graph(nodes, edges):
     G = nx.Graph()
     
     G.add_nodes_from(nodes)
@@ -44,6 +44,6 @@ def createGraph(nodes, edges):
 
 if __name__ == "__main__":
 
-    g = Graph(sys.argv[1])
+    g = parse_graph(sys.argv[1])
     
-    createGraph(g.nodes, g.edges)
+    create_graph(g.nodes, g.edges)
