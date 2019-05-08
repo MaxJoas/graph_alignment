@@ -1,4 +1,4 @@
-
+from parser import parse_graph
 from graph import Graph
 import sys
 import pprint
@@ -59,13 +59,13 @@ def bk ( r, p, x ):
 
 if __name__ == '__main__':
 
-    try:
+    #try:
 
-        graph = Graph(sys.argv[1])
+        graph = parse_graph(sys.argv[1])
         r = x = {}
         p = graph.nodes
 
         bk ( r, p, x )
 
-    except:
+    #except:
         print( ' please provide a graph file as argument \n example: python3 bk_pivot.py graph.graph' )
