@@ -13,3 +13,5 @@ git merge #mit deinem Stand zusammenzuführen
 git checkout -- <filename> #auf den letzten Stand im HEAD zurücksetzen
 git fetch origin #lokale Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository
 git reset --hard origin/master
+
+git config credential.helper store #zum Benutzernamen speichern
