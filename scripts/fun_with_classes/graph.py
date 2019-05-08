@@ -7,11 +7,11 @@ class Graph():
 
     def __init__( 
                     self,  
+                    nodes=set(),
+                    edges=set(),
                     nodes_labelled=False,
                     edges_labelled=False,
-                    is_directed=False,
-                    nodes=set(),
-                    edges=set() 
+                    is_directed=False 
                 ):
 
         self.nodes_are_labelled = nodes_labelled
