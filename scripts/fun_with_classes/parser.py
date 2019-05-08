@@ -35,7 +35,7 @@ def parse_graph(doc):
                 arg = split_list[-1]  #last element in row is interpreted
 
                 if line.upper().startswith( "AUTHOR" ):
-                    print( "Reading graph from {}".format(line.split(" ")[1:]) )
+                    print( "Reading {} from {}".format( sys.argv[1].split("/")[-1], line.split(" ")[1:]) )
                     continue
 
                 elif arg.upper() in ( "TRUE", "FALSE" ):
@@ -156,5 +156,5 @@ def get_node_neighbours(nodes, edges):
 if __name__ == "__main__":
     
     G = parse_graph(sys.argv[1])
-   
+    
     pprint.pprint( G )
