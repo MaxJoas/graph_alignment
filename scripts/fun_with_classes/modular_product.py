@@ -4,6 +4,8 @@ from node import Node
 import sys
 import pprint
 from parser import parse_graph
+from bk_pivot import bk
+from view_graph import create_graph
 
 
 ''' building cartesian product of two graphs '''
@@ -57,8 +59,12 @@ def mod_product( cartp ):
 		modular_set.add(cur_node)
 
 	# OUTPUT
-	pprint.pprint(modular_set)
-	return modular_set
+	modular_product_as_graph = Graph(modular_set)
+
+	modular_product_as_graph.create_undirected_edges()
+	#print(modular_product_as_graph.nodes)
+
+	return modular_product_as_graph
 
 # EXECUTION  -------------------------------------------------------------------
 
@@ -68,6 +74,16 @@ if __name__ == '__main__':
 		g = parse_graph( sys.argv[1] )
 		h = parse_graph( sys.argv[2] )
 		modp = mod_product( cart_product( g.nodes, h.nodes ) )
+		#print(modp)
+		x = []
+		r = []
+		p = list(modp.nodes)
+		print(p[3])
+
+
+
+		bk( r, p, x)
+		#create_graph(modp.nodes ,modp.edges)
 
 	except Exception as e:
 		print(e)

@@ -15,7 +15,7 @@ class Node():
     def __str__( self ):
         neighbours_string = " "
         for neighbour in self.neighbours:
-            neighbours_string += neighbour.id 
+            neighbours_string += neighbour.id
             neighbours_string += " "
         return "\n Node " + self.id + " '" + self.label + "' {" + str(neighbours_string) + "}"
 
