@@ -12,28 +12,27 @@ def bk_pivot ( r, p, x ):
     # when p and x are empty return r as max clique and end
     if not any ( [p, x] ):
         print('clique')
-        pprint.pprint(r)
+        print(r)
         return r
 
-    pivot = random.choice( p  + r ) # chosing pivot randomly from union of p, r
-    #pprint.pprint( pivot )
+    pivot = random.choice( p + list(x) ) # chosing pivot randomly from union of p, x
 
     # loop through canditates p without neighbours of pivot element
     for v in p[:] :
 
         if  v in pivot.neighbours:
-            pass
+            continue
 
-        r_ = r + [v] # concatenate r and v
+        r_ = r | {v} # concatenate r and v
 
         # intersection of x respectively p and neighbours of v
-        x_ = [ v for v in v.neighbours if v in x ]
-        p_ = [ v for v in v.neighbours if v in p ]
+        x_ = x & v.neighbours
+        p_ = list(set(p) & v.neighbours)
 
         bk_pivot ( r_, p_, x_ ) # recursive call of broknkerbosch
 
         p.remove(v) # taking current node out of canditates
-        x.append(v) # adding current node to garbage collection
+        x.add(v) # adding current node to garbage collection
 
 def bk ( r, p, x ):
 
@@ -44,19 +43,17 @@ def bk ( r, p, x ):
         return r
 
     for v in p[:] :
-        print(p)
-        r_ = r + [v] # concatenate r and v
+
+        r_ = r | {v} # concatenate r and v
 
         # intersection of x respectively p and neighbours of v
-        x_ = [ v for v in v.neighbours if v in x ]
-        p_ = [ v for v in v.neighbours if v in p ]
-        print("P_")
-        print(p_)
+        x_ = x & v.neighbours
+        p_ = list(set(p) & v.neighbours)
 
         bk ( r_, p_, x_ ) # recursive call of broknkerbosch
 
         p.remove(v) # taking current node out of canditates
-        x.append(v) # adding current node to garbage collection
+        x.add(v) # adding current node to garbage collection
 
 
 # EXECUTION (PIVOT VERSION) ----------------------------------------------------
@@ -66,10 +63,13 @@ if __name__ == '__main__':
     try:
 
         graph = parse_graph(sys.argv[1])
-        r = x = []
+        r = set()
+        x = set()
         p = list(graph.nodes)
+
 
         bk_pivot ( r, p, x )
 
-    except:
+    except Exception as e:
+        print(e)
         print( ' please provide a graph file as argument \n example: python3 bk_pivot.py graph.graph' )
