@@ -19,7 +19,7 @@ yet to be implemented:
 def create_graph(nodes, edges):
     G = nx.Graph()
     
-    G.add_nodes_from(nodes)
+    #G.add_nodes_from(nodes)
     
     edge_label_dict = {}
 

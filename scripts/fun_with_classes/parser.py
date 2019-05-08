@@ -112,7 +112,7 @@ def parse_graph(doc):
         nodes = get_node_neighbours(nodes, edges)
         
         print( "Successfully parsed " + sys.argv[1].split("/")[-1] )
-        g = Graph( check_list[2], check_list[3], check_list[4], nodes, edges)
+        g = Graph( nodes, edges, check_list[2], check_list[3], check_list[4] )
         return g
 
     else:
