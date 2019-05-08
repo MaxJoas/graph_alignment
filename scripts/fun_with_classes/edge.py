@@ -18,7 +18,7 @@ class Edge(object):
 
     def __str__( self ):
 
-        return "({} to {}) '{}'".format( self.node1, self.node2, self.label )
+        return "\n ({} to {}) '{}'".format( self.node1.id, self.node2.id, self.label )
 
     def __repr__(self):
         return self.__str__()

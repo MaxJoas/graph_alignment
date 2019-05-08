@@ -4,6 +4,8 @@ import sys
 import pprint
 from node import Node
 from edge import Edge
+from graph import Graph
+
 
 
 def parse_graph(doc):
@@ -110,7 +112,8 @@ def parse_graph(doc):
         nodes = get_node_neighbours(nodes, edges)
         
         print( "Successfully parsed " + sys.argv[1].split("/")[-1] )
-        return (check_list, nodes, edges)
+        g = Graph( check_list[2], check_list[3], check_list[4], nodes, edges)
+        return g
 
     else:
         print( "There are some issues with the input file: \n" )
@@ -139,11 +142,9 @@ def get_node_neighbours(nodes, edges):
         for cur_edge in edges:
 
             if cur_node.id == cur_edge.node1.id:
-                print("node1 matched")
                 cur_node.neighbours.add( cur_edge.node2 )
             
             if cur_node.id == cur_edge.node2.id:
-                print("node2 matched")
                 cur_node.neighbours.add( cur_edge.node1 )
     
         nodes_w_neighbours.add(cur_node)
@@ -154,8 +155,6 @@ def get_node_neighbours(nodes, edges):
 
 if __name__ == "__main__":
     
-    test = parse_graph(sys.argv[1])
-    
-    pprint.pprint(test[0])
-    pprint.pprint(test[1])
-    pprint.pprint(test[2])
+    G = parse_graph(sys.argv[1])
+   
+    pprint.pprint( G )
