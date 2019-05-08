@@ -3,14 +3,14 @@
 class Node():
     """ node class for storing label and id of node amd neighbours """
 
-    def __init__ ( self, id, label ):
+    def __init__ ( self, id, label="" ):
 
         self.id = id
         self.label = label
-        self.neighbours = []
+        self.neighbours = set()
 
     def add_neighbour(self, node):
-        self.neighbours.append(node)
+        self.neighbours.add(node)
 
     def __str__( self ):
         neighbours_string = " "

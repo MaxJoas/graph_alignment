@@ -18,22 +18,22 @@ class Graph():
 
         self.nodes = parsed[1]
         self.edges = parsed[2]
-
+        
         #self.edges = get_edges(parsed[2])
 
 
     def __str__(self):
-        return "[" + str(self.nodes)
-        + "]; Nodes labelled? " + str(self.nodes_are_labelled)
-        + ", Edges labelled? " + str(self.edges_are_labelled)
-        + ", Directed graph? " + str(self.is_directed)
+        return "[" + str(self.nodes) 
+        + "]; Nodes labelled? " + str(self.nodes_are_labelled) 
+        + ", Edges labelled? " + str(self.edges_are_labelled) 
+        + ", Directed graph? " + str(self.is_directed) 
 
     def __repr__(self):
         return self.__str__()
 
 
 if __name__ == "__main__" :
-
+    
     G = Graph(sys.argv[1])
-
+    
     pprint.pprint(G)
