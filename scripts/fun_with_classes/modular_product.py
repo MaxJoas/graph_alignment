@@ -35,10 +35,8 @@ def neighbours_in_mp ( tup1, tup2 ):
 
 
 ''' this function build the modular product out of the cartesian product therfore
-we take each node ( here still a tupel of the two old nodes) and compare it which
-each node (tupel) except itself and check then neighobouring rules. In case we
-found a neughbour we add it to the list of values in the dict to the according
-node'''
+we take each node (here a Tuple of two nodes) and make a node object of the tupel
+and find neighbours of new nodes accoring to rules of modular prodcut'''
 
 def mod_product( cartp ):
 
