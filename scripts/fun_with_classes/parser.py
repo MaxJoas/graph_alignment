@@ -101,9 +101,7 @@ def parse_graph(doc):
                 issues += "One or more edges are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
     
-    print(check_list[4])
     if not check_list[4]:  #if graph is undirected
-        print("Möp")
         if edges_contain_doubles( edges ):  #(a,b) and (b,a)
             issues += "Undirected graph can contain any edge only once. \n" 
             
