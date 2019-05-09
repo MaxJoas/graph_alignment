@@ -15,7 +15,7 @@ G = nx.Graph()
 '''first number is the number of nodes; second is the edge probability, ergo a float between 0 and 1'''
 n = input("number of nodes? (integer):\n")
 p = input("the edge probability? (a float between 0 and 1):\n")
-d = input("directed? (True or False):\n")
+d = input("directed? (True or False):\n").upper == "TRUE" #turns cas insensitive string-input to true bool
 
 G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=d) 
 
@@ -23,10 +23,12 @@ G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=d)
 this changes the layout of the node display. Planar layout doesn't work with every graph. KK layout is pretty nice
 (better than spring_layout) most of the time.
 '''
-#pos = nx.planar_layout(G) #no edge intersections
-pos = nx.kamada_kawai_layout(G) #nice layout
+if int(n) < 20:
+    pos = nx.planar_layout(G) #no edge intersections
+else:
+    pos = nx.kamada_kawai_layout(G) #nice layout
 
-nx.draw(G, pos, with_labels = 1) # default spring_layout
+nx.draw(G, pos, with_labels = 1) 
 
 '''
 The functions below return some properties about the graph
@@ -38,44 +40,48 @@ https://networkx.github.io/documentation/networkx-1.10/reference/functions.html
 #print("Nodes: " + str(nx.nodes(G)))
 #print("Edges: " + str(nx.edges(G)))
 #print("Edgetype:" + str(type(G.edges)))
+
 x = input("do you want to see the plot? (y=yes):\n")
 if (x=="y"):
-	plt.show()
+    fig_copy = plt.gcf()
+    plt.show() #.show clears the image
+    plt.draw()
 
-x = input("do you want to save the plot? (y=yes):\n")
-if (x=="y"):
-	plt.savefig("RandomGraph.png")
-	print("\nthe random generated graph is saved as RandomGraph.png")
+z = input("do you want to save the plot? (y=yes):\n")
 
-f = open('RandomGraph.graph', 'w')
-f.write("AUTHOR: Clemens M., Max. J, Michel K., NetworkX\n")
-f.write("#nodes;" + str(nx.number_of_nodes(G)))
-f.write("\n#edges;"+ str(nx.number_of_edges(G)))
-f.write("\nNodes labelled;"+ "False")
-f.write("\nEdges labelled;"+ "False")
-f.write("\nDirected graph;"+ str(nx.is_directed(G)))
-f.write("\n\n")
-for i in (nx.nodes(G)):
-	f.write(str(i))
-	f.write(";\n")
-f.write("\n")
+if z=="y":
+    fig_copy.savefig("RandomGraph.png")
+    print("\nthe random generated graph is saved as RandomGraph.png")
 
-_list= (str(G.edges)).replace("[", "")
-_list = _list.replace("]", "")
-_list = _list.replace("(", "")
-_list = _list.replace(")", "")
-_list = _list.replace(" ", "")
-split_list = _list.split(",")
+    f = open('RandomGraph.graph', 'w')
+    f.write("AUTHOR: Clemens M., Max. J, Michel K., NetworkX\n")
+    f.write("#nodes;" + str(nx.number_of_nodes(G)))
+    f.write("\n#edges;"+ str(nx.number_of_edges(G)))
+    f.write("\nNodes labelled;"+ "False")
+    f.write("\nEdges labelled;"+ "False")
+    f.write("\nDirected graph;"+ str(nx.is_directed(G)))
+    f.write("\n\n")
+    for i in (nx.nodes(G)):
+        f.write(str(i))
+        f.write(";\n")
+    f.write("\n")
 
-#print("split_list:" + str(split_list))
-a=0
-for i in (split_list):
-	f.write(i)
-	if (a % 2 == 0):
-		f.write(";")
-	else :
-		f.write("\n")
-	a=a+1
-f.close()
+    _list= (str(G.edges)).replace("[", "")
+    _list = _list.replace("]", "")
+    _list = _list.replace("(", "")
+    _list = _list.replace(")", "")
+    _list = _list.replace(" ", "")
+    split_list = _list.split(",")
 
-print("\nthe random generated graph is saved as RandomGraph.graph")
+    #print("split_list:" + str(split_list))
+    a=0
+    for i in (split_list):
+        f.write(i)
+        if (a % 2 == 0):
+            f.write(";")
+        else :
+            f.write("\n")
+        a=a+1
+    f.close()
+
+    print("\nthe random generated graph is saved as RandomGraph.graph")
