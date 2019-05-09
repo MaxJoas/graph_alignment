@@ -28,9 +28,10 @@ def bk_pivot ( r, p, x ):
         print('clique: ', r)
         return r
 
-    pivot = find_max_pivot( p, x)
+    pivot = find_max_pivot( p, x )
 
-    # chosing pivot randomly from union of p, x:  pivot = random.choice( p + list(x)
+    # chosing pivot randomly from union of p, x:  
+    #pivot = random.choice( p + list(x) )
 
     # loop through canditates p without neighbours of pivot element
     for v in p[:] :
@@ -78,7 +79,8 @@ if __name__ == '__main__':
     try:
 
         graph = parse_graph(sys.argv[1])
-        r = x = set()
+        r = set()
+        x = set()
         p = list(graph.nodes)
 
         bk_pivot ( r, p, x )
