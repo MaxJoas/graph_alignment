@@ -7,27 +7,42 @@ import random
 ''' implementing broknkerbosch algorithmn where r is the list of possible nodes
 in a clique, p is the list of canditates and x is the garbage collection'''
 
+def find_max_pivot(p, x):
+
+    helper = dict()
+    p_union_x = p + list(x)
+
+    for v in p_union_x[:]:
+
+        cur_len_intersection = len([n for n in v.neighbours if n in p])
+        helper[v] = cur_len_intersection
+
+    key_max = max(helper.keys(), key=(lambda k: helper[k]))
+    return  key_max
+
 def bk_pivot ( r, p, x ):
 
     # when p and x are empty return r as max clique and end
     if not any ( [p, x] ):
-        print('clique')
-        print(r)
+
+        print('clique: ', r)
         return r
 
-    pivot = random.choice( p + list(x) ) # chosing pivot randomly from union of p, x
+    pivot = find_max_pivot( p, x)
+
+    # chosing pivot randomly from union of p, x:  pivot = random.choice( p + list(x)
 
     # loop through canditates p without neighbours of pivot element
     for v in p[:] :
 
-        if  v in pivot.neighbours:
+        if  v in pivot.neighbours: # bk with pivot only takes
             continue
 
         r_ = r | {v} # concatenate r and v
 
         # intersection of x respectively p and neighbours of v
         x_ = x & v.neighbours
-        p_ = list(set(p) & v.neighbours)
+        p_ = [n for n in v.neighbours if n in p ]
 
         bk_pivot ( r_, p_, x_ ) # recursive call of broknkerbosch
 
@@ -48,7 +63,7 @@ def bk ( r, p, x ):
 
         # intersection of x respectively p and neighbours of v
         x_ = x & v.neighbours
-        p_ = list(set(p) & v.neighbours)
+        p_ = [n for n in v.neighbours if n in p]
 
         bk ( r_, p_, x_ ) # recursive call of broknkerbosch
 
@@ -63,10 +78,8 @@ if __name__ == '__main__':
     try:
 
         graph = parse_graph(sys.argv[1])
-        r = set()
-        x = set()
+        r = x = set()
         p = list(graph.nodes)
-
 
         bk_pivot ( r, p, x )
 
