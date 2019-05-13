@@ -1,0 +1,11 @@
+1) Sind mit Vektoren dicts gemeint, die als key den node und als value die Tiefe im SSR tree (sind das einfach steigende ints?)?
+
+2) Wie fängt man am besten an, also welche Knoten matcht man zuallererst aufeinander?
+
+3) Warum werden die Datenstrukturen NACH dem rekursiven Aufrufwiederhergestellt? Läuft das nicht ins Leere?
+
+4) Wie genau sollen wir die Feasibility Function implementieren? k-look-ahead-Regel? (k = 2?)
+
+5) Sind die Terminalmengen in und out bei ungerichteten Graphen die gleichen, oder geht es um "bereits besucht" und "noch nicht besucht"?
+
+6) Was passiert bei nicht verbundenen Graphen?

@@ -1,0 +1,22 @@
+Cord_questions:
+Clemens:
+1)wie Implementiert man: corresponding to an isomorphism between G 1 (intermediate_state) and G 2 (intermediate_state)?
+
+Die Feasibility Function entscheidet, ob zwei Knoten n, m (von den jeweiligen Graphen G1 und G2) "äquivalent", also aufeinander abbildbar sind. Wenn die Function also True ausgibt werden n und m zu s (das ist wie das r im BK, also der wachsende common subgraph). Mit dem letzten Satz in 2.1 ist gemeint, dass die Feasibility Function auch (irgendwie...) manche Wege nicht weiter geht, obwohl n und m Teil eines common subgraph wären, weil F schon weiß, dass G2 auf diesem Weg nicht komplett auf G1 abbildbar ist.
+
+
+2) ist covers all nodes das gleiche wie die intersection?
+
+Mit covers all nodes ist gemeint, dass M(s) (also der common subgraph, den wir Schritt für Schritt aufbauen) alle Knoten von G2 auf Knoten von G1 abgebildet hat. Das ist auch das Ziel des Algorithmus: entweder G2 ist komplett in G1 enthalten (dann ist G2 ein common induced subgraph von G1), oder G2 kann auf den kompletten Graph G1 abgebildet werden (dann sind die Graphen (komplett) isomorph zueinander).
+
+
+3) wie ist die Machbarkeitsfunktion F(s=intermediane_state) zu realisieren? Also konkreter wie testet man corresponding to an isomorphism between G1(s) & G2(s)?
+
+Dazu findest du was auf den Seiten 23ffff in der von mir in WA verlinkten Arbeit (tr10-01.pdf). Fragen wir aber auch noch.
+
+
+4) Wie ist die Abbruchbedingung des Algos in dem Paper in python zu interpretieren(boolean + whileshleife?): wie realisiert man end ifs in python? was ist mit restore data structure genau gemeint?
+
+Die Abbruchbedingung steht, wie immer bei rekursiven Algorithmen (auch beim BK) ganz oben und sagt: "Wenn M(s) alle Knoten von G2 enthält, dann gib mir das Mapping, das du gemacht hast (also sag mir, wie G2 in G1 reinpasst)". 
+END IF, END FOREACH usw sind nur ein Ausdruck im Pseudocode, dass der jeweilige Block dort beendet ist. In manchen Programmiersprachen wird das auch so gemacht, in bash zB. Bei Python rückt man einfach einen Indent raus. Die ENDs muss man also nicht separat computen. 
+Mit restore data structures ist wahrscheinlich gemeint, dass die Vektoren, die man als Input für F benutzt und so reinitialisiert werden müssen. Versteh ich aber auch noch nicht so ganz.
