@@ -1,0 +1,6 @@
+Cord_questions:
+Clemens:
+wie Implementiert man: corresponding to an isomorphism between G 1 (intermediate_state) and G 2 (intermediate_state)?
+ist covers all nodes das gleiche wie die intersection?
+wie ist die Machbarkeitsfunktion F(s=intermediane_state) zu realisieren? Also konkreter wie testet man corresponding to an isomorphism between G1(s) & G2(s)?
+Wie ist die Abbruchbedingung des Algos in dem Paper in python zu interpretieren(boolean + whileshleife?): wie realisiert man end ifs in python? was ist mit restore data structure genau gemeint?

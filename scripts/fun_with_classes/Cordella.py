@@ -23,7 +23,7 @@ def F(intermediate_state, n, m, G1=n?, G2=m?): #Durchführbarkeit testen? True/F
 
 
 
-def matchs(intermediate_state, G1, G2):#M maps each branch of G 1 onto a branch of G 2 and (vice versa?????
+def matchs(intermediate_state, G1, G2):#M maps each branch of G 1 onto a branch of G 2 and umgekehrt
 	while (procedure == True):		
 		if (intermediate_state covers all nodes G2.node):
 				return matchs(intermediate_state) #intermediate_state covers all nodes G2.node ??MATCH??
