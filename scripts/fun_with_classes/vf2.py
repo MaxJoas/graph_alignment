@@ -5,7 +5,7 @@ def vf2 ( s, s0, ms ):
         return ms
 
     ps = compute_ps()
-    for n,m un  in ps :
+    for n,m   in ps :
         if feasibility( s, n, m ):
             s_ = compute_s_()
             vf2(s_,so, ms)
@@ -24,6 +24,7 @@ def compute_ps(s, g1, g2, n1, n2, ms1, ms2):
     succ_set2 = succ(g2, n2)
     t_in2 = t_in_out(ms2,pred_set, g2)
     t_out2 - t_in_out(ms2, succ_set, g2)
+    ps
 
     if t_out1 and t_out2:
         # # TODO: # TODO:  ----------------------
@@ -33,17 +34,24 @@ def compute_ps(s, g1, g2, n1, n2, ms1, ms2):
         ps = t_in1 x min(t_in2) ## TODO:  ----------------------------
 
     elif not any(t_in1, t_in2, t_out1, t_out2):
-        ps = (n1 - ms1 ) X min(n2 - ms2) # # TODO:  ----------------------
+        ps = (g1.nodes - ms1 ) X min(g2.nodes - ms2) # # TODO:  ----------------------
 
     else :
         state is not part of matching
 
-''' feasbilit function a lo unclear here '''
+    return ps
+
+''' feasbilit function a lot unclear here '''
 def feasibility(s, n, m):
+    """
+    First, check for isomorphism
+    then, check for subgraph
+    finally, check the stuff below.
+    """
     bool = False
     # checks isomporphismus
-    if  n.neighbours and m.neighbours inf ms1 ? ms2:
-        check = check for corrsebonding branches # # TODO: ---------------------
+    if  n.neighbours in core_1 and m.neighbours in core_2:
+        check = check for corrsebonding branches # # TODO: LOOH AHEAD REGEL ---------------------
         if  check:
             # # TODO: check semantic attributes
             if semantic_attributes:
