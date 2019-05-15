@@ -20,7 +20,7 @@ def cart_product(G,H):
 	cart_product = {} # empty dicht to store consolidated nodes as keys and tupel of old nodes as values
 	for g in G:
 		for h in H:
-			cur_node = Node( g.id + h.id, g.label + h.label )
+			cur_node = Node( g.id + '_' + h.id, g.label + h.label )
 			cart_product[cur_node] = (g,h)
 
 	return cart_product

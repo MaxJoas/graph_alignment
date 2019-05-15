@@ -27,14 +27,16 @@ def compute_ps(s, g1, g2, n1, n2, ms1, ms2):
     ps
 
     if t_out1 and t_out2:
-        # # TODO: # TODO:  ----------------------
+        # # TODO: # TODO:  ---------------------- x entspricht kart produkt
         ps = t_out1 x min(t_out2)
 
     elif (not t_out1 and not t_out2)  and  ( t_in1 and t_in2 ):
         ps = t_in1 x min(t_in2) ## TODO:  ----------------------------
 
     elif not any(t_in1, t_in2, t_out1, t_out2):
-        ps = (g1.nodes - ms1 ) X min(g2.nodes - ms2) # # TODO:  ----------------------
+        ps = (g1.nodes - ms1 ) X min(g2.nodes - ms2) # # TODO:  ---------------------- minus entspricht mengenoperation ohne
+    elif on empty:
+        print(error)
 
     else :
         state is not part of matching
@@ -57,11 +59,13 @@ def feasibility(s, n, m):
             if semantic_attributes:
                 bool = True
                 return bool
-
+ # graph isompo n equal numbers for n and m
     # checks subgraph
     else :
+    # subgraph
         count how many nodes are in t_in_i, t_out_i ## TODO: ------------------
         and count how many nodes in (n_i - ms_i - t_in_i - t_out_i)
+        if
         if count_small_graph <- count_large_graph :
             # # TODO:  check semantic_attributes
             if semantic_attributes:
@@ -85,7 +89,7 @@ def ms_in_g2(ms, g2):
 def pred(g, n):
     pred_set = Set()
     ## TODO: FIND pred_set --------------------------------------
-
+# IN NEIGHBOUR / OUT NEIGHBOUR
 
     return pred_set
 
@@ -99,9 +103,9 @@ def succ(g, n):
 
  ''' find T out ot T in set based on the input '''
 def t_in_out(ms, pred_succ_set, g1):
-    t_out = Set()
+    t_in_out = Set()
     for g in g1:
-        if not g in and in pred_succ_set:
+        if not g in ms and in pred_succ_set:
             t_in_out.add(g)
     return t_in_out
 ''' MISSING HELPERS  ---------------------------------''''
