@@ -34,7 +34,7 @@ class Graph():
 
             for neighbour in node.neighbours:
 
-                if not neighbour in done:
+                if not neighbour in done: #done is for undirected #no bjektion
                     cur_edge = Edge(node, neighbour)
                     self.edges.add(cur_edge)
 

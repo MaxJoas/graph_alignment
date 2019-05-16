@@ -1,0 +1,14 @@
+- modular Product  and bk ....-> outputfile
+
+-aus nodes -> graphwriter.py
+-undirected to directet conv.
+
+ Node 1_1 'a1b1' { 3_3 2_2 }, 
+ Node 3_1 'a3b1' { 1_3 2_2 }, 
+node       label   edges 
+ 
+nodes -> edges
+(graph.py zeile 33-41)
+
+
+- benchmark einlesen (sys.time) usw.
