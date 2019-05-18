@@ -1,0 +1,8 @@
+#pip install pyprof2calltree
+#pip install kcachegrind
+
+python3 lsprofcalltree.py -o output.log generate_random_nx_graph.py args
+#Visualising the Output
+kcachegrind output.log
+
+

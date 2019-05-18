@@ -1,0 +1,22 @@
+digraph "callgraph" {
+  F558e296d2a30 [label="_find_and_load <frozen importl...\n24 774"];
+  F558e298ea3b0 [label="<module> <string>:1\n97 175"];
+  F558e298ea920 [label="('~', 0, '<built-in method bui...\n33 023"];
+  F558e29b59250 [label="<module> /home/clm/.local/lib/...\n5 139"];
+  F558e29b6f270 [label="<module> generate_random_nx_gr...\n82 198"];
+  F558e29b6f860 [label="<module> /home/clm/.local/lib/...\n7 357"];
+  F558e29b75e80 [label="('~', 0, '<built-in method bui...\n61 632"];
+  F558e2a192020 [label="exec_module <frozen importlib....\n1 717"];
+  F558e2a192880 [label="_call_with_frames_removed <fro...\n3 074"];
+  F558e298ea3b0 -> F558e298ea920 [weight=2,label="97 164 (6x)"];
+  F558e298ea920 -> F558e298ea3b0 [weight=2,label="98 070 (210x)"];
+  F558e298ea920 -> F558e29b59250 [weight=2,label="8 811 (6x)"];
+  F558e298ea920 -> F558e29b6f270 [weight=2,label="83 093 (6x)"];
+  F558e298ea920 -> F558e29b6f860 [weight=2,label="11 010 (6x)"];
+  F558e29b59250 -> F558e296d2a30 [weight=2,label="4 896 (68x)"];
+  F558e29b6f270 -> F558e296d2a30 [weight=2,label="16 038 (11x)"];
+  F558e29b6f270 -> F558e29b75e80 [weight=2,label="62 453 (27x)"];
+  F558e29b6f860 -> F558e296d2a30 [weight=2,label="7 032 (39x)"];
+  F558e2a192020 -> F558e2a192880 [weight=2,label="1 717 (375x)"];
+  F558e2a192880 -> F558e298ea920 [weight=2,label="3 074 (671x)"];
+}
