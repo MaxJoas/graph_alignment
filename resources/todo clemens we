@@ -11,7 +11,7 @@ nodes -> edges
 (graph.py zeile 33-41)
 
 
-- benchmark einlesen (sys.time) usw.
+ßßßßßßßßßßßßßßßßßßßßß- benchmark einlesen (sys.time) usw.
 
 
-python3 lsprofcalltree.py -o output.log yourprogram.py args
+ßßßßßßßßßßßßßßßßßßßßßpython3 lsprofcalltree.py -o output.log yourprogram.py args
