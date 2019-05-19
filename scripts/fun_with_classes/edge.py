@@ -1,7 +1,7 @@
 
-
+'''Edge object with a label (str)  and a node1 (Node) connecting to node2 (Node) '''
 class Edge(object):
-    """simple Edge class that stores id, label and direction of an edge"""
+
 
     def __init__( self, node1, node2, label="" ):
 
@@ -11,8 +11,7 @@ class Edge(object):
 
 
 
-
-    #checks if edge is reverse (as in a,b to b,a) to another edge 
+    '''checks if edge is the reverse (as in a,b to b,a) of another edge'''
     def is_reverse_of( self, e2 ):
         if self.node1 == e2.node2 and self.node2 == e2.node1:
             return True
@@ -21,22 +20,31 @@ class Edge(object):
 
 
 
+    '''allow comparing edges to each other (==, !=)'''
     def __eq__( self, other ):
-        return self.node1 == other.node1 and self.node2 == other.node2 and self.label == other.label
-    
-    
-    
+        if not isinstance(other, Edge):
+            return NotImplemented
+        else:
+            return all( self.node1 == other.node1, self.node2 == other.node2, self.label == other.label)
+
+
+    def __ne__( self, other ):
+        if not isinstance(other, Edge):
+            return NotImplemented
+        else:
+            return any( self.node1 != other.node1, self.node2 != other.node2, self.label != other.label)
+
+
     def __hash__( self ):
         return hash((self.node1, self.node2, self.label))
 
 
 
+    '''define the way an edge is printed'''
     def __str__( self ):
 
         return "\n ({} to {}) '{}'".format( self.node1.id, self.node2.id, self.label )
 
-    
-    
-    
+
     def __repr__(self):
         return self.__str__()

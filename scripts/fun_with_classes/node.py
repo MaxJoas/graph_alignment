@@ -1,7 +1,7 @@
 
-
+""" Node object with an id (str), a label (str) and neighbours (set) """
 class Node():
-    """ node class for storing label and id of node amd neighbours """
+
 
     def __init__ ( self, id, label="" ):
 
@@ -11,31 +11,69 @@ class Node():
 
 
 
+    '''add a neighbour to the neighbours set of the node'''
     def add_neighbour(self, node):
-
         self.neighbours.add(node)
 
 
 
-
+    '''allow comparing nodes to each other ( all operations )'''
     def __eq__( self, other ):
-        return self.id == other.id and self.label == other.label and self.neighbours == other.neighbours
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
 
+
+    def __ne__( self, other ):
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return any( (self.id != other.id, self.label != other.label, self.neighbours != other.neighbours) )
+
+
+    def __lt__( self, other ):
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return self.id < other.id
+
+
+    def __le__( self, other ):
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return self.id <= other.id
+
+
+    def __gt__( self, other ):
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return self.id > other.id
+
+
+    def __ge__( self, other ):
+        if not isinstance(other, Node):
+            return NotImplemented
+        else:
+            return self.id >= other.id
 
 
     def __hash__( self ):
         return hash((self.id, self.label))
 
 
+
+    '''define the way, a node is printed'''
     def __str__( self ):
 
         neighbours_string = " "
-        
+
         for neighbour in self.neighbours:
             neighbours_string += neighbour.id
             neighbours_string += " "
         return "\n Node " + self.id + " '" + self.label + "' {" + str(neighbours_string) + "}"
-
 
 
     def __repr__(self):
