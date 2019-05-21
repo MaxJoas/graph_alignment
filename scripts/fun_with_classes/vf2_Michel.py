@@ -2,7 +2,7 @@ from node import Node
 from graph import Graph
 import sys
 
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(500)
 
 
 class VF2():
@@ -18,18 +18,24 @@ class VF2():
             g2.create_fake_directions()
 
 
+        '''
+        TODO: definition of type is not true
+        maybe convert to subgraph afterwards if needed?
+        '''
         if len(g1.nodes) == len(g2.nodes):
             self.type = "isomorphism"
         else:
             self.type = "subgraph"
-        if g1 >= g2:
+        if g1 > g2:
             self.g1 = g1
             self.g2 = g2
         else:
             self.g1 = g2
             self.g2 = g1
 
-
+        '''
+        TODO: There is a more pythonic way (one line) right?
+        '''
         self.core1 = {}
         self.core2 = {}
 
@@ -58,26 +64,25 @@ class VF2():
     def match(
                 self,
                 last_mapped=( Node("0",""),Node("0","") ),
-                init_t_lengths={"in1":0, "out1":0, "in2":0, "out2":0},
                 depth=0
             ):
 
-        #print("last_mapped: {} \n t_lengths: {} \n depth: {} \n".format(last_mapped, init_t_lengths, depth))
         if self.s_in_g2():
+            print("\n\nEND_RESULT: \nType: {} \n\n{}\n\n".format(self.type, self.core2))
             return self.core2
 
-        t_lengths = self.set_inout( last_mapped, depth, init_t_lengths )
-        #print("Afterwards tl {} {} {}".format(t_lengths, self.core1, self.core2) )
+        t_lengths = self.set_inout( last_mapped, depth )
         p = self.compute_p( t_lengths )
-        #print("p "+str(p))
-        #print("After p {}".format(t_lengths))
+
 
         for tuple in p :
-            #print("t_lengths {}".format(t_lengths))
-            if self.is_feasible( tuple ):
-                self.compute_s_( tuple, depth )
-                print("Call! " + str(tuple) + str(t_lengths) + str(depth))
-                self.match( tuple, t_lengths, depth+1 )
+
+            if self.is_feasible( tuple, depth, t_lengths ):
+                self.compute_s_( tuple )
+
+                print("Call! \n\n last_mapped: {} \n\n t_lengths: {} \n\n depth: {} \n\n core1: {} \n\n core2 {} \n\n".format(tuple, t_lengths, depth, self.core1, self.core2))
+
+                self.match( tuple, depth+1 )
 
         self.restore_ds( last_mapped, t_lengths, depth )
 
@@ -91,37 +96,40 @@ class VF2():
                 return False
         return True
 
-        '''
-        for node in self.g2.nodes:
-            if not node in s:
-                return False
-
-        return True
-        '''
 
 
 
     def compute_p( self, t_lengths ):
 
         if t_lengths["out1"] and t_lengths["out2"]:
+
             p = self.cartesian_product( self.out1, self.legal_max(self.out2) )
+
+            print("OUT Candidates: {}".format(p))
             return p
 
-        elif not any( (t_lengths["out1"], t_lengths["out2"] ) ) and  all( (t_lengths["in1"], t_lengths["in2"]) ):
+        elif not t_lengths["out1"] and not t_lengths["out2"] and t_lengths["in1"] and t_lengths["in2"]:
+
             p = self.cartesian_product( self.in1,  self.legal_max(self.in2) )
+
+            print("IN Candidates: {}".format(p))
             return p
 
         elif not any( (t_lengths["in1"], t_lengths["in2"], t_lengths["out1"], t_lengths["out2"]) ):
+
             g1_starter_set = self.g1.nodes - set( n for n in self.core1.keys() if self.core1[n] != self.null_node )
             g2_starter_set = self.g2.nodes - set( m for m in self.core2.keys() if self.core2[m] != self.null_node )
 
             p = set()
 
+            '''
+            TODO: Does cp work here now?
+            '''
             for node in g1_starter_set:
                 p.add( (node, max(g2_starter_set)) )
             return p
 
-        elif not any( (t_lengths[in1], t_lengths[in2], t_lengths[out1]) ) and t_lengths[out2]:
+        elif not any( (t_lengths["in1"], t_lengths["in2"], t_lengths["out1"]) ) and t_lengths["out2"]:
             print( "This situation should have been caught." )
             return
 
@@ -132,35 +140,61 @@ class VF2():
 
 
 
+    '''
+    TODO:
+    Unused ifs?
+    Summarize them at least!
 
-    def is_feasible(self, tuple):
+    condition not sufficient for subgraph...
+    some edges are missing
+    '''
+    def is_feasible( self, tuple, depth, t_lengths ):
 
         n = tuple[0]
         m = tuple[1]
 
+        print("Tested tuple: {}".format(tuple))
+
+        if self.type == "isomorphism" and len(n.neighbours) != len(m.neighbours):
+            print("Wrong neighbour number in isomorphism!")
+            return False
+
+        elif self.type == "subgraph" and len(n.neighbours) < len(m.neighbours):
+            print("Wrong neighbour number in subgraph!")
+            return False
+
         for node1 in n.neighbours:
 
-            if not self.core1[node1] == self.null_node:
-                print("Hi")
-                for node2 in m.neighbours:
-                    if not self.core1[node1] == self.core2[node2]:
-                        print("neighbours not ok")
+            for node2 in m.neighbours:
+
+                if self.core1[node1] == node2:
+                    if self.core2[node2] != node1:
+                        print("Wrong association in core2!")
+
                         return False
 
-            elif not self.is_diff_okay():
-                print("diff not okay")
-                return False
+                elif self.core2[node2] == node1:
+                    if self.core1[node1] != node2:
+                        print("Wrong association in core1!")
 
-            if self.semantic_attributes():
-                return True
-            else:
-                return False
+                        return False
+
+        '''
+        if not self.is_diff_okay( depth, t_lengths ):
+            print("diff not okay")
+            return False
+        '''
+
+        if self.semantic_attributes():
+            print(depth)
+            print("IS OKAY CONTINUE")
+            print(self.core2)
+            return True
 
 
 
 
-    '''#TODO: try sth different'''
-    def compute_s_( self, tuple, depth ):
+    def compute_s_( self, tuple ):
 
         self.core1[tuple[0]] = tuple[1]
         self.core2[tuple[1]] = tuple[0]
@@ -168,18 +202,24 @@ class VF2():
 
 
 
+    '''
+    TODO:
+    when backtracking, the nodes are being used
+    multiple times
+    '''
     def restore_ds( self, last_mapped, t_lengths, depth ):
 
         n = last_mapped[0]
         m = last_mapped[1]
 
+        #if not self.null_node in (n,m):
         self.core1[n] = self.null_node
         self.core2[m] = self.null_node
 
-        self.restore_terminals(self.in1, t_lengths, "in1", depth)
-        self.restore_terminals(self.out1, t_lengths, "out1", depth)
-        self.restore_terminals(self.in2, t_lengths, "in2", depth)
-        self.restore_terminals(self.out2, t_lengths, "out2", depth)
+        self.restore_terminals(self.in1, self.core1, depth)
+        self.restore_terminals(self.out1, self.core1, depth)
+        self.restore_terminals(self.in2, self.core2, depth)
+        self.restore_terminals(self.out2, self.core2, depth)
 
 
 
@@ -191,33 +231,46 @@ class VF2():
 
 
 
-    def set_inout( self, last_mapped, depth, t_lengths ):
+    def set_inout( self, last_mapped, depth ):
+
+        t_lengths={"in1":0, "out1":0, "in2":0, "out2":0}
 
         n = last_mapped[0]
         m = last_mapped[1]
 
         for edge in self.g1.edges:
 
-            if n == edge.node1:
-                self.out1[edge.node2] = depth
+            if n == edge.node1 and self.core1[edge.node2] == self.null_node:
                 t_lengths["out1"] += 1
 
-            elif n == edge.node2:
-                self.in1[edge.node1] = depth
+                if self.out1[edge.node2] == 0:
+                        self.out1[edge.node2] = depth
+
+            elif n == edge.node2 and self.core1[edge.node1] == self.null_node:
                 t_lengths["in1"] += 1
+
+                if self.in1[edge.node1] == 0:
+                    self.in1[edge.node1] = depth
+
 
         for edge in self.g2.edges:
 
-            if m == edge.node1:
-                self.out2[edge.node2] = depth
+            if m == edge.node1 and self.core2[edge.node2] == self.null_node:
                 t_lengths["out2"] += 1
 
-            elif m == edge.node2:
-                self.in2[edge.node1] = depth
+                if self.out2[edge.node2] == 0:
+                    self.out2[edge.node2] = depth
+
+            elif m == edge.node2 and self.core2[edge.node1] == self.null_node:
                 t_lengths["in2"] += 1
 
-        print(self.in1, self.out1)
+                if self.in2[edge.node1] == 0:
+                    self.in2[edge.node1] = depth
+
+        print(t_lengths)
         return t_lengths
+
+
 
 
     def cartesian_product( self, t_dict, t_max ):
@@ -249,12 +302,11 @@ class VF2():
 
 
 
-    '''TODO: This is all pretty damn ugly'''
-    def is_diff_okay( self ):
+    def is_diff_okay( self, depth, t_lengths ):
 
-        free_n1 = len(self.g1.nodes) - len([n for n in self.core1 if self.core1[n].id != "0"]) - len(self.in1) - len(self.out1)
+        free_n1 = len(self.g1.nodes) - depth - t_lengths["in1"] - t_lengths["out1"]
+        free_n2 = len(self.g2.nodes) - depth - t_lengths["in2"] - t_lengths["out2"]
 
-        free_n2 = len(self.g2.nodes) - len([n for n in self.core2 if self.core2[n].id != "0"]) - len(self.in2) - len(self.out2)
 
         if self.type == "isomorphism":
             return free_n1 == free_n2
@@ -271,25 +323,24 @@ class VF2():
 
 
 
-    def restore_terminals( self, t_dict, t_lengths, dict_key, depth):
+    def restore_terminals( self, t_dict, core, depth):
 
-        for node in t_dict.keys():
-            if t_dict[node] == depth:
+        for node in t_dict:
+            if core[node] == self.null_node and t_dict[node] == depth:
                 t_dict[node] = 0
-                #if t_lengths[str(t_dict)] > 0:
-                t_lengths[dict_key] -= 1
 
 
+    '''
+    TODO: to_String?
+    '''
 
 
 if __name__ == "__main__":
     from parser import parse_graph
-    import sys
+
 
     g1 = parse_graph(sys.argv[1])
     g2 = parse_graph(sys.argv[2])
 
-    s = {}
-
     vf2 = VF2(g1, g2)
-    print( vf2.match() )
+    vf2.match()
