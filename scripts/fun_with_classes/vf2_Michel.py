@@ -80,9 +80,11 @@ class VF2():
             if self.is_feasible( tuple, depth, t_lengths ):
                 self.compute_s_( tuple )
 
-                print("Call! \n\n last_mapped: {} \n\n t_lengths: {} \n\n depth: {} \n\n core1: {} \n\n core2 {} \n\n".format(tuple, t_lengths, depth, self.core1, self.core2))
+                print("\n Call! \n\n last_mapped: {} \n\n t_lengths: {} \n\n depth: {} \n\n core1: {} \n\n core2 {} \n\n".format(tuple, t_lengths, depth, self.core1, self.core2))
 
                 self.match( tuple, depth+1 )
+
+                last_mapped = tuple
 
         self.restore_ds( last_mapped, t_lengths, depth )
 
@@ -155,6 +157,65 @@ class VF2():
 
         print("Tested tuple: {}".format(tuple))
 
+        '''
+        if self.type == "isomorphism" and len(n.neighbours) != len(m.neighbours):
+            print("Wrong neighbour number in isomorphism!")
+            return False
+
+        elif self.type == "subgraph" and len(n.neighbours) < len(m.neighbours):
+            print("Wrong neighbour number in subgraph!")
+            return False
+        '''
+
+
+        if self.type == "isomorphism":
+
+            '''0-look-ahead'''
+            if not all(
+                        (self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2),
+                        self.zero_look_ahead(m, self.in2, self.core2, self.in1, self.core1),
+                        self.zero_look_ahead(n, self.out1, self.core1, self.out2, self.core2),
+                        self.zero_look_ahead(m, self.out2, self.core2, self.out1, self.core1))
+                    ):
+
+                print("0-look-ahead error")
+                return False
+
+            '''1-look-ahead'''
+            if not t_lengths["in1"] == t_lengths["in2"] or not t_lengths["out1"] == t_lengths["out2"]:
+                print("1-look-ahead error")
+                return False
+
+        elif self.type == "subgraph":
+
+            '''0-look-ahead'''
+            if not all(
+                        (self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2),
+                        self.zero_look_ahead(m, self.in2, self.core2, self.in1, self.core1),
+                        self.zero_look_ahead(n, self.out1, self.core1, self.out2, self.core2),
+                        self.zero_look_ahead(m, self.out2, self.core2, self.out1, self.core1)
+                    )):
+
+                print("0-look-ahead error")
+                return False
+
+            '''1-look-ahead'''
+            if not t_lengths["in1"] >= t_lengths["in2"] or not t_lengths["out1"] >= t_lengths["out2"]:
+                print("1-look-ahead-error")
+                return False
+
+        else:
+            raise ValueError("!!!WARNING: Matching type has not been set!!!")
+
+        '''2-look-ahead'''
+        if not self.two_look_ahead( depth, t_lengths ):
+            print("2-look-ahead-error")
+            return False
+
+
+        return True
+
+        '''
         if self.type == "isomorphism" and len(n.neighbours) != len(m.neighbours):
             print("Wrong neighbour number in isomorphism!")
             return False
@@ -179,7 +240,7 @@ class VF2():
 
                         return False
 
-        '''
+
         if not self.is_diff_okay( depth, t_lengths ):
             print("diff not okay")
             return False
@@ -216,10 +277,10 @@ class VF2():
         self.core1[n] = self.null_node
         self.core2[m] = self.null_node
 
-        self.restore_terminals(self.in1, self.core1, depth)
-        self.restore_terminals(self.out1, self.core1, depth)
-        self.restore_terminals(self.in2, self.core2, depth)
-        self.restore_terminals(self.out2, self.core2, depth)
+        self.restore_terminals(self.in1, t_lengths, "in1", self.core1, depth)
+        self.restore_terminals(self.out1, t_lengths, "out1", self.core1, depth)
+        self.restore_terminals(self.in2, t_lengths, "in2", self.core2, depth)
+        self.restore_terminals(self.out2, t_lengths, "out2", self.core2, depth)
 
 
 
@@ -302,7 +363,24 @@ class VF2():
 
 
 
-    def is_diff_okay( self, depth, t_lengths ):
+
+    def zero_look_ahead( self, node, t_dict_a, core_a, t_dict_b, core_b ):
+
+        #for n_ in node.neighbours:
+        for n_ in t_dict_a:
+
+            if t_dict_a[n_] != 0 and core_a[n_] != self.null_node:
+
+                m_ = core_a[n_]
+
+                if t_dict_b[m_] == 0 :
+                    return False
+                '''or core_b[m_] == self.null_node'''
+        return True
+
+
+
+    def two_look_ahead( self, depth, t_lengths ):
 
         free_n1 = len(self.g1.nodes) - depth - t_lengths["in1"] - t_lengths["out1"]
         free_n2 = len(self.g2.nodes) - depth - t_lengths["in2"] - t_lengths["out2"]
@@ -323,11 +401,14 @@ class VF2():
 
 
 
-    def restore_terminals( self, t_dict, core, depth):
+    def restore_terminals( self, t_dict, t_lengths, dict_key, core, depth ):
 
         for node in t_dict:
             if core[node] == self.null_node and t_dict[node] == depth:
                 t_dict[node] = 0
+                t_lengths[dict_key] -= 1
+
+        return t_lengths
 
 
     '''
