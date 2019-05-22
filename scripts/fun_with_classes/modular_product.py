@@ -6,7 +6,7 @@ import sys
 import pprint
 from parser import parse_graph
 from bk_pivot import bk_pivot
-from view_graph import create_graph
+#from view_graph import create_graph
 
 
 ''' building cartesian product of two graphs and making new node objects out

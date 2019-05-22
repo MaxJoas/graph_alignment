@@ -50,6 +50,7 @@ class VF2():
         self.in2 = {}
         self.out2 = {}
 
+# save depth for every node initialization
         for node in self.g1.nodes:
             self.in1[node] = 0
             self.out1[node] = 0
@@ -71,7 +72,7 @@ class VF2():
             print("\n\nEND_RESULT: \nType: {} \n\n{}\n\n".format(self.type, self.core2))
             return self.core2
 
-        t_lengths = self.set_inout( last_mapped, depth )
+        t_lengths = self.set_inout( last_mapped, depth ) #
         p = self.compute_p( t_lengths )
 
 
@@ -80,7 +81,7 @@ class VF2():
             if self.is_feasible( tuple, depth, t_lengths ):
                 self.compute_s_( tuple )
 
-                print("\n Call! \n\n last_mapped: {} \n\n t_lengths: {} \n\n depth: {} \n\n core1: {} \n\n core2 {} \n\n".format(tuple, t_lengths, depth, self.core1, self.core2))
+                print("\n Call! \n\n last_mapped: {} \n\n t_lengths: {} \n\n depth: {} \n\n core1: {} \n\n core2 {} \n\n".format(tuple, t_lengths, depth, self.core1, self.core2 ) )
 
                 self.match( tuple, depth+1 )
 
@@ -119,21 +120,15 @@ class VF2():
 
         elif not any( (t_lengths["in1"], t_lengths["in2"], t_lengths["out1"], t_lengths["out2"]) ):
 
-            g1_starter_set = self.g1.nodes - set( n for n in self.core1.keys() if self.core1[n] != self.null_node )
-            g2_starter_set = self.g2.nodes - set( m for m in self.core2.keys() if self.core2[m] != self.null_node )
+            g1_starter_set = self.g1.nodes - set( n for n in self.core1.keys() if self.core1[n] != self.null_node ) # checks current mapping of g1 equals M1(s)
+            g2_starter_set = self.g2.nodes - set( m for m in self.core2.keys() if self.core2[m] != self.null_node ) # see above
 
             p = set()
 
-            '''
-            TODO: Does cp work here now?
-            '''
+            # analgo to cartesian product with different max function sinve we have already tested  'legal max' and differnte DS
             for node in g1_starter_set:
                 p.add( (node, max(g2_starter_set)) )
             return p
-
-        elif not any( (t_lengths["in1"], t_lengths["in2"], t_lengths["out1"]) ) and t_lengths["out2"]:
-            print( "This situation should have been caught." )
-            return
 
         else : #state is not part of matching
 
@@ -290,7 +285,11 @@ class VF2():
 
 # HELPER FUNCTIONS -------------------------------------------------------------
 
-
+    '''
+    Saves number of nodes for each terminal set and sets ssr / recursions depth,
+    if not set. Returns dictionaries that saves these numbers. we need thos for
+    compute p and for sanity checks
+    '''
 
     def set_inout( self, last_mapped, depth ):
 
@@ -347,14 +346,14 @@ class VF2():
 
 
 
-
+    '''works returns node from t_dict with max id'''
     def legal_max( self, t_dict ):
 
         max_node = self.null_node
 
         for node in t_dict:
             if t_dict[node] > 0:
-                if self.core2[node] == self.null_node:
+                if self.core2[node] == self.null_node: # checks if cur node is mapped
                     if node > max_node:
                         max_node = node
 

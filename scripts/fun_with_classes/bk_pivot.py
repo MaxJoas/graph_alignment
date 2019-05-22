@@ -3,6 +3,7 @@ from graph import Graph
 import sys
 import pprint
 import random
+from node import Node
 
 ''' implementing broknkerbosch algorithmn where r is the list of possible nodes
 in a clique, p is the list of canditates and x is the garbage collection'''
@@ -11,6 +12,7 @@ def find_max_pivot(p, x):
 
     helper = dict()
     p_union_x = p + list(x)
+    helper = [0,0]
 
     for v in p_union_x[:]:
 
@@ -20,6 +22,19 @@ def find_max_pivot(p, x):
     key_max = max(helper.keys(), key=(lambda k: helper[k]))
     return  key_max
 
+def test(p,x):
+    p_union_x = p + list(x)
+    helper = 0
+    piv = Node('0', '')
+    for v in p_union_x:
+        cur_len_intersection = len([n for n in v.neighbours if n in p])
+        if cur_len_intersection > helper:
+            piv = v
+            helper = cur_len_intersection
+
+    return piv
+
+
 def bk_pivot ( r, p, x ):
 
     # when p and x are empty return r as max clique and end
@@ -28,9 +43,9 @@ def bk_pivot ( r, p, x ):
         print('clique: ', r)
         return r
 
-    pivot = find_max_pivot( p, x )
+    pivot = test( p, x )
 
-    # chosing pivot randomly from union of p, x:  
+    # chosing pivot randomly from union of p, x:
     #pivot = random.choice( p + list(x) )
 
     # loop through canditates p without neighbours of pivot element

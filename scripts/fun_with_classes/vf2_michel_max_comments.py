@@ -56,7 +56,7 @@ class VF2():
 
 
 
-# why last mapped no attribute since it is always the same? smae with init_t_lengths, but it is just a stylistc critic
+
     def match(
                 self,
                 last_mapped = ( Node("0",""),Node("0","") ),
