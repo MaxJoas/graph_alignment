@@ -17,4 +17,20 @@ python3 -m cProfile -o profile.cprof modular_product.py /home/clm/graph_alignmen
 
 pyprof2calltree -k -i profile.cprof
 
+#for greps
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph  | grep "mod_product"
+
+#        1    0.000    0.000    0.001    0.001 modular_product.py:46(mod_product)
+
+#cumtime ist in ms nicht in ns TO_DO
+
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph  | grep "create_undirected_edges"
+
+#        1    0.000    0.000    0.000    0.000 graph.py:24(create_undirected_edges)
+
+
+#ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
