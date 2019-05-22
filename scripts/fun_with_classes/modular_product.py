@@ -25,7 +25,6 @@ def cart_product(G,H):
 
 	return cart_product
 
-
 ''' this function checks if the two given new nodes (of the cartesian product)
 of two graphs are neighbours according to the rules of the modular product which'''
 
@@ -86,7 +85,7 @@ if __name__ == '__main__':
 		r = set()
 		p = list(modp.nodes)
 
-		bk_pivot( r, p, x)
+		#bk_pivot( r, p, x)
 		#create_graph(modp.nodes ,modp.edges)
 
 	except Exception as e:

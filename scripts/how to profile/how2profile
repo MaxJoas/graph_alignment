@@ -1,8 +1,20 @@
-#pip install pyprof2calltree
-#pip install kcachegrind
+#pip3 install pyprof2calltree to convert the output.cprof for kcachegrind
+#pip3 install kcachegrind
 
-python3 lsprofcalltree.py -o output.log generate_random_nx_graph.py args
-#Visualising the Output
-kcachegrind output.log
+#profiling of modular product (with bk inside)
+
+python3 lsprofcalltree.py -o output.log modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph args
+
+# Profiling with cProfile gives more details
+# use as admin #sudo su
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+#output in file
+
+
+python3 -m cProfile -o profile.cprof modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+pyprof2calltree -k -i profile.cprof
 
 
