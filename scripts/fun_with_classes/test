@@ -1,0 +1,745 @@
+Reading graph1.graph from Clemens M., Max. J, Michel K.
+Successfully parsed graph1.graph
+
+Reading graph1.graph from Clemens M., Max. J, Michel K.
+Successfully parsed graph2.graph
+
+{'in1': 0, 'out1': 0, 'in2': 0, 'out2': 0}
+Tested tuple: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 })
+
+ Call! 
+
+ last_mapped: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }) 
+
+ t_lengths: {'in1': 0, 'out1': 0, 'in2': 0, 'out2': 0} 
+
+ depth: 0 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 0 '' { }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 0 '' { }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 0 '' { }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 0 '' { }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 5, 'out1': 5, 'in2': 3, 'out2': 3}
+OUT Candidates: {(
+ Node 6 'b' { 5 7 3 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 4 'c' { 5 2 3 }, 
+ Node 4 'd' { 1 2 5 })}
+Tested tuple: (
+ Node 6 'b' { 5 7 3 }, 
+ Node 4 'd' { 1 2 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 4 'd' { 1 2 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 4 'd' { 1 2 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 4 'd' { 1 2 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 6 'b' { 5 7 3 }, 
+ Node 5 'e' { 1 2 4 })
+
+ Call! 
+
+ last_mapped: (
+ Node 6 'b' { 5 7 3 }, 
+ Node 5 'e' { 1 2 4 }) 
+
+ t_lengths: {'in1': 0, 'out1': 0, 'in2': 0, 'out2': 0} 
+
+ depth: 0 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 0 '' { }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 0 '' { }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 0 '' { }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 0 '' { }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 3, 'out1': 3, 'in2': 3, 'out2': 3}
+OUT Candidates: {(
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 4 'd' { 1 2 5 }), (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 4 'd' { 1 2 5 })}
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 3, 'out2': 3} 
+
+ depth: 1 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 4 'd' { 1 2 5 }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 0 '' { }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 0 '' { }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 0 '' { }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 7 'h' { 5 6 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 1, 'out1': 1, 'in2': 2, 'out2': 2}
+OUT Candidates: {(
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 2 'b' { 1 4 3 5 })}
+Tested tuple: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 2 'b' { 1 4 3 5 })
+1-look-ahead-error
+Tested tuple: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 2 'b' { 1 4 3 5 })
+1-look-ahead-error
+Tested tuple: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 4 'd' { 1 2 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 4 'd' { 1 2 5 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 3, 'out2': 3} 
+
+ depth: 1 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 4 'd' { 1 2 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 0 '' { }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 0 '' { }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 4, 'out1': 4, 'in2': 2, 'out2': 2}
+OUT Candidates: {(
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 4 'c' { 5 2 3 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 7 'h' { 5 6 }, 
+ Node 2 'b' { 1 4 3 5 })}
+Tested tuple: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 2 'b' { 1 4 3 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 2 'b' { 1 4 3 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 2 'b' { 1 4 3 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 2 'b' { 1 4 3 5 })
+2-look-ahead-error
+Tested tuple: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 4 'd' { 1 2 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 4 'd' { 1 2 5 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 3, 'out2': 3} 
+
+ depth: 1 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 0 '' { }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 0 '' { }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2}
+OUT Candidates: {(
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 4 'c' { 5 2 3 }, 
+ Node 2 'b' { 1 4 3 5 }), (
+ Node 7 'h' { 5 6 }, 
+ Node 2 'b' { 1 4 3 5 })}
+Tested tuple: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 2 'b' { 1 4 3 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 2 'b' { 1 4 3 5 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2} 
+
+ depth: 2 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 0 '' { }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 0 '' { }} 
+
+
+{'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2}
+OUT Candidates: {(
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 3 'c' { 1 2 }), (
+ Node 7 'h' { 5 6 }, 
+ Node 3 'c' { 1 2 }), (
+ Node 4 'c' { 5 2 3 }, 
+ Node 3 'c' { 1 2 })}
+Tested tuple: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 3 'c' { 1 2 })
+
+ Call! 
+
+ last_mapped: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 3 'c' { 1 2 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2} 
+
+ depth: 3 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 0 '' { }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }} 
+
+
+{'in1': 2, 'out1': 2, 'in2': 1, 'out2': 1}
+OUT Candidates: {(
+ Node 4 'c' { 5 2 3 }, 
+ Node 1 'a' { 2 3 4 5 }), (
+ Node 1 'e' { 2 }, 
+ Node 1 'a' { 2 3 4 5 }), (
+ Node 7 'h' { 5 6 }, 
+ Node 1 'a' { 2 3 4 5 })}
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 1 'a' { 2 3 4 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 1 'a' { 2 3 4 5 }) 
+
+ t_lengths: {'in1': 2, 'out1': 2, 'in2': 1, 'out2': 1} 
+
+ depth: 4 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 0 '' { }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 4 'c' { 5 2 3 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }} 
+
+
+
+
+END_RESULT: 
+Type: subgraph 
+
+{
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 4 'c' { 5 2 3 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }}
+
+
+Tested tuple: (
+ Node 1 'e' { 2 }, 
+ Node 1 'a' { 2 3 4 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 1 'e' { 2 }, 
+ Node 1 'a' { 2 3 4 5 }) 
+
+ t_lengths: {'in1': 2, 'out1': 2, 'in2': 1, 'out2': 1} 
+
+ depth: 4 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 1 'e' { 2 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }} 
+
+
+
+
+END_RESULT: 
+Type: subgraph 
+
+{
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 1 'e' { 2 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }}
+
+
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 1 'a' { 2 3 4 5 })
+
+ Call! 
+
+ last_mapped: (
+ Node 7 'h' { 5 6 }, 
+ Node 1 'a' { 2 3 4 5 }) 
+
+ t_lengths: {'in1': 2, 'out1': 2, 'in2': 1, 'out2': 1} 
+
+ depth: 4 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 7 'h' { 5 6 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }} 
+
+
+
+
+END_RESULT: 
+Type: subgraph 
+
+{
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 7 'h' { 5 6 }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 2 'a' { 5 4 3 1 }}
+
+
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 3 'c' { 1 2 })
+
+ Call! 
+
+ last_mapped: (
+ Node 7 'h' { 5 6 }, 
+ Node 3 'c' { 1 2 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2} 
+
+ depth: 3 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 7 'h' { 5 6 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 7 'h' { 5 6 }} 
+
+
+{'in1': 0, 'out1': 0, 'in2': 1, 'out2': 1}
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 3 'c' { 1 2 })
+
+ Call! 
+
+ last_mapped: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 3 'c' { 1 2 }) 
+
+ t_lengths: {'in1': 3, 'out1': 3, 'in2': 2, 'out2': 2} 
+
+ depth: 3 
+
+ core1: {
+ Node 6 'b' { 5 7 3 }: 
+ Node 5 'e' { 1 2 4 }, 
+ Node 1 'e' { 2 }: 
+ Node 1 'a' { 2 3 4 5 }, 
+ Node 7 'h' { 5 6 }: 
+ Node 0 '' { }, 
+ Node 5 'f' { 6 7 2 4 3 }: 
+ Node 2 'b' { 1 4 3 5 }, 
+ Node 8 'g' { }: 
+ Node 0 '' { }, 
+ Node 2 'a' { 5 4 3 1 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 4 'c' { 5 2 3 }: 
+ Node 3 'c' { 1 2 }, 
+ Node 3 'd' { 6 2 4 5 }: 
+ Node 4 'd' { 1 2 5 }} 
+
+ core2 {
+ Node 2 'b' { 1 4 3 5 }: 
+ Node 5 'f' { 6 7 2 4 3 }, 
+ Node 5 'e' { 1 2 4 }: 
+ Node 6 'b' { 5 7 3 }, 
+ Node 1 'a' { 2 3 4 5 }: 
+ Node 0 '' { }, 
+ Node 4 'd' { 1 2 5 }: 
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 3 'c' { 1 2 }: 
+ Node 4 'c' { 5 2 3 }} 
+
+
+{'in1': 0, 'out1': 0, 'in2': 1, 'out2': 1}
+Tested tuple: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 2 'b' { 1 4 3 5 })
+0-look-ahead error
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 2 'b' { 1 4 3 5 })
+0-look-ahead error
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 2 'b' { 1 4 3 5 })
+0-look-ahead error
+Tested tuple: (
+ Node 8 'g' { }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error
+Tested tuple: (
+ Node 1 'e' { 2 }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error
+Tested tuple: (
+ Node 7 'h' { 5 6 }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error
+Tested tuple: (
+ Node 4 'c' { 5 2 3 }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error
+Tested tuple: (
+ Node 2 'a' { 5 4 3 1 }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error
+Tested tuple: (
+ Node 3 'd' { 6 2 4 5 }, 
+ Node 5 'e' { 1 2 4 })
+0-look-ahead error

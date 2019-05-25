@@ -44,8 +44,8 @@ def create_graph(nodes, edges):
 
 if __name__ == "__main__":
 
-    #g = parse_graph(sys.argv[1])
-    g = sys.argv[1]
+    g = parse_graph(sys.argv[1])
+    # g = sys.argv[1]
     print(g)
 
     create_graph(g.nodes, g.edges)

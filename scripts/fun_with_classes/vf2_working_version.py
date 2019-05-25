@@ -153,13 +153,13 @@ class VF2():
         print("Tested tuple: {}".format(tuple))
 
 
-        if self.type == "isomorphism" and len(n.neighbours) != len(m.neighbours):
-            print("Wrong neighbour number in isomorphism!")
-            return False
-
-        elif self.type == "subgraph" and len(n.neighbours) < len(m.neighbours):
-            print("Wrong neighbour number in subgraph!")
-            return False
+        # if self.type == "isomorphism" and len(n.neighbours) != len(m.neighbours):
+        #     print("Wrong neighbour number in isomorphism!")
+        #     return False
+        #
+        # elif self.type == "subgraph" and len(n.neighbours) < len(m.neighbours):
+        #     print("Wrong neighbour number in subgraph!")
+        #     return False
 
 
 
@@ -167,10 +167,10 @@ class VF2():
 
             '''0-look-ahead'''
             if not all(
-                        (self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2),
-                        self.zero_look_ahead(m, self.in2, self.core2, self.in1, self.core1),
-                        self.zero_look_ahead(n, self.out1, self.core1, self.out2, self.core2),
-                        self.zero_look_ahead(m, self.out2, self.core2, self.out1, self.core1))
+                        (self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2 ),
+                        self.zero_look_ahead( m, self.in2, self.core2, self.in1, self.core1 ),
+                        self.zero_look_ahead( n, self.out1, self.core1, self.out2, self.core2 ),
+                        self.zero_look_ahead( m, self.out2, self.core2, self.out1, self.core1))
                     ):
 
                 print("0-look-ahead error")
@@ -185,9 +185,9 @@ class VF2():
 
             '''0-look-ahead'''
             if not all(
-                        (#self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2),
+                        (self.zero_look_ahead( n, self.in1, self.core1, self.in2, self.core2),
                         self.zero_look_ahead(m, self.in2, self.core2, self.in1, self.core1),
-                        # self.zero_look_ahead(n, self.out1, self.core1, self.out2, self.core2),
+                         self.zero_look_ahead(n, self.out1, self.core1, self.out2, self.core2),
                         self.zero_look_ahead(m, self.out2, self.core2, self.out1, self.core1)
                     )):
 
@@ -347,7 +347,7 @@ class VF2():
                 '''or core_b[m_] == self.null_node'''
         return True
 
-
+    def look_ahead_0
 
     def two_look_ahead( self, depth, t_lengths ):
 

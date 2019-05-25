@@ -368,7 +368,7 @@ class VF2():
         #for n_ in node.neighbours:
         for n_ in t_dict_a:
 
-            if t_dict_a[n_] != 0 and core_a[n_] != self.null_node:
+            if t_dict_a[n_] > 0 and core_a[n_] != self.null_node:
 
                 m_ = core_a[n_]
 

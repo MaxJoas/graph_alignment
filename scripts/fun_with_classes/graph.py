@@ -19,6 +19,8 @@ class Graph():
         self.nodes_are_labelled = nodes_labelled
         self.edges_are_labelled = edges_labelled
         self.is_directed = is_directed
+        self.in_neighbours = dict.fromkeys( self.nodes,set() )
+        self.out_neighbours = dict.fromkeys( self.nodes, set() )
 
 
     def create_undirected_edges( self ):
@@ -86,3 +88,21 @@ class Graph():
 
     def __repr__( self ):
         return self.__str__()
+
+    def int_size ( self ):
+        return len(self.nodes)
+
+    ''' saves the in neighbour and out neighbourt of every node in a dict '''
+    def generate_in_and_out_neigh( self ):
+
+        for edge in self.edges:
+            self.in_neighbours[edge.node2].add( edge.node1 )
+            self.out_neighbours[edge.node1].add( edge.node2 )
+
+    ''' is only used when contemplating the neighbours of a node, so one can
+    say that if this check is false then the node must be a out node instead'''
+    def is_in_neigh(  self,node_to_check, node_reference ):
+
+        if node_to_check in self.in_neighbours[node_reference] :
+            return True
+        return False
