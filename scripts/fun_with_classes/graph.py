@@ -19,8 +19,14 @@ class Graph():
         self.nodes_are_labelled = nodes_labelled
         self.edges_are_labelled = edges_labelled
         self.is_directed = is_directed
-        self.in_neighbours = dict.fromkeys( self.nodes,set() )
-        self.out_neighbours = dict.fromkeys( self.nodes, set() )
+        self.in_neighbours = self.gen_dict(self.nodes, set() )
+        self.out_neighbours = self.gen_dict(self.nodes, set() )
+
+        for node in self.nodes:
+            self.in_neighbours[node] = set()
+            self.out_neighbours[node] = set()
+
+
 
 
     def create_undirected_edges( self ):
@@ -92,9 +98,15 @@ class Graph():
     def int_size ( self ):
         return len(self.nodes)
 
+    def gen_dict( self, key_list, value ):
+        dict = {}
+        for key in key_list:
+            dict[key] = value
+        return dict
+
+
     ''' saves the in neighbour and out neighbourt of every node in a dict '''
     def generate_in_and_out_neigh( self ):
-
         for edge in self.edges:
             self.in_neighbours[edge.node2].add( edge.node1 )
             self.out_neighbours[edge.node1].add( edge.node2 )
