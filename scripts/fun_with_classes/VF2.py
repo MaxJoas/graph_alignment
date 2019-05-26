@@ -147,28 +147,21 @@ class VF2():
                 #print("0-look-ahead error")
                 return False
 
+        if self.type == "isomorphism":
+
             '''1-look-ahead'''
             if not t_lengths["in1"] == t_lengths["in2"] or not t_lengths["out1"] == t_lengths["out2"]:
                 #print("1-look-ahead error")
                 return False
 
+
         elif self.type == "subgraph":
-
-            '''0-look-ahead'''
-            if not all(
-                    (  # self.zero_look_ahead( n, m, self.in1, self.core1, self.in2, self.core2),
-                        self.zero_look_ahead(m, n, self.in2, self.core2, self.in1, self.core1),
-                        # self.zero_look_ahead(n, m, self.out1, self.core1, self.out2, self.core2),
-                        self.zero_look_ahead(m, n, self.out2, self.core2, self.out1, self.core1)
-                    )):
-
-                #print("0-look-ahead error")
-                return False
 
             '''1-look-ahead'''
             if not t_lengths["in1"] >= t_lengths["in2"] or not t_lengths["out1"] >= t_lengths["out2"]:
                 # print("1-look-ahead-error")
                 return False
+
 
         else:
             raise ValueError("!!!WARNING: Matching type has not been set!!!")
