@@ -131,10 +131,11 @@ class VfTwo():
                 # saves current depth for terminal node in case it hasn't depth yet
                 if self.t_in_l[v] == 0: self.t_in_l[v] = depth
                 self.t_len[ 'in_l' ] += 1
-                continue
 
-            if self.t_out_l[v] == 0: self.t_out_l[v] = depth
-            self.t_len[ 'out_l' ] += 1
+            elif self.large_g.is_out_neigh():
+                self.t_len[ 'out_l' ] += 1
+                if self.t_out_l[v] == 0: self.t_out_l[v] = depth
+
 
         # compute terminal_dicts for the small graph
         for v in m.neighbours:
@@ -145,10 +146,11 @@ class VfTwo():
             elif self.small_g.is_in_neigh( v, m ):
                 if self.t_in_s[v] == 0: self.t_in_s[v] = depth
                 self.t_len[ 'in_s' ] += 1
-                continue
+                
+            elif self.small_g.is_out_neigh( v, m ):
+                self.t_len[ 'out_s' ] += 1
+                if self.t_out_s[v] == 0: self.t_out_s[v] = depth
 
-            if self.t_out_s[v] == 0: self.t_out_s[v] = depth
-            self.t_len[ 'out_s' ] += 1
 
 
     def feasable( self, n, m, depth ):
