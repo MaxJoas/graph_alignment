@@ -53,16 +53,20 @@ class VfTwo():
     def match( self, depth=0, last_mapped=(Node("0", ""), Node("0", "")), ):
         """ vf2 according to cordella paper """
         if self.matching_covers_g2():
-            print("FINISHED")
+
+            print("\nEND_RESULT: \nType: {} \n\n{}\n".format( self.core_s_g ))
+            self.restore_ds( last_mapped, last_mapped[1], depth )
             return self.core_s_g
 
         self.compute_len_terminal_sets(last_mapped[0], last_mapped[1], depth)
         p = self.compute_p()
+
         for tup in p:
+            print('for')
             if self.feasable(tup[0], tup[1], depth):
                 self.compute_state( tup )
                 self.match( depth + 1, tup)
-        self.restore_ds()
+        self.restore_ds( last_mapped[0], last_mapped[1], depth )
 
     def matching_covers_g2(self):
         """
@@ -94,12 +98,10 @@ class VfTwo():
 
             m_l = {n for n in self.core_l_g if self.core_l_g[n] != self.null_n}
             m_s = {n for n in self.core_s_g if self.core_s_g[n] != self.null_n}
-
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
             return self.cart_prod(diff_l, max(diff_s))
-
         return set()
 
     def cart_prod(self, nodes, my_max):
@@ -132,7 +134,7 @@ class VfTwo():
                 if self.t_in_l[v] == 0: self.t_in_l[v] = depth
                 self.t_len[ 'in_l' ] += 1
 
-            elif self.large_g.is_out_neigh():
+            elif self.large_g.is_out_neigh( v, n ) :
                 self.t_len[ 'out_l' ] += 1
                 if self.t_out_l[v] == 0: self.t_out_l[v] = depth
 
@@ -146,7 +148,7 @@ class VfTwo():
             elif self.small_g.is_in_neigh( v, m ):
                 if self.t_in_s[v] == 0: self.t_in_s[v] = depth
                 self.t_len[ 'in_s' ] += 1
-                
+
             elif self.small_g.is_out_neigh( v, m ):
                 self.t_len[ 'out_s' ] += 1
                 if self.t_out_s[v] == 0: self.t_out_s[v] = depth
@@ -155,11 +157,24 @@ class VfTwo():
 
     def feasable( self, n, m, depth ):
 
+        lens = [self.t_len[x] for x in self.t_len]  # list of vals in dict
         bool_l = self.zero_la( n,m, self.core_l_g, self.large_g, self.small_g )
         bool_s = self.zero_la( m,n, self.core_s_g, self.small_g, self.large_g )
-        if all( [ bool_l, bool_s ] ):
-            return True
-        return False
+
+        if not all( [ bool_l, bool_s ] ):
+            return False
+
+        elif self.type == 'isomorphism' :
+            if not ( lens[0] == lens[2] or lens[1] == lens[3] ):
+                return False
+
+        elif self.type == 'subgraph':
+            if not ( lens[0] >= lens[2] or lens[1] >= lens[3] ):
+                return False
+
+        elif not self.two_la( depth, lens ):
+            return False
+        return self.check_semantics()
 
     def zero_la( self, n, m, core, g, h ):
 
@@ -178,11 +193,20 @@ class VfTwo():
             # Neighbour of m
             elif  h.is_in_neigh( m_, m ):
                 return False
-        return self.check_semantics()
+        return True
+
+    def two_la( self ,depth, lens ):
+        free_large_g = self.large_g.int_size() -  depth - lens[0] -lens[1]
+        free_small_g = self.small_g.int_size() - depht - lens[2] - lens[3]
+
+        if self.type == 'subgraph' and free_large_g >= free_small_g:
+            return True
+        elif self.type == 'isomorphism' and free_large_g == free_small_g:
+            return True
+        return False
 
     def check_semantics( self ):
         return True
-
 
     def compute_state ( self, tupel ):
 
@@ -193,8 +217,21 @@ class VfTwo():
         self.core_l_g[ tupel[0] ] = tupel[1]
         self.core_s_g[ tupel[1] ] = tupel[0]
 
-    def restore_ds( self ):
-        pass
+    def restore_ds( self, n, m, depth ):
+
+        self.restore_terminals(self.t_in_l, "in_l", self.core_l_g, depth)
+        self.restore_terminals(self.t_out_l, "out_l", self.core_l_g, depth)
+        self.restore_terminals(self.t_in_s, "in_s", self.core_s_g, depth)
+        self.restore_terminals(self.t_out_s, "out_s", self.core_s_g, depth)
+
+        self.core_l_g[n] = self.null_n
+        self.core_s_g[m] = self.null_n
+
+    def restore_terminals(self, t_dict, dict_key, core, depth):
+
+        for node in t_dict:
+            if core[node] == self.null_n and t_dict[node] == depth:
+                t_dict[node] = 0
 
 
 if __name__ == "__main__":
@@ -202,6 +239,5 @@ if __name__ == "__main__":
     g = parse_graph( sys.argv[1] )
     h = parse_graph( sys.argv[2] )
     g.generate_in_and_out_neigh()
-    print(g.in_neighbours)
     vf2 = VfTwo( g, h )
     vf2.match()
