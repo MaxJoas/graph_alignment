@@ -1,0 +1,79 @@
+#pip3 install pyprof2calltree to convert the output.cprof for kcachegrind
+#pip3 install kcachegrind
+
+#profiling of modular product (with bk inside)
+
+python3 lsprofcalltree.py -o output.log modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph args
+
+# Profiling with cProfile gives more details
+# use as admin #sudo su
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+#output in file
+
+
+python3 -m cProfile -o profile.cprof modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+pyprof2calltree -k -i profile.cprof
+
+#for greps
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph 
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph  | grep "mod_product"
+
+#        1    0.000    0.000    0.001    0.001 modular_product.py:46(mod_product)
+
+#cumtime ist in ms nicht in ns TO_DO
+
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Wikigraph1.graph /home/clm/graph_alignment/graphs/Wikigraph2.graph  | grep 'create_undirected_edges\|mod_product'
+
+        1    0.000    0.000    0.001    0.001 modular_product.py:46(mod_product)
+        1    0.000    0.000    0.000    0.000 graph.py:24(create_undirected_edges)
+
+#ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+
+#ncalls    			for the number of calls.
+#tottime    			for the total time spent in the given function (and excluding time made in calls to sub-functions)
+#percall    			is the quotient of tottime divided by ncalls
+#cumtime    			is the cumulative time spent in this and all subfunctions (from invocation till exit). This figure is accurate even for recursive functions.
+#percall    			is the quotient of cumtime divided by primitive calls
+#filename:lineno(function)    	provides the respective data of each function
+
+
+
+python3 generate_random_nx_graph.py
+number of nodes? (integer):
+500
+the edge probability? (a float between 0 and 1):
+0.01
+directed? (True or False):
+True
+do you want to see the plot? (y=yes):
+n
+do you want to save the plot? (y=yes):
+y
+
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Random_huge_Grap1.graph /home/clm/graph_alignment/graphs/Random_huge_Grap2.graph  | grep 'ncalls\|parser.py\|modular_product.py\|edge.py\|node.py\|bk_pivot.py\|enode.py'
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    7.024    7.024 modular_product.py:3(<module>)
+        2    0.588    0.294    7.016    3.508 parser.py:11(parse_graph)
+        1    0.879    0.879    5.531    5.531 parser.py:127(edges_contain_doubles)
+  1617984    1.405    0.000    4.652    0.000 edge.py:15(is_reverse_of)
+  2240604    2.763    0.000    3.686    0.000 node.py:21(__eq__)
+        1    0.434    0.434    0.441    0.441 parser.py:136(get_node_neighbours)
+     8088    0.005    0.000    0.008    0.000 node.py:63(__hash__)
+        1    0.000    0.000    0.006    0.006 bk_pivot.py:1(<module>)
+     1272    0.001    0.000    0.005    0.000 edge.py:38(__hash__)
+      500    0.002    0.000    0.002    0.000 node.py:6(__init__)
+     1272    0.001    0.000    0.001    0.000 edge.py:6(__init__)
+        1    0.000    0.000    0.000    0.000 edge.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 node.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 parser.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 node.py:3(Node)
+        1    0.000    0.000    0.000    0.000 edge.py:3(Edge)
+
+
