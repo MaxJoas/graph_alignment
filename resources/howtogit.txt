@@ -1,6 +1,8 @@
 
 ALLGEMEINER WORKFLOW MIT GIT
 
+git status
+
 Aktuellen master-Branch vom Server downloaden (vorher mit git status sicherstellen, dass man sich auf dem master-Branch befindet. Wenn nicht: git checkout master):
 git pull
 Einen neuen Branch für das kommende Feature anlegen:

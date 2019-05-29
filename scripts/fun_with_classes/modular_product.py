@@ -85,7 +85,7 @@ if __name__ == '__main__':
 		r = set()
 		p = list(modp.nodes)
 
-		#bk_pivot( r, p, x)
+		bk_pivot( r, p, x)
 		#create_graph(modp.nodes ,modp.edges)
 
 	except Exception as e:
