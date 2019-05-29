@@ -17,7 +17,7 @@ n = input("number of nodes? (integer):\n")
 p = input("the edge probability? (a float between 0 and 1):\n")
 d = input("directed? (True or False):\n").upper == "TRUE" #turns cas insensitive string-input to true bool
 
-G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=d) 
+G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=d)
 
 '''
 this changes the layout of the node display. Planar layout doesn't work with every graph. KK layout is pretty nice
@@ -28,7 +28,7 @@ if int(n) < 20:
 else:
     pos = nx.kamada_kawai_layout(G) #nice layout
 
-nx.draw(G, pos, with_labels = 1) 
+nx.draw(G, pos, with_labels = 1)
 
 '''
 The functions below return some properties about the graph
@@ -40,10 +40,9 @@ https://networkx.github.io/documentation/networkx-1.10/reference/functions.html
 #print("Nodes: " + str(nx.nodes(G)))
 #print("Edges: " + str(nx.edges(G)))
 #print("Edgetype:" + str(type(G.edges)))
-
+fig_copy = plt.gcf()
 x = input("do you want to see the plot? (y=yes):\n")
 if (x=="y"):
-    fig_copy = plt.gcf()
     plt.show() #.show clears the image
     plt.draw()
 
