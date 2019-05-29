@@ -59,7 +59,7 @@ class VF2():
     def match(
         self,
         last_mapped=(Node("0", ""), Node("0", "")),
-        depth=0
+        depth=1
     ):
 
         if self.s_in_g2():
@@ -134,18 +134,17 @@ class VF2():
         n = tuple[0]
         m = tuple[1]
 
-        if self.type == "isomorphism":
 
-            '''0-look-ahead'''
-            if not all((
-                self.zero_look_ahead(n, m, self.in1, self.core1, self.in2, self.core2),
-                self.zero_look_ahead(m, n, self.in2, self.core2, self.in1, self.core1),
-                self.zero_look_ahead(n, m, self.out1, self.core1, self.out2, self.core2),
-                self.zero_look_ahead(m, n, self.out2, self.core2, self.out1, self.core1)
-            )):
+        '''0-look-ahead'''
+        if not all((
+            self.zero_look_ahead(n, m, self.in1, self.core1, self.in2, self.core2),
+            self.zero_look_ahead(m, n, self.in2, self.core2, self.in1, self.core1),
+            self.zero_look_ahead(n, m, self.out1, self.core1, self.out2, self.core2),
+            self.zero_look_ahead(m, n, self.out2, self.core2, self.out1, self.core1)
+        )):
 
-                #print("0-look-ahead error")
-                return False
+            #print("0-look-ahead error")
+            return False
 
         if self.type == "isomorphism":
 

@@ -109,12 +109,8 @@ def parse_graph(doc):
 
     #evaluates if any issues have been detected. If not, parsing continues.
     if issues == "":
-        nodes = get_node_neighbours(nodes, edges)
-
-
+        get_node_neighbours(nodes, edges)
         g = Graph(  nodes, edges, check_list[2], check_list[3], check_list[4] )
-        #if g.is_directed:
-        #    g.create_fake_directions()
 
         print( "Successfully parsed " + doc.split("/")[-1] + "\n" )
         return g
@@ -145,14 +141,12 @@ def get_node_neighbours(nodes, edges):
 
         for cur_edge in edges:
 
-            if cur_node.id == cur_edge.node1.id:
-                cur_node.out_neighbours.add( cur_edge.node2 )
+            if cur_node == cur_edge.node1:
+                cur_node.neighbours.add( cur_edge.node2 )
 
-            elif cur_node.id == cur_edge.node2.id:
-                cur_node.in_neighbours.add( cur_edge.node1 )
+            if cur_node == cur_edge.node2:
+                cur_node.neighbours.add( cur_edge.node1 )
 
-        cur_node.neighbours = cur_node.in_neighbours + cur_node.out_neighbours
-        
         nodes_w_neighbours.add(cur_node)
 
     return nodes_w_neighbours

@@ -19,12 +19,20 @@ class Graph():
         self.nodes_are_labelled = nodes_labelled
         self.edges_are_labelled = edges_labelled
         self.is_directed = is_directed
-        self.in_neighbours = self.gen_dict(self.nodes, set() )
-        self.out_neighbours = self.gen_dict(self.nodes, set() )
 
-        for node in self.nodes:
-            self.in_neighbours[node] = set()
-            self.out_neighbours[node] = set()
+
+    def get_inout_neighbours( self ):
+
+        for cur_node in self.nodes:
+
+            for cur_edge in self.edges:
+
+                if cur_node == cur_edge.node1:
+                    cur_node.out_neighbours.add( cur_edge.node2 )
+
+                if cur_node == cur_edge.node2:
+                    cur_node.in_neighbours.add( cur_edge.node1 )
+
 
 
 
@@ -56,7 +64,14 @@ class Graph():
 
 
 
-    '''allow comparing graphs (number of nodes!) to each other ( >=, <=, <, > )'''
+    '''allow comparing graphs (number of nodes!) to each other ( ==, >=, <=, <, > )'''
+    def __eq__( self, other):
+        if not isinstance(other, Graph):
+            return NotImplemented
+        else:
+            return len(self.nodes) == len(other.nodes)
+
+
     def __gt__( self, other ):
         if not isinstance(other, Graph):
             return NotImplemented
@@ -98,23 +113,28 @@ class Graph():
     def int_size ( self ):
         return len(self.nodes)
 
-    def gen_dict( self, key_list, value ):
-        dict = {}
-        for key in key_list:
-            dict[key] = value
-        return dict
+    def gen_dict( self,  value ):
+        _dict = {}
+        for key in self.nodes:
+            _dict[key] = value
+        return _dict
 
 
-    ''' saves the in neighbour and out neighbourt of every node in a dict '''
-    def generate_in_and_out_neigh( self ):
-        for edge in self.edges:
-            self.in_neighbours[edge.node2].add( edge.node1 )
-            self.out_neighbours[edge.node1].add( edge.node2 )
 
-    ''' is only used when contemplating the neighbours of a node, so one can
-    say that if this check is false then the node must be a out node instead'''
-    def is_in_neigh(  self,node_to_check, node_reference ):
+    # def generate_in_and_out_neigh( self ):
+    #     ''' saves the in neighbour and out neighbourt of every node in a dict '''
+    #     for edge in self.edges:
+    #         self.in_neighbours[edge.node2].add( edge.node1.id )
+    #         self.out_neighbours[edge.node1].add( edge.node2.id )
 
-        if node_to_check in self.in_neighbours[node_reference] :
-            return True
-        return False
+
+    # def is_in_neigh(  self,node_to_check, node_reference ):
+
+    #     if node_to_check.id in self.in_neighbours[node_reference] :
+    #         return True
+    #     return False
+
+    # def is_out_neigh( self, node_to_check, node_reference ):
+    #     if node_to_check.id in self.out_neighbours[node_reference] :
+    #         return True
+    #     return False

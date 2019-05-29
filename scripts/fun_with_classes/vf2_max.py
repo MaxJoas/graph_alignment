@@ -10,15 +10,10 @@ class VfTwo():
     def __init__(self, g, h):
 
         self.null_n = Node('0', '')
-        self.g = g
-        self.h = h
+
 
         # make sure that smaller graph has always the same name
         self.small_g, self.large_g = h, g
-
-        # needed to check if something is successor or predecessor
-        self.small_g.generate_in_and_out_neigh()
-        self.large_g.generate_in_and_out_neigh()
 
         if g.int_size() < h.int_size():
             self.small_g = g
@@ -38,14 +33,14 @@ class VfTwo():
         # Initialiazing the two core dictionaries that store each node of the
         # Corresponding graph as key and the node of the other graph where it maps
         # As soon as it mapps for now we use self.null_n as inital value
-        self.core_s_g = self.small_g.gen_dict( self.small_g.nodes, self.null_n )
-        self.core_l_g = self.large_g.gen_dict( self.large_g.nodes, self.null_n )
+        self.core_s_g = self.small_g.gen_dict( self.null_n )
+        self.core_l_g = self.large_g.gen_dict( self.null_n )
 
         # initialiazing the terminal sets for each graph. These are dictionaries
         # that store the node as values and the recursion depth as keys where the
         # nodes entered the corresponding set. For now we initialiazing them with 0 '''
-        self.t_in_s = self.t_out_s = self.small_g.gen_dict(self.small_g.nodes, 0)
-        self.t_in_l = self.t_out_l = self.large_g.gen_dict(self.large_g.nodes, 0)
+        self.t_in_s = self.t_out_s = self.small_g.gen_dict(0)
+        self.t_in_l = self.t_out_l = self.large_g.gen_dict(0)
 
         self.t_len = {"in_l": 0, "out_l": 0, "in_s": 0, "out_s": 0}
 
@@ -62,7 +57,7 @@ class VfTwo():
         p = self.compute_p()
 
         for tup in p:
-            print('for')
+
             if self.feasable(tup[0], tup[1], depth):
                 self.compute_state( tup )
                 self.match( depth + 1, tup)
@@ -113,7 +108,7 @@ class VfTwo():
     def my_max(self, t_dict):
         max_node = self.null_n
         for v in t_dict:
-            if t_dict[v] > 0 and self.small_g[v] != self.null_n:
+            if t_dict[v] > 0 and self.core_s_g[v] != self.null_n:
                 continue
             elif v > max_node:
                 max_node = v
@@ -129,12 +124,12 @@ class VfTwo():
             if not self.core_l_g[v] == self.null_n :
                 continue
 
-            elif self.large_g.is_in_neigh( v, n ):
+            elif v in n.in_neighbours:
                 # saves current depth for terminal node in case it hasn't depth yet
                 if self.t_in_l[v] == 0: self.t_in_l[v] = depth
                 self.t_len[ 'in_l' ] += 1
 
-            elif self.large_g.is_out_neigh( v, n ) :
+            elif v in n.out_neighbours :
                 self.t_len[ 'out_l' ] += 1
                 if self.t_out_l[v] == 0: self.t_out_l[v] = depth
 
@@ -145,11 +140,11 @@ class VfTwo():
             if self.core_s_g[v] == self.null_n:
                 continue
 
-            elif self.small_g.is_in_neigh( v, m ):
+            elif v in m.in_neighbours:
                 if self.t_in_s[v] == 0: self.t_in_s[v] = depth
                 self.t_len[ 'in_s' ] += 1
 
-            elif self.small_g.is_out_neigh( v, m ):
+            elif v in m.out_neighbours:
                 self.t_len[ 'out_s' ] += 1
                 if self.t_out_s[v] == 0: self.t_out_s[v] = depth
 
@@ -158,8 +153,8 @@ class VfTwo():
     def feasable( self, n, m, depth ):
 
         lens = [self.t_len[x] for x in self.t_len]  # list of vals in dict
-        bool_l = self.zero_la( n,m, self.core_l_g, self.large_g, self.small_g )
-        bool_s = self.zero_la( m,n, self.core_s_g, self.small_g, self.large_g )
+        bool_l = self.zero_la( n, m, self.core_l_g )
+        bool_s = self.zero_la( m, n, self.core_s_g )
 
         if not all( [ bool_l, bool_s ] ):
             return False
@@ -176,7 +171,7 @@ class VfTwo():
             return False
         return self.check_semantics()
 
-    def zero_la( self, n, m, core, g, h ):
+    def zero_la( self, n, m, core ):
 
         for n_ in n.neighbours:
             m_ = core[n_] # Mapping of v
@@ -184,14 +179,17 @@ class VfTwo():
                 continue
 
             # If n_ is an in neighbour of n m_ must be an in neighbour of m
-            elif g.is_in_neigh( n_, n ):
-                if not h.is_in_neigh( m_, m ):
+            elif n_ in n.in_neighbours
+                print('n:')
+                print(n)
+                print(n.in_neighbours)
+                if not m_ in m.in_neighbours:
                     return False
 
             # Since we only contemplating neighbours of n n_ has to be an in or
             # An out neighbour, it is sufficient to only check it m_ is out
             # Neighbour of m
-            elif  h.is_in_neigh( m_, m ):
+            elif not  m_ in m.out_neighbours:
                 return False
         return True
 
@@ -238,6 +236,5 @@ if __name__ == "__main__":
 
     g = parse_graph( sys.argv[1] )
     h = parse_graph( sys.argv[2] )
-    g.generate_in_and_out_neigh()
     vf2 = VfTwo( g, h )
     vf2.match()
