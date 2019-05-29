@@ -95,7 +95,7 @@ def parse_graph(doc):
                 issues += "One or more nodes are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
 
-    if not check_list[3]:
+    if not check_list[3]: #if edges are not labelled
         for edge in edges:
             if edge.label != "":
                 issues += "One or more edges are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
@@ -111,8 +111,12 @@ def parse_graph(doc):
     if issues == "":
         nodes = get_node_neighbours(nodes, edges)
 
-        print( "Successfully parsed " + doc.split("/")[-1] + "\n" )
+
         g = Graph(  nodes, edges, check_list[2], check_list[3], check_list[4] )
+        #if g.is_directed:
+        #    g.create_fake_directions()
+
+        print( "Successfully parsed " + doc.split("/")[-1] + "\n" )
         return g
 
     else:
@@ -142,11 +146,13 @@ def get_node_neighbours(nodes, edges):
         for cur_edge in edges:
 
             if cur_node.id == cur_edge.node1.id:
-                cur_node.neighbours.add( cur_edge.node2 )
+                cur_node.out_neighbours.add( cur_edge.node2 )
 
-            if cur_node.id == cur_edge.node2.id:
-                cur_node.neighbours.add( cur_edge.node1 )
+            elif cur_node.id == cur_edge.node2.id:
+                cur_node.in_neighbours.add( cur_edge.node1 )
 
+        cur_node.neighbours = cur_node.in_neighbours + cur_node.out_neighbours
+        
         nodes_w_neighbours.add(cur_node)
 
     return nodes_w_neighbours

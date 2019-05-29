@@ -7,6 +7,8 @@ class Node():
 
         self.id = id
         self.label = label
+        self.in_neighbours = set()
+        self.out_neighbours = set()
         self.neighbours = set()
 
 
