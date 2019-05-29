@@ -1,5 +1,5 @@
-#pip3 install pyprof2calltree to convert the output.cprof for kcachegrind
-#pip3 install kcachegrind
+#pip3 install pyprof2calltree # to convert the output.cprof for kcachegrind
+#pip3 install kcachegrind     # only 4 visualate (look Archive)
 
 #profiling of modular product (with bk inside)
 
@@ -34,15 +34,6 @@ python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/grap
 
 #ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
-#ncalls    			for the number of calls.
-#tottime    			for the total time spent in the given function (and excluding time made in calls to sub-functions)
-#percall    			is the quotient of tottime divided by ncalls
-#cumtime    			is the cumulative time spent in this and all subfunctions (from invocation till exit). This figure is accurate even for recursive functions.
-#percall    			is the quotient of cumtime divided by primitive calls
-#filename:lineno(function)    	provides the respective data of each function
-
-
-
 python3 generate_random_nx_graph.py
 number of nodes? (integer):
 500
@@ -76,4 +67,48 @@ python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/grap
         1    0.000    0.000    0.000    0.000 node.py:3(Node)
         1    0.000    0.000    0.000    0.000 edge.py:3(Edge)
 
+#ncalls    			for the number of calls.
+#tottime    			for the total time spent in the given function (and excluding time made in calls to sub-functions)
+#percall    			is the quotient of tottime divided by ncalls
+#cumtime    			is the cumulative time spent in this and all subfunctions (from invocation till exit). This figure is accurate even for recursive functions.
+#percall    			is the quotient of cumtime divided by primitive calls
+#filename:lineno(function)    	provides the respective data of each function
+#see : https://docs.python.org/3/library/profile.html#instant-user-s-manual
+#The following are the valid string and SortKey:
 
+#awk '{ print $3 }' 
+#percall
+
+#awk '{ print $5 }'
+#percall after cumtime
+
+#awk '{ print $2 }' 
+#tottime
+
+#awk '{ print $1 }' 
+#ncalls
+
+python3 -m cProfile -s cumtime modular_product.py /home/clm/graph_alignment/graphs/Random_huge_Grap1.graph /home/clm/graph_alignment/graphs/Random_huge_Grap2.graph  | grep 'ncalls\|parser.py\|modular_product.py\|edge.py\|node.py\|bk_pivot.py\|enode.py'|awk '{ print $4 "\t" $6}' 
+
+graph1.graph	
+cumtime	filename:lineno(function)
+6.620	modular_product.py:3(<module>)
+6.611	parser.py:11(parse_graph)
+5.072	parser.py:127(edges_contain_doubles)
+4.270	edge.py:15(is_reverse_of)
+3.458	node.py:21(__eq__)
+0.426	parser.py:136(get_node_neighbours)
+0.008	node.py:63(__hash__)
+0.006	bk_pivot.py:1(<module>)
+0.006	edge.py:38(__hash__)
+0.003	node.py:6(__init__)
+0.002	edge.py:6(__init__)
+0.000	edge.py:2(<module>)
+0.000	node.py:2(<module>)
+0.000	parser.py:3(<module>)
+0.000	edge.py:3(Edge)
+0.000	node.py:3(Node)
+
+
+
+graph generator -> 50 , 100 ... Notes? -> Mainfkt.?! (bk, mod_prdkt, cordella,...) ?
