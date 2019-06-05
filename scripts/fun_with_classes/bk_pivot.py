@@ -8,7 +8,7 @@ from node import Node
 ''' implementing broknkerbosch algorithmn where r is the list of possible nodes
 in a clique, p is the list of canditates and x is the garbage collection'''
 
-def find_max_pivot(p, x):
+def old_find_max_pivot( p, x):
 
     helper = dict()
     p_union_x = p + list(x)
@@ -22,7 +22,7 @@ def find_max_pivot(p, x):
     key_max = max(helper.keys(), key=(lambda k: helper[k]))
     return  key_max
 
-def test(p,x):
+def find_max_pivot( p, x ):
     p_union_x = p + list(x)
     helper = 0
     piv = Node('0', '')
@@ -40,10 +40,10 @@ def bk_pivot ( r, p, x ):
     # when p and x are empty return r as max clique and end
     if not any ( [p, x] ):
 
-        print('clique: ', r)
+        # print('clique: ', r)
         return r
 
-    pivot = test( p, x )
+    pivot = find_max_pivot( p, x )
 
     # chosing pivot randomly from union of p, x:
     #pivot = random.choice( p + list(x) )
@@ -69,8 +69,8 @@ def bk ( r, p, x ):
 
     # when p and x are empty return r as max clique
     if not any ( [ p, x ] ):
-        print('clique')
-        pprint.pprint(r)
+        # print('clique')
+        # pprint.pprint(r)
         return r
 
     for v in p[:] :
@@ -87,6 +87,8 @@ def bk ( r, p, x ):
         x.add(v) # adding current node to garbage collection
 
 
+
+
 # EXECUTION (PIVOT VERSION) ----------------------------------------------------
 
 if __name__ == '__main__':
@@ -98,7 +100,7 @@ if __name__ == '__main__':
         x = set()
         p = list(graph.nodes)
 
-        bk_pivot ( r, p, x )
+        bk_pivot( r, p, x )
 
     except Exception as e:
         print(e)

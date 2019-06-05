@@ -4,6 +4,8 @@ from node import Node
 from graph import Graph
 from parser import parse_graph
 
+import pprint
+
 
 class VF2():
 
@@ -45,14 +47,17 @@ class VF2():
         self.in_s = self.out_s = self.small_g.gen_dict( 0 )
         self.in_l = self.out_l = self.large_g.gen_dict( 0 )
 
+        self.results = []
+
 
     def match( self, last_mapped=(Node("0", ""), Node("0", "")), depth=0 ):
 
         if self.s_in_small_g():
 
             print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
+            # self.results.append(core_s)
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
-            return self.core_s
+            return
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
@@ -231,9 +236,12 @@ class VF2():
                 t_dict[node] = 0
 
 
+
 if __name__ == "__main__":
 
     large_g = parse_graph(sys.argv[1])
     small_g = parse_graph(sys.argv[2])
+
     vf2 = VF2(large_g, small_g)
     vf2.match()
+    pprint.pprint(vf2.results)

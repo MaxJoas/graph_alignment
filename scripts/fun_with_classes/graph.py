@@ -25,6 +25,9 @@ class Graph():
     def set_id( self, id ):
         self.id = id
 
+    def get_graph( self, id ):
+        if self.id == id:
+            return self
 
     def get_inout_neighbours( self ):
 
@@ -102,6 +105,7 @@ class Graph():
 
     def __repr__( self ):
         return self.__str__()
+
 
     def int_size ( self ):
         return len(self.nodes)
