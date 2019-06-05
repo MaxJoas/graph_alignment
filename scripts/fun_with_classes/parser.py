@@ -110,7 +110,14 @@ def parse_graph(doc):
     #evaluates if any issues have been detected. If not, parsing continues.
     if issues == "":
         get_node_neighbours(nodes, edges)
-        g = Graph(  nodes, edges, check_list[2], check_list[3], check_list[4] )
+        g = Graph(
+                    doc.split("/")[-1].split(".")[0],
+                    nodes,
+                    edges,
+                    check_list[2],
+                    check_list[3],
+                    check_list[4]
+        )
 
         print( "Successfully parsed " + doc.split("/")[-1] + "\n" )
         return g

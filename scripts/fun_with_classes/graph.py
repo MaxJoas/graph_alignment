@@ -7,18 +7,23 @@ class Graph():
 
     def __init__(
                     self,
+                    id = "",
                     nodes = set(),
-                    edges =set(),
+                    edges = set(),
                     nodes_labelled=False,
                     edges_labelled=False,
                     is_directed=False
                 ):
 
+        self.id = id
         self.nodes = nodes
         self.edges = edges
         self.nodes_are_labelled = nodes_labelled
         self.edges_are_labelled = edges_labelled
         self.is_directed = is_directed
+
+    def set_id( self, id ):
+        self.id = id
 
 
     def get_inout_neighbours( self ):
