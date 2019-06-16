@@ -1,0 +1,22 @@
+ToDo:
+- China Chemie VF2 Paper suchen
+
+- BK vs VF2 untersuchen bei verschiedenen Graphen:	- Kreuz/Rad-Graphen
+							- Meshes (1 Knoten max. 4/8 Nachbarn)
+							- Tannenbäume
+
+- Entsprechenden Graph-Creator bauen
+- K_n-Creator bauen
+
+- Flags:	- Cooptimale: beim ersten aufhören, oder alle machen
+		- time (für Finden von Lösungen einzeln und gesamt)
+
+- VF2 sub <-> sub (nicht den ganzen small_graph, sondern gemeinsamer subgraph)
+
+- guide tree:
+	- Newick geben mit Dateinamen
+	- UPGMA (Anzahl Knoten)
+
+- Facebook-Graph: Untersuchen, welche K_n man findet
+
+- Plotten: random Plot und Laufzeiten von BK und VF2 vergleichen (10 Graphen pro Nodeanzahl, alle speichern! bash?)
