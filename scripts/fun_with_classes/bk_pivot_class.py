@@ -13,20 +13,6 @@ class BK:
     def __init__( self ):
         self.results = []
 
-    def old_find_max_pivot(self, p, x):
-
-        helper = dict()
-        p_union_x = p + list(x)
-        helper = [0,0]
-
-        for v in p_union_x[:]:
-
-            cur_len_intersection = len([n for n in v.neighbours if n in p])
-            helper[v] = cur_len_intersection
-
-        key_max = max(helper.keys(), key=(lambda k: helper[k]))
-        return  key_max
-
     def find_max_pivot(self, p,x):
         p_union_x = p + list(x)
         helper = 0
@@ -41,14 +27,12 @@ class BK:
 
 
     def bk_pivot ( self, r, p, x ):
-
         # when p and x are empty return r as max clique and end
         if not any ( [p, x] ):
 
             # print('clique: ', r)
             self.results.append(r)
             return r
-
         pivot = self.find_max_pivot( p, x )
 
         # chosing pivot randomly from union of p, x:
@@ -105,9 +89,7 @@ if __name__ == '__main__':
         r = set()
         x = set()
         p = list(graph.nodes)
-
         bk.bk_pivot ( r, p, x )
-
         pprint.pprint(bk.results)
 
     except Exception as e:

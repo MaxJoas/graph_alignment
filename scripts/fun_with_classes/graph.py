@@ -101,7 +101,7 @@ class Graph():
     def __str__( self ):
 
         '''define the way a graph is printed'''
-        return "{} ;\n {};\n Nodes labelled? {}\n Edges labelled? {}\n Directed graph? {}".format(self.nodes, self.edges, self.nodes_are_labelled, self.edges_are_labelled, self.is_directed)
+        return "{} ;\n {} ;\n {};\n Nodes labelled? {}\n Edges labelled? {}\n Directed graph? {}".format(self.id, self.nodes, self.edges, self.nodes_are_labelled, self.edges_are_labelled, self.is_directed)
 
     def __repr__( self ):
         return self.__str__()

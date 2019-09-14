@@ -7,63 +7,40 @@ import sys
 
 
 # TODO: Change graph_list to dict with g.id as key
-def upgma( graph_list, align_algo ):
+def upgma( graph_list ):
 
+    #alignment = Graph('0')
     if len( graph_list ) == 1:
-        return graph_list[0]
-
-    alignment = Graph('0')
-    max = 0
+        print(graph_list)
+        return graph_list
+    maximum = 0
 
     for g1 in graph_list[:]:
         for g2 in graph_list[:]:
 
             if g1.id == g2.id:
-            #or g2.id + "." + g1.id in dist_dict
-
                 continue
 
-            # if align_algo == "VF2":
-            #     vf2 = VF2( g1, g2 )
-            #     vf2.match()
-            #
-            #     g1g2 = Graph( g1.id + "." + g2.id, vf2.results[0])
-            #     g1g2.create_undirected_edges()
-            #
-            #     dist_dict[ g1g2 ] = len(g1.nodes) - len(g1g2.nodes)
+            modp = mod_product( cart_product( g1.nodes, g2.nodes))
+            bk = BK()
+            x = set()
+            r = set()
+            p = list(modp.nodes)
 
-            if align_algo == "BK":
+            bk.bk_pivot( r, p, x)
+           # print(bk.bk_pivot(r,p,x))
 
-                modp = mod_product( cart_product( g1.nodes, g2.nodes))
+            if len(max(bk.results)) >= maximum:
+                alignment = Graph( g1.id + "." + g2.id,max( bk.results))
+                alignment.create_undirected_edges()
+                maximum = len(max(bk.results))
+                alig_one = g1
+                alig_two = g2
 
-                bk = BK()
-
-                x = set()
-                r = set()
-                p = list(modp.nodes)
-
-                bk.bk_pivot( r, p, x)
-
-                g1g2 = Graph( g1.id + "." + g2.id, bk.results[0])
-                g1g2.create_undirected_edges()
-                print(bk.results)
-
-                if len(g1g2.nodes) > max:
-                        alignment = g1g2
-                        max = len(g1g2.nodes)
-
-
-
-    id_list = alignment.id.split(".")
-    for id in id_list:
-        for graph in graph_list:
-
-            if graph.id == id:
-                print("{} removed from list!".format(graph.id))
-                graph_list.remove(graph)
-
+    graph_list.remove(alig_one)
+    graph_list.remove(alig_two)
     graph_list.append( alignment )
-    upgma(graph_list, align_algo)
+    upgma(graph_list)
 
 
 if __name__ == '__main__':
@@ -75,4 +52,5 @@ if __name__ == '__main__':
         g_list.append( g )
 
     #print(g_list)
-    upgma( g_list, "BK" )
+    res = upgma( g_list )
+    print(res)

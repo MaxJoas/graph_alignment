@@ -17,7 +17,7 @@ their .neighbour method later'''
 def cart_product(G,H):
 
 
-	cart_product = {} # empty dicht to store consolidated nodes as keys and tupel of old nodes as values
+	cart_product = {} # empty dict to store consolidated nodes as keys and tupel of old nodes as values
 	for g in G:
 		for h in H:
 			cur_node = Node( g.id + '_' + h.id, g.label + h.label )
@@ -61,8 +61,9 @@ def mod_product( cartp ):
 		modular_set.add(n)
 
 	# OUTPUT-------------------------------------------------------------------
-	modular_product_as_graph = Graph(modular_set) # making graph out of modular product nodes
-	modular_product_as_graph.create_undirected_edges() #giving the graph edges
+	modular_product_as_graph = Graph('h_g',modular_set) # making graph out of modular product nodes
+	#modular_product_as_graph.create_undirected_edges() #giving the graph edges
+
 
 	return modular_product_as_graph
 
