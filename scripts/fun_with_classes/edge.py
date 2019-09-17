@@ -1,6 +1,6 @@
 
 '''Edge object with a label (str)  and a node1 (Node) connecting to node2 (Node) '''
-class Edge(object):
+class Edge():
 
 
     def __init__( self, node1, node2, label="" ):
@@ -43,7 +43,7 @@ class Edge(object):
     '''define the way an edge is printed'''
     def __str__( self ):
 
-        return "\n ({} to {}) '{}'".format( self.node1.id, self.node2.id, self.label )
+        return "\n ({}, {}) '{}'".format( self.node1.id, self.node2.id, self.label )
 
 
     def __repr__(self):

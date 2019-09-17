@@ -86,43 +86,42 @@ def parse_graph(doc):
 
 
 
-    print("Some illegalities are tested")
+    print_if_big(edges, "Some illegalities are tested...")
     issues = ""
 
-    print("1 of 5...")
     if check_list[0] != len(nodes):
         issues += "Indicated number of nodes ({}) doesn't fit actual number of nodes ({}). \n".format(check_list[0], len(nodes))
 
-    print("2 of 5...")
     if check_list[1] != len(edges):
         issues += "Indicated number of edges ({}) doesn't fit actual number of edges ({}). \n".format(check_list[1], len(edges))
 
-    print("3 of 5...")
     if not check_list[2]:
         for node in nodes:
             if node.label != "":
                 issues += "One or more nodes are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
 
-    print("4 of 5...")
     if not check_list[3]: #if edges are not labelled
         for edge in edges:
             if edge.label != "":
                 issues += "One or more edges are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
 
-    print("5 of 5...")
-    # if not check_list[4]:  #if graph is undirected
-    #     if edges_contain_doubles( edges ):  #(a,b) and (b,a)
-    #         issues += "Undirected graph can contain any edge only once. \n"
+    #This test is not suitable for big graphs and must therefore be skipped
+    if not check_list[4]:  #if graph is undirected
+        if len(edges) < 20000:
+            if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+                issues += "Undirected graph can contain any edge only once. \n"
+        else:
+            print("Warning: Due to the graph size (number of edges exceeding 20000), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
 
-    print("Done.")
+    print_if_big(edges, "Done.")
 
     #evaluates if any issues have been detected. If not, parsing continues.
     if issues == "":
-        print("Getting node neighbours...")
+        print_if_big(edges, "Getting node neighbours...")
         get_node_neighbours(nodes, edges)
-        print("Done.")
+        print_if_big(edges, "Done.")
         g = Graph(
                     doc.split("/")[-1].split(".")[0],
                     nodes,
@@ -175,7 +174,10 @@ def get_node_neighbours(nodes, edges):
 
     return nodes_w_neighbours
 
-
+def print_if_big(edges, message):
+    if(len(edges)) > 20000:
+        return message
+    return 
 
 if __name__ == "__main__":
 

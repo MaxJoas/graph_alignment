@@ -101,6 +101,14 @@ class Graph():
     def __str__( self ):
 
         '''define the way a graph is printed'''
+        p_nodes = ""
+        for node in self.nodes:
+            p_nodes += node + "\n"
+        
+        p_edges = ""
+        for edge in self.edges:
+            p_edges += edge + "\n"
+
         return "{} ;\n {} ;\n {};\n Nodes labelled? {}\n Edges labelled? {}\n Directed graph? {}".format(self.id, self.nodes, self.edges, self.nodes_are_labelled, self.edges_are_labelled, self.is_directed)
 
     def __repr__( self ):

@@ -17,7 +17,9 @@ class Node():
     def add_neighbour(self, node):
         self.neighbours.add(node)
 
-
+    '''remove a neighbour from the neighbours set of the node'''
+    def remove_neighbour(self, node):
+        self.neighbours.remove(node)
 
     '''allow comparing nodes to each other ( all operations )'''
     def __eq__( self, other ):
@@ -74,8 +76,8 @@ class Node():
 
         for neighbour in self.neighbours:
             neighbours_string += neighbour.id
-            neighbours_string += " "
-        return "\n Node " + self.id + " '" + self.label + "' {" + str(neighbours_string) + "}"
+            neighbours_string += ", "
+        return  self.id + "\t'" + self.label + "'\t(" + str(neighbours_string) + ")"
 
 
     def __repr__(self):
