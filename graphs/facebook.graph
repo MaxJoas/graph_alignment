@@ -1,6 +1,6 @@
 AUTHOR: Clemens M., Max J., Michel K.
-#nodes;5
-#edges;8
+#nodes;4039
+#edges;88234
 Nodes labelled;False
 Edges labelled;False
 Directed graph;False
@@ -4044,7 +4044,6 @@ Directed graph;False
 4036
 4037
 4038
-4039
 
 0;1
 0;2
