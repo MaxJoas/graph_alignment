@@ -14,6 +14,8 @@ def parse_graph(doc):
     nodes = set()
     edges = set()
 
+    limit = 5000
+
     with open(doc) as d:
 
         indicator = 0 #counts the empty lines (0: check_list, 1: nodes, 2: edges)
@@ -76,7 +78,7 @@ def parse_graph(doc):
                 edges.add( cur_edge )
                 edge_counter += 1
 
-                if edge_counter % 10000 == 0:
+                if edge_counter % limit == 0:
                     print("Already processed {} edges".format(edge_counter))
 
             else:
@@ -109,11 +111,11 @@ def parse_graph(doc):
 
     #This test is not suitable for big graphs and must therefore be skipped
     if not check_list[4]:  #if graph is undirected
-        if len(edges) < 20000:
+        if len(edges) < limit:
             if edges_contain_doubles( edges ):  #(a,b) and (b,a)
                 issues += "Undirected graph can contain any edge only once. \n"
         else:
-            print("Warning: Due to the graph size (number of edges exceeding 20000), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
+            print("Warning: Due to the graph size (number of edges exceeding " + limit + "), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
 
     print_if_big(edges, "Done.")
 
@@ -169,13 +171,13 @@ def get_node_neighbours(nodes, edges):
 
         # nodes_w_neighbours.add(cur_node)
         counter += 1
-        if counter % 5000 == 0:
+        if counter % limit == 0:
             print("Processing edge {} of {} ...".format(counter, len(edges)))
 
     return nodes_w_neighbours
 
 def print_if_big(edges, message):
-    if(len(edges)) > 20000:
+    if(len(edges)) > limit:
         return message
     return 
 
