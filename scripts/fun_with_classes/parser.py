@@ -17,6 +17,7 @@ def parse_graph(doc):
     with open(doc) as d:
 
         indicator = 0 #counts the empty lines (0: check_list, 1: nodes, 2: edges)
+        edge_counter = 0 #counts the processed edges to give some completion feedback
 
         for line in d:
             line = line.replace("\n", "")
@@ -25,6 +26,7 @@ def parse_graph(doc):
             #if line is empty
             if not line:
                 indicator += 1
+                #print("Accessing block #{}".format(indicator))
                 continue
 
 
@@ -72,6 +74,10 @@ def parse_graph(doc):
 
                 cur_edge = Edge( *split_list )
                 edges.add( cur_edge )
+                edge_counter += 1
+
+                if edge_counter % 10000 == 0:
+                    print("Already processed {} edges".format(edge_counter))
 
             else:
                 print( "Wrong input file format. File contains too many empty lines." )
@@ -80,36 +86,43 @@ def parse_graph(doc):
 
 
 
-    #Some illegalities are tested
+    print("Some illegalities are tested")
     issues = ""
 
+    print("1 of 5...")
     if check_list[0] != len(nodes):
         issues += "Indicated number of nodes ({}) doesn't fit actual number of nodes ({}). \n".format(check_list[0], len(nodes))
 
+    print("2 of 5...")
     if check_list[1] != len(edges):
         issues += "Indicated number of edges ({}) doesn't fit actual number of edges ({}). \n".format(check_list[1], len(edges))
 
+    print("3 of 5...")
     if not check_list[2]:
         for node in nodes:
             if node.label != "":
                 issues += "One or more nodes are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
 
+    print("4 of 5...")
     if not check_list[3]: #if edges are not labelled
         for edge in edges:
             if edge.label != "":
                 issues += "One or more edges are labelled. If this is intended, please indicate this at the beginning of the graph file \n"
                 break
 
-    if not check_list[4]:  #if graph is undirected
-        if edges_contain_doubles( edges ):  #(a,b) and (b,a)
-            issues += "Undirected graph can contain any edge only once. \n"
+    print("5 of 5...")
+    # if not check_list[4]:  #if graph is undirected
+    #     if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+    #         issues += "Undirected graph can contain any edge only once. \n"
 
-
+    print("Done.")
 
     #evaluates if any issues have been detected. If not, parsing continues.
     if issues == "":
+        print("Getting node neighbours...")
         get_node_neighbours(nodes, edges)
+        print("Done.")
         g = Graph(
                     doc.split("/")[-1].split(".")[0],
                     nodes,
@@ -126,7 +139,7 @@ def parse_graph(doc):
         print( "There are some issues with the input file: \n" )
         print( issues )
         print( "Aborting..." )
-        return
+        exit()
 
 
 
@@ -142,11 +155,12 @@ def edges_contain_doubles( edges ):
 
 def get_node_neighbours(nodes, edges):
 
-    nodes_w_neighbours = set()
+    nodes_w_neighbours = nodes
+    counter = 0
 
-    for cur_node in nodes:
+    for cur_edge in edges:
 
-        for cur_edge in edges:
+        for cur_node in nodes:
 
             if cur_node == cur_edge.node1:
                 cur_node.neighbours.add( cur_edge.node2 )
@@ -154,7 +168,10 @@ def get_node_neighbours(nodes, edges):
             if cur_node == cur_edge.node2:
                 cur_node.neighbours.add( cur_edge.node1 )
 
-        nodes_w_neighbours.add(cur_node)
+        # nodes_w_neighbours.add(cur_node)
+        counter += 1
+        if counter % 5000 == 0:
+            print("Processing edge {} of {} ...".format(counter, len(edges)))
 
     return nodes_w_neighbours
 
