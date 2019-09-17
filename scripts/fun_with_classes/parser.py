@@ -88,7 +88,7 @@ def parse_graph(doc):
 
 
 
-    print_if_big(edges, "Some illegalities are tested...")
+    print_if_big(limit, edges, "Some illegalities are tested...")
     issues = ""
 
     if check_list[0] != len(nodes):
@@ -117,13 +117,13 @@ def parse_graph(doc):
         else:
             print("Warning: Due to the graph size (number of edges exceeding " + limit + "), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
 
-    print_if_big(edges, "Done.")
+    print_if_big(limit, edges, "Done.")
 
     #evaluates if any issues have been detected. If not, parsing continues.
     if issues == "":
-        print_if_big(edges, "Getting node neighbours...")
-        get_node_neighbours(nodes, edges)
-        print_if_big(edges, "Done.")
+        print_if_big(limit, edges, "Getting node neighbours...")
+        get_node_neighbours(limit, nodes, edges)
+        print_if_big(limit, edges, "Done.")
         g = Graph(
                     doc.split("/")[-1].split(".")[0],
                     nodes,
@@ -154,7 +154,7 @@ def edges_contain_doubles( edges ):
 
 
 
-def get_node_neighbours(nodes, edges):
+def get_node_neighbours(limit, nodes, edges):
 
     nodes_w_neighbours = nodes
     counter = 0
@@ -176,7 +176,7 @@ def get_node_neighbours(nodes, edges):
 
     return nodes_w_neighbours
 
-def print_if_big(edges, message):
+def print_if_big(limit, edges, message):
     if(len(edges)) > limit:
         return message
     return 
