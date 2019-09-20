@@ -1,5 +1,7 @@
 import sys
 
+
+
 from node import Node
 from graph import Graph
 from parser import parse_graph
@@ -18,8 +20,8 @@ class VF2():
 
         '''makes sure, that small_g is the smaller graph'''
         self.type = 'subgraph'
-        if h == g:
-            self.type = 'isomorphism'
+        # if h == g:
+            # self.type = 'isomorphism'
 
         self.small_g, self.large_g = g, h
         if g.int_size() > h.int_size():
@@ -54,8 +56,8 @@ class VF2():
 
         if self.s_in_small_g():
 
-            print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
-            # self.results.append(core_s)
+            # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
+            self.results.append(self.core_s)
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
             return
 
@@ -239,9 +241,34 @@ class VF2():
 
 if __name__ == "__main__":
 
+    print()
+    print("********************************************************************")
+    print("*                                                                  *")
+    print("        RESULTS for " + sys.argv[1] )
+    print("*                                                                  *")
+    print("********************************************************************")
+    print()
+    print()
+
     large_g = parse_graph(sys.argv[1])
     small_g = parse_graph(sys.argv[2])
 
     vf2 = VF2(large_g, small_g)
     vf2.match()
-    pprint.pprint(vf2.results)
+    for result in vf2.results:
+        counter = 1
+        print("--- RESULT #{} ------------------------------------------".format(counter))
+        print()
+        for node in result.nodes:
+            print(node)
+        print()
+        for edge in result.edges:
+            print(edge)
+        print()
+        print()
+        counter += 1
+    print("--- ELAPSED TIME ----------------------------------------")
+    print()
+
+
+    # pprint.pprint(vf2.results)

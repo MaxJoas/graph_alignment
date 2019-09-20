@@ -115,7 +115,7 @@ def parse_graph(doc):
             if edges_contain_doubles( edges ):  #(a,b) and (b,a)
                 issues += "Undirected graph can contain any edge only once. \n"
         else:
-            print("Warning: Due to the graph size (number of edges exceeding " + limit + "), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
+            print("Warning: Due to the graph size (number of edges exceeding " + str(limit) + "), it is not controlled wether there are doubled edges. Please make sure your undirected graph does not contain edges as in (n1,n2) and (n2,n1)")
 
     print_if_big(limit, edges, "Done.")
 
