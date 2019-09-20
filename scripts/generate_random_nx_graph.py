@@ -21,11 +21,13 @@ p = 0.05
 this changes the layout of the node display. Planar layout doesn't work with every graph. KK layout is pretty nice
 (better than spring_layout) most of the time.
     '''
-n_graphs_per_node = 1
-for ngraph in range(n_graphs_per_node):
+n_graphs_per_node = 10
+counter = 1
+while counter <= n_graphs_per_node:
     for n in np.floor(np.exp(np.linspace(1,np.log(600),50))):
-        for d in [' partner2',' partner1']:
+        for d in ['2','1']:
             G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=False)
+
 
            # if int(n) < 20:
            #     pos = nx.planar_layout(G) #no edge intersections
@@ -55,7 +57,7 @@ for ngraph in range(n_graphs_per_node):
 #            if z=="y":
 #                fig_copy.savefig("RandomGraph.png")
 #                print("\nthe random generated graph is saved as RandomGraph.png")
-            filename = './graphs/randomone/' + str(ngraph) + str('number of nodes: ') + str(n) + str(d) +str('.graph')
+            filename = './{}_{}_{}.graph'.format(int(n), counter, d)
             with open(filename, 'w') as f:
                 f.write("AUTHOR: Clemens M., Max. J, Michel K., NetworkX\n")
                 f.write("#nodes;" + str(nx.number_of_nodes(G)))
@@ -88,3 +90,6 @@ for ngraph in range(n_graphs_per_node):
                 f.close()
 
                 print("\nthe random generated graph is saved as RandomGraph.graph")
+
+    counter += 1
+
