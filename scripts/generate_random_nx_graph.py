@@ -89,7 +89,7 @@ while counter <= n_graphs_per_node:
                     a=a+1
                 f.close()
 
-                print("\nthe random generated graph is saved as RandomGraph.graph")
+                print("\nthe random generated graph is saved as {}".format(filename))
 
     counter += 1
 

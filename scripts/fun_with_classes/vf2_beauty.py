@@ -20,8 +20,8 @@ class VF2():
 
         '''makes sure, that small_g is the smaller graph'''
         self.type = 'subgraph'
-        # if h == g:
-            # self.type = 'isomorphism'
+        if h == g:
+            self.type = 'isomorphism'
 
         self.small_g, self.large_g = g, h
         if g.int_size() > h.int_size():
@@ -241,34 +241,39 @@ class VF2():
 
 if __name__ == "__main__":
 
-    print()
+
+
+    large_g = parse_graph(sys.argv[1])
+    small_g = parse_graph(sys.argv[2])
+
+    print("")
     print("********************************************************************")
     print("*                                                                  *")
     print("        RESULTS for " + sys.argv[1] )
     print("*                                                                  *")
     print("********************************************************************")
-    print()
-    print()
-
-    large_g = parse_graph(sys.argv[1])
-    small_g = parse_graph(sys.argv[2])
+    print("")
+    print("")
 
     vf2 = VF2(large_g, small_g)
     vf2.match()
     for result in vf2.results:
         counter = 1
         print("--- RESULT #{} ------------------------------------------".format(counter))
-        print()
-        for node in result.nodes:
-            print(node)
-        print()
-        for edge in result.edges:
-            print(edge)
-        print()
-        print()
-        counter += 1
+        print("")
+        print (result)
+        print("")
+        print("")
+    #     for node in result.nodes:
+    #         print(node)
+    #     print()
+    #     for edge in result.edges:
+    #         print(edge)
+    #     print()
+    #     print()
+    #     counter += 1
     print("--- ELAPSED TIME ----------------------------------------")
-    print()
+    print("")
 
 
     # pprint.pprint(vf2.results)
