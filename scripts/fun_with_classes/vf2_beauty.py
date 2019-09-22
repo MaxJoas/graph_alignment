@@ -57,7 +57,8 @@ class VF2():
         if self.s_in_small_g():
 
             # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
-            self.results.append(self.core_s)
+            if not self.core_s in self.results:
+                self.results.append(self.core_s)
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
             return
 
@@ -68,6 +69,7 @@ class VF2():
 
             if self.is_feasible(tup[0], tup[1], depth, td):
                 self.compute_s_( tup[0], tup[1], depth )
+                # print(depth)
                 self.match( tup, depth+1 )
                 #print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
@@ -264,6 +266,7 @@ if __name__ == "__main__":
         print (result)
         print("")
         print("")
+        counter += 1
     #     for node in result.nodes:
     #         print(node)
     #     print()

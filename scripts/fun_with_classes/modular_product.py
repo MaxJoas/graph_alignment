@@ -5,7 +5,7 @@ from node import Node
 import sys
 import pprint
 from parser import parse_graph
-from bk_pivot import bk_pivot
+from bk_pivot_class import BK
 #from view_graph import create_graph
 
 
@@ -80,13 +80,14 @@ if __name__ == '__main__':
 		g = parse_graph( sys.argv[1] )
 		h = parse_graph( sys.argv[2] )
 		modp = mod_product( cart_product( g.nodes, h.nodes ) )
-		print(modp)
+		#print(modp)
 		#print(list(modp.nodes)[1].neighbours)
 		x = set()
 		r = set()
 		p = list(modp.nodes)
 
-		bk_pivot( r, p, x)
+		bk = BK()
+		print(bk.bk_pivot( r, p, x))
 		#create_graph(modp.nodes ,modp.edges)
 
 	except Exception as e:

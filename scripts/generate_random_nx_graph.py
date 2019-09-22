@@ -15,16 +15,16 @@ G = nx.Graph()
 
 '''first number is the number of nodes; second is the edge probability, ergo a float between 0 and 1'''
 #d = input("directed? (True or False):\n").upper == "TRUE" #turns cas insensitive string-input to true bool
-p = 0.05
+p = 0.1
 
 '''
 this changes the layout of the node display. Planar layout doesn't work with every graph. KK layout is pretty nice
 (better than spring_layout) most of the time.
     '''
-n_graphs_per_node = 10
+n_graphs_per_node = 3
 counter = 1
 while counter <= n_graphs_per_node:
-    for n in np.floor(np.exp(np.linspace(1,np.log(600),50))):
+    for n in np.floor(np.exp(np.linspace(1,np.log(30),50))):
         for d in ['2','1']:
             G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=False)
 
@@ -67,8 +67,8 @@ while counter <= n_graphs_per_node:
                 f.write("\nDirected graph;"+ str(nx.is_directed(G)))
                 f.write("\n\n")
                 for i in (nx.nodes(G)):
-                    f.write(str(i))
-                    f.write(";\n")
+                    f.write(str(i+1))
+                    f.write("\n")
                 f.write("\n")
 
                 _list= (str(G.edges)).replace("[", "")
@@ -78,15 +78,16 @@ while counter <= n_graphs_per_node:
                 _list = _list.replace(" ", "")
                 split_list = _list.split(",")
 
-                #print("split_list:" + str(split_list))
+                # print("split_list:" + str(split_list))
                 a=0
                 for i in (split_list):
-                    f.write(i)
-                    if (a % 2 == 0):
-                        f.write(";")
-                    else :
-                        f.write("\n")
-                    a=a+1
+                    if not i == '':
+                        f.write(str(int(i)+1))
+                        if (a % 2 == 0):
+                            f.write(";")
+                        else :
+                            f.write("\n")
+                        a=a+1
                 f.close()
 
                 print("\nthe random generated graph is saved as {}".format(filename))
