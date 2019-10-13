@@ -1,12 +1,9 @@
 import sys
-
-
-
-from node import Node
-from graph import Graph
-from parser import parse_graph
-
 import pprint
+
+from multivitamin.basic.node import Node
+from multivitamin.basic.graph import Graph
+from multivitamin.utils.parser import parse_graph
 
 
 class VF2():
@@ -30,13 +27,13 @@ class VF2():
 
         #  '''if the graph is undirected, the inverse edges (1,2 -> 2,1) are
         # constructed to work with the original VF2 algorithm'''
-        if not large_g.is_directed:
-            large_g.create_fake_directions()
-        if not small_g.is_directed:
-            small_g.create_fake_directions()
+        if not self.large_g.is_directed:
+            self.large_g.create_fake_directions()
+        if not self.small_g.is_directed:
+            self.small_g.create_fake_directions()
 
-        large_g.get_inout_neighbours()
-        small_g.get_inout_neighbours()
+        self.large_g.get_inout_neighbours()
+        self.small_g.get_inout_neighbours()
         # Initialiazing the two core dictionaries that store each node of the
         # Corresponding graph as key and the node of the other graph where it maps
         # As soon as it mapps for now we use self.null_n as inital value
@@ -57,10 +54,15 @@ class VF2():
         if self.s_in_small_g():
 
             # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
-            if not self.core_s in self.results:
-                self.results.append(self.core_s)
-            self.restore_ds( last_mapped[0], last_mapped[1], depth )
-            return
+            #print("core_s\n{}".format(self.core_s))
+            
+            # if not self.core_s in self.results:
+            # print("CALL")
+            self.results.append( self.gen_result_graph(self.core_s) )
+
+            # self.restore_ds( last_mapped[0], last_mapped[1], depth )
+            
+            return self.results
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
@@ -69,9 +71,13 @@ class VF2():
 
             if self.is_feasible(tup[0], tup[1], depth, td):
                 self.compute_s_( tup[0], tup[1], depth )
+        
                 # print(depth)
+        
                 self.match( tup, depth+1 )
+        
                 #print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
+        
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
 
     def s_in_small_g(self):
@@ -79,6 +85,7 @@ class VF2():
         checks if every node of the small graph is mapped to a node in the
         large graph and return True or False accordingly
         """
+       
         for node in self.core_s:
             if self.core_s[node] == self.null_n:
                 return False
@@ -93,13 +100,17 @@ class VF2():
             return self.cart_p(self.in_l,  self.legal_max(self.in_s))
 
         elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
+     
             # all mapped nodes are in m_l (large_g) or m_s (small_g)
             m_l = {n for n in self.core_l if self.core_l[n] != self.null_n}
             m_s = {n for n in self.core_s if self.core_s[n] != self.null_n}
+     
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
+     
             return self.cart_p(diff_l, max(diff_s))
+     
         return set()
 
     def is_feasible( self, n ,m, depth, td):
@@ -114,6 +125,7 @@ class VF2():
             if not ( td["in_l"] == td["in_s"] or td["out_l"] == td["out_s"] ):
                 #print("1-look-ahead error")
                 return False
+      
         elif self.type == "subgraph":
             # 1-look-ahead
             if not ( td["in_l"] >= td["in_s"] or td["out_l"] >= td["out_s"] ):
@@ -121,6 +133,7 @@ class VF2():
 
         elif not self.two_look_ahead(depth, td):
             return False
+      
         return self.check_semantics()
 
     def compute_s_(self, n, m, depth):
@@ -137,6 +150,7 @@ class VF2():
 
         self.core_l[n] = self.null_n
         self.core_s[m] = self.null_n
+      
         #print("Depth: {} \n Restored tup: {}".format(depth, last_mapped))
 
 # HELPER FUNCTIONS ------------------------------------------------------------
@@ -145,7 +159,9 @@ class VF2():
         Saves number of nodes for each terminal set in td and sets ssr /
         recursion depth, if not set. Used for computing candidate set p.
         '''
+    
         td = {"in_l": 0, "out_l": 0, "in_s": 0, "out_s": 0}
+    
         # makes sure, the first selected node gets depth
         try:  # This is needed, because the very first try will fail
             if self.in_l[n] == 0 and self.out_l[n] == 0:
@@ -239,6 +255,13 @@ class VF2():
             if core[node] == self.null_n and t_dict[node] == depth:
                 t_dict[node] = 0
 
+    def gen_result_graph( self, result ):
+        graph = Graph("{}_{}".format(self.small_g.id, self.large_g.id))
+        for key, value in result.items():
+            # print("pair {} {}".format(key, value))
+            cur_node = Node( "{}.{}".format( key.id, value.id), "{} {}".format( key.label, value.label ) )
+            graph.nodes.add(cur_node)
+        return graph
 
 
 if __name__ == "__main__":
@@ -251,7 +274,7 @@ if __name__ == "__main__":
     print("")
     print("********************************************************************")
     print("*                                                                  *")
-    print("        RESULTS for " + sys.argv[1] )
+    print("                     RESULTS for " + sys.argv[1] )
     print("*                                                                  *")
     print("********************************************************************")
     print("")
@@ -259,14 +282,15 @@ if __name__ == "__main__":
 
     vf2 = VF2(large_g, small_g)
     vf2.match()
-    for result in vf2.results:
-        counter = 1
-        print("--- RESULT #{} ------------------------------------------".format(counter))
-        print("")
-        print (result)
-        print("")
-        print("")
-        counter += 1
+    # for result in vf2.results:
+    #     counter = 1
+    #     print("--- RESULT #{} ------------------------------------------".format(counter))
+    #     print("")
+    #     print (result)
+    #     print("")
+    #     print("")
+    #     counter += 1
+
     #     for node in result.nodes:
     #         print(node)
     #     print()
@@ -275,8 +299,7 @@ if __name__ == "__main__":
     #     print()
     #     print()
     #     counter += 1
-    print("--- ELAPSED TIME ----------------------------------------")
     print("")
 
 
-    # pprint.pprint(vf2.results)
+    pprint.pprint(vf2.results)
