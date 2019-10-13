@@ -1,0 +1,35 @@
+AUTHOR: Clemens M., Max. J, Michel K., NetworkX, pysmiles, c1cccc(OC(=O)C)c1C(=O)O
+#nodes;13
+#edges;13
+Nodes labelled;True
+Edges labelled;False
+Directed graph;False
+
+0;C
+1;C
+2;C
+3;C
+4;C
+5;O
+6;C
+7;O
+8;C
+9;C
+10;C
+11;O
+12;O
+
+0;1
+0;9
+1;2
+2;3
+3;4
+4;9
+4;5
+5;6
+6;8
+6;7
+9;10
+10;11
+10;12
+
