@@ -55,13 +55,13 @@ class VF2():
 
             # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
             #print("core_s\n{}".format(self.core_s))
-            
+
             # if not self.core_s in self.results:
             # print("CALL")
             self.results.append( self.gen_result_graph(self.core_s) )
 
             # self.restore_ds( last_mapped[0], last_mapped[1], depth )
-            
+
             return self.results
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
@@ -71,13 +71,13 @@ class VF2():
 
             if self.is_feasible(tup[0], tup[1], depth, td):
                 self.compute_s_( tup[0], tup[1], depth )
-        
+
                 # print(depth)
-        
+
                 self.match( tup, depth+1 )
-        
+
                 #print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
-        
+
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
 
     def s_in_small_g(self):
@@ -85,7 +85,7 @@ class VF2():
         checks if every node of the small graph is mapped to a node in the
         large graph and return True or False accordingly
         """
-       
+
         for node in self.core_s:
             if self.core_s[node] == self.null_n:
                 return False
@@ -100,17 +100,17 @@ class VF2():
             return self.cart_p(self.in_l,  self.legal_max(self.in_s))
 
         elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
-     
+
             # all mapped nodes are in m_l (large_g) or m_s (small_g)
             m_l = {n for n in self.core_l if self.core_l[n] != self.null_n}
             m_s = {n for n in self.core_s if self.core_s[n] != self.null_n}
-     
+
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
-     
+
             return self.cart_p(diff_l, max(diff_s))
-     
+
         return set()
 
     def is_feasible( self, n ,m, depth, td):
@@ -125,7 +125,7 @@ class VF2():
             if not ( td["in_l"] == td["in_s"] or td["out_l"] == td["out_s"] ):
                 #print("1-look-ahead error")
                 return False
-      
+
         elif self.type == "subgraph":
             # 1-look-ahead
             if not ( td["in_l"] >= td["in_s"] or td["out_l"] >= td["out_s"] ):
@@ -133,7 +133,7 @@ class VF2():
 
         elif not self.two_look_ahead(depth, td):
             return False
-      
+
         return self.check_semantics()
 
     def compute_s_(self, n, m, depth):
@@ -150,7 +150,7 @@ class VF2():
 
         self.core_l[n] = self.null_n
         self.core_s[m] = self.null_n
-      
+
         #print("Depth: {} \n Restored tup: {}".format(depth, last_mapped))
 
 # HELPER FUNCTIONS ------------------------------------------------------------
@@ -159,9 +159,9 @@ class VF2():
         Saves number of nodes for each terminal set in td and sets ssr /
         recursion depth, if not set. Used for computing candidate set p.
         '''
-    
+
         td = {"in_l": 0, "out_l": 0, "in_s": 0, "out_s": 0}
-    
+
         # makes sure, the first selected node gets depth
         try:  # This is needed, because the very first try will fail
             if self.in_l[n] == 0 and self.out_l[n] == 0:
@@ -260,7 +260,9 @@ class VF2():
         for key, value in result.items():
             # print("pair {} {}".format(key, value))
             cur_node = Node( "{}.{}".format( key.id, value.id), "{} {}".format( key.label, value.label ) )
+            pprint.pprint(cur_node)
             graph.nodes.add(cur_node)
+        pprint.pprint(graph.nodes)
         return graph
 
 
@@ -274,7 +276,7 @@ if __name__ == "__main__":
     print("")
     print("********************************************************************")
     print("*                                                                  *")
-    print("                     RESULTS for " + sys.argv[1] )
+    #print("                     RESULTS for " + sys.argv[1] )
     print("*                                                                  *")
     print("********************************************************************")
     print("")
@@ -300,6 +302,5 @@ if __name__ == "__main__":
     #     print()
     #     counter += 1
     print("")
-
 
     pprint.pprint(vf2.results)

@@ -106,7 +106,7 @@ class Graph():
         # p_nodes = ""
         # for node in self.nodes:
         #     p_nodes += str(node) + "\n"
-        
+
         # p_edges = ""
         # for edge in self.edges:
         #     p_edges += str(edge) + "\n"
