@@ -1,3 +1,0 @@
-
-100500	Command terminated by signal 9
-3738.05
