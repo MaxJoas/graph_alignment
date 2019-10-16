@@ -1,4 +1,5 @@
 import sys
+import pprint
 
 from multivitamin.basic.graph import Graph
 from multivitamin.utils.parser import parse_graph
@@ -32,8 +33,8 @@ class Guide_tree():
         if len( self.graph_list ) == 1:
             
             res = self.graph_list[0]
-            
-            # self.make_graph_real( result )
+
+            res.edges = set()
             res.create_undirected_edges()
             
             self.result = res
@@ -50,9 +51,14 @@ class Guide_tree():
 
                 if g1.id == g2.id:
                     continue
+           
+                # print("g1")
+                # print(g1.id)
+                # print("g2")
+                # print(g2.id)
+           
+                results = self.apply_algorithm( g1, g2)
 
-                results = self.apply_algorithm( g1.nodes, g2.nodes)
-    
                 if len(max(results)) >= maximum:
                     alignment = Graph( "({},{})".format( g1.id, g2.id ), max( results ) )
                     maximum = len(max(results))
@@ -67,6 +73,8 @@ class Guide_tree():
         self.graph_list.append( alignment_graph )
         self.intermediates.append( alignment_graph )
 
+        # print(self.newick)
+
         self.upgma()
 
 
@@ -75,20 +83,32 @@ class Guide_tree():
             for neighbour in list(node.neighbours)[:]:
                 if not neighbour in graph.nodes:
                     node.remove_neighbour(neighbour)
+        if not graph.edges:
+            graph.create_undirected_edges()
         return graph
 
-    
-    def apply_algorithm( self, nodes1, nodes2 ):
+
+    def apply_algorithm( self, graph1, graph2 ):
         if self.algorithm == "BK":  
-            modp = mod_product( cart_product( nodes1, nodes2 ) )
+            modp = mod_product( cart_product( graph1.nodes, graph2.nodes ) )
             bk = BK()
             x = set()
             r = set()
             p = list(modp.nodes)
             bk.bk_pivot( r, p, x)
             return bk.results
+
         elif self.algorithm == "VF2":
-            pass
+            vf2 = VF2( graph1, graph2 )
+            vf2.match()
+    
+            # print("results")
+            # print(vf2.results)
+            # print("max")
+            # print(max(vf2.results))
+    
+            return vf2.results
+
 
 
     def print_alignment( self, graph ):

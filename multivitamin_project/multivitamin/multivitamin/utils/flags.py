@@ -7,11 +7,11 @@ from multivitamin.utils.get_input import process_file
 
 parser = argparse.ArgumentParser(
     description='A multiple alignment tool for graphs',
-    usage='use "python %(prog)s --help" for more information',
+    usage='use "python3 %(prog)s --help" for more information',
     formatter_class=RawTextHelpFormatter
 )
 
-# TODO: Add debug options ( parser, modular product, ?)
+# TODO?: Add debug options ( parser, modular product, ?)
 
 # arguments which provide the graph files
 group = parser.add_argument_group('required arguments', 'this argument is required')
@@ -25,14 +25,14 @@ mxg.add_argument(
     help='provide .graph files for the alignment'
 )
 
-# mxg.add_argument(
-#     '-d',
-#     '--dir-path',
-#     dest='path',
-#     type=process_directory,
-#     nargs='+',
-#     help='provide a dir which contains the .graph files to be aligned (other files or subdirs are ignored)'
-# )
+mxg.add_argument(
+    '-c',
+    '--coopt',
+    dest='coopt',
+    type=process_file,
+    nargs='+',
+    help='provide *2* graphs which will be aligned. Co-optimals will be saved in ./results (the graphs must be provided explicitly at the moment)'
+)
 
 
 

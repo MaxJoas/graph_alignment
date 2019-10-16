@@ -27,13 +27,13 @@ class VF2():
 
         #  '''if the graph is undirected, the inverse edges (1,2 -> 2,1) are
         # constructed to work with the original VF2 algorithm'''
-        if not large_g.is_directed:
-            large_g.create_fake_directions()
-        if not small_g.is_directed:
-            small_g.create_fake_directions()
+        if not self.large_g.is_directed:
+            self.large_g.create_fake_directions()
+        if not self.small_g.is_directed:
+            self.small_g.create_fake_directions()
 
-        large_g.get_inout_neighbours()
-        small_g.get_inout_neighbours()
+        self.large_g.get_inout_neighbours()
+        self.small_g.get_inout_neighbours()
         # Initialiazing the two core dictionaries that store each node of the
         # Corresponding graph as key and the node of the other graph where it maps
         # As soon as it mapps for now we use self.null_n as inital value
@@ -46,22 +46,23 @@ class VF2():
         self.in_s = self.out_s = self.small_g.gen_dict( 0 )
         self.in_l = self.out_l = self.large_g.gen_dict( 0 )
 
+        self.result_graphs = []
         self.results = []
 
 
     def match( self, last_mapped=(Node("0", ""), Node("0", "")), depth=0 ):
 
         if self.s_in_small_g():
-
-            # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
             
-            if not self.core_s in self.results:
-                self.results.append(self.core_s)
+
+            #print("core_s\n{}".format(self.core_s))
+            # print("CALL")
+            
+            self.append_result_graph( self.core_s )
 
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
             
-            return
-
+            return 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
 
@@ -74,7 +75,7 @@ class VF2():
         
                 self.match( tup, depth+1 )
         
-                #print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
+                # print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
         
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
 
@@ -106,7 +107,6 @@ class VF2():
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
-     
             return self.cart_p(diff_l, max(diff_s))
      
         return set()
@@ -121,7 +121,7 @@ class VF2():
         if self.type == "isomorphism":
             # 1-look-ahead
             if not ( td["in_l"] == td["in_s"] or td["out_l"] == td["out_s"] ):
-                #print("1-look-ahead error")
+                # print("1-look-ahead error")
                 return False
       
         elif self.type == "subgraph":
@@ -132,10 +132,9 @@ class VF2():
         elif not self.two_look_ahead(depth, td):
             return False
       
-        return self.check_semantics()
+        return self.check_semantics( n, m )
 
     def compute_s_(self, n, m, depth):
-
         self.core_l[n] = m
         self.core_s[m] = n
 
@@ -245,52 +244,94 @@ class VF2():
         elif self.type == "subgraph":
             return free_n1 >= free_n2
 
-    def check_semantics(self):
-        return True
+    def check_semantics(self, n, m):
+        # print(n.label)
+        # print(m.label)
+        if n.label == m.label:
+            # print("True")
+            return True
+        else:
+            # print("False")
+            return False
 
     def restore_terminals(self, t_dict, dict_key, core, depth):
         for node in t_dict:
             if core[node] == self.null_n and t_dict[node] == depth:
                 t_dict[node] = 0
 
+# RESULT PROCESSING -----------------------------------------------------------
+
+    def append_result_graph( self, result ):
+        '''creates a graph which contains the concatenated mapped nodes. 
+        Then, it adds the neighbours to the new nodes following the 
+        original neighbours.'''
+        
+        result_graph = Graph("({},{})#{}".format(self.small_g.id, self.large_g.id, len(self.result_graphs)+1), set())
+        for key, value in result.items():
+            # print("pair {} {}".format(key, value))
+            cur_node = Node( "{}.{}".format( key.id, value.id), "{}".format( key.label ) )
+            
+            
+            for node in result_graph.nodes: # f.ex. 1.2
+                orig_node = Node("")
+                for n in result.keys(): # original nodes from small graph
+                    if node.id.split(".")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
+                        orig_node = n
+                        break
+                if key in orig_node.neighbours:
+                    node.add_neighbour( cur_node )
+                    cur_node.add_neighbour( node )
+            result_graph.nodes.add(cur_node)
+        # print("new")
+        # print(self.result_graphs)
+        # for res in self.result_graphs:
+        #     print("CALL")
+        #     for res_node in result_graph.nodes:
+        #         print(res_node)
+        #         print(res.nodes)
+                # if not res_node in res.nodes:
+                    # return
+            
+        # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
+        self.result_graphs.append( result_graph )
+        self.results.append( result_graph.nodes )
+
+        
 
 
 if __name__ == "__main__":
 
-
-
     large_g = parse_graph(sys.argv[1])
     small_g = parse_graph(sys.argv[2])
 
-    print("")
-    print("********************************************************************")
-    print("*                                                                  *")
-    print("                     RESULTS for " + sys.argv[1] )
-    print("*                                                                  *")
-    print("********************************************************************")
-    print("")
-    print("")
-
     vf2 = VF2(large_g, small_g)
     vf2.match()
-    for result in vf2.results:
-        counter = 1
+
+    print("")
+    print("********************************************************************")
+    print("*                                                                  *")
+    print("                    RESULTS for {} and {}".format( vf2.g.id, vf2.h.id) )
+    print("*                                                                  *")
+    print("********************************************************************")
+    print("")
+    print("")
+
+    counter = 1
+    for result in vf2.result_graphs:
+        
         print("--- RESULT #{} ------------------------------------------".format(counter))
         print("")
-        print (result)
+        print (result.id)
         print("")
+
+        for node in result.nodes:
+            print(node)
+        print("")
+        for edge in result.edges:
+            print(edge)
         print("")
         counter += 1
-    #     for node in result.nodes:
-    #         print(node)
-    #     print()
-    #     for edge in result.edges:
-    #         print(edge)
-    #     print()
-    #     print()
-    #     counter += 1
-    print("--- ELAPSED TIME ----------------------------------------")
     print("")
 
 
-    # pprint.pprint(vf2.results)
+    # pprint.pprint(vf2.result_graphs)
