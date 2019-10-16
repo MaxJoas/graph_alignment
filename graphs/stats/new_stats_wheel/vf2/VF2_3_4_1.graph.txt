@@ -1,0 +1,25 @@
+Reading 3_4_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 3_4_1.graph
+
+Reading 3_4_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 3_4_2.graph
+
+
+********************************************************************
+*                                                                  *
+        RESULTS for 3_4_1.graph
+*                                                                  *
+********************************************************************
+
+
+--- RESULT #1 ------------------------------------------
+
+{2	''	( 3, 1, ): 0	''	( ), 3	''	( 2, 1, ): 0	''	( ), 1	''	( 2, 3, ): 0	''	( ), 0	''	( ): 0	''	( )}
+
+
+--- ELAPSED TIME ----------------------------------------
+
+
+0.02
+
+
