@@ -1,6 +1,6 @@
 AUTHOR: Michel K.
 #nodes;6
-#edges;5
+#edges;6
 Nodes labelled;True
 Edges labelled;False
 Directed graph;False
@@ -13,6 +13,7 @@ Directed graph;False
 6;c
 
 1;2
+1;6
 2;3
 3;4
 4;5
