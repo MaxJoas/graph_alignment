@@ -1,0 +1,14 @@
+AUTHOR: Clemens M., Max. J, Michel K.
+#nodes;3
+#edges;2
+nodes labelled;True
+edges labelled;False
+directed graph;True
+
+1;rain
+2;sprinkler
+3;wet grass
+
+1;2
+1;3
+2;3
