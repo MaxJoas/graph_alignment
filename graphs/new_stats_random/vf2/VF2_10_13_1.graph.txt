@@ -1,0 +1,19 @@
+Reading 10_13_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 10_13_1.graph
+
+Reading 10_13_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 10_13_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+0.03
+
+

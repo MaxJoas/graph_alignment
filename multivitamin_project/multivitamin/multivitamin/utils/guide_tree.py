@@ -28,12 +28,12 @@ class Guide_tree():
 
     def upgma( self ):
         if len( self.graph_list ) == 1:
-            
+
             res = self.graph_list[0]
 
             res.edges = set()
             res.create_undirected_edges()
-            
+
             self.result = res
 
             self.newick = self.graph_list[0].id
@@ -48,7 +48,7 @@ class Guide_tree():
 
                 if g1.id == g2.id:
                     continue
-           
+
                 results = self.apply_algorithm( g1, g2)
 
                 if len(max(results)) >= maximum:
@@ -61,7 +61,7 @@ class Guide_tree():
         self.graph_list.remove(alig_two)
 
         alignment_graph = self.make_graph_real( alignment )
-        
+
         self.graph_list.append( alignment_graph )
         self.intermediates.append( alignment_graph )
 
@@ -79,7 +79,7 @@ class Guide_tree():
 
 
     def apply_algorithm( self, graph1, graph2 ):
-        if self.algorithm == "BK":  
+        if self.algorithm == "BK":
             modp = mod_product( cart_product( graph1.nodes, graph2.nodes ) )
             bk = BK()
             x = set()

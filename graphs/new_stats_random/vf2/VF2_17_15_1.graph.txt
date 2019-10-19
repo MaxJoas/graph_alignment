@@ -1,0 +1,19 @@
+Reading 17_15_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 17_15_1.graph
+
+Reading 17_15_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 17_15_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+0.92
+
+

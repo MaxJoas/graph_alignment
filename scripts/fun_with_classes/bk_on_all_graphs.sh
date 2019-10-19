@@ -31,7 +31,7 @@ do
   cat $temp >> $out
   echo >> $out
   echo >> $out
-     
+
   echo -n $(basename $file | cut -d "_" -f 1) >> $stats
   echo -ne "\t" >> $stats
   cat $temp >> $stats

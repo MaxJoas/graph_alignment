@@ -1,0 +1,14 @@
+Reading 29_18_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 29_18_1.graph
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 17, in parse_graph
+    with open(doc) as d:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

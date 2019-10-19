@@ -1,0 +1,32 @@
+Reading 23_9_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 23_9_1.graph
+
+Reading 23_9_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 23_9_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 218, in legal_max
+    elif node > max_node:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 56, in __gt__
+    return self.id > other.id
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

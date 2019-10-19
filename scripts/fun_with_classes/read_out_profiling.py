@@ -12,7 +12,6 @@ def read_out_profile(file):
                 res[int(splitted[0])].append(float(splitted[1]))
             except:
                 res[int(splitted[0])] = [float(splitted[1])]
-
     res2 = {k: statistics.mean(v) for k,v in res.items()}
     helper = sorted(res2.keys())
     res_sorted = dict()
@@ -24,11 +23,12 @@ def read_out_profile(file):
 if __name__ == '__main__':
 
     file = sys.argv[1]
-    title = sys.argv[2]
+    file_vf2 = sys.argv[2]
+    title = sys.argv[3]
     result = read_out_profile(file)
-    print(result.values())
+    result_vf2 = read_out_profile(file_vf2)
     plt.plot(list(result.keys()), list(result.values()), label='BK')
-    plt.plot(range(10), range(10),label='Test')
+    plt.plot(list(result.keys()), list(result_vf2.values()),label='VF2')
     plt.xlabel('Nodes')
     plt.ylabel('Time')
     plt.title(title)

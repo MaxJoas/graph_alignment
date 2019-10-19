@@ -1,0 +1,28 @@
+Reading 25_19_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_19_1.graph
+
+Reading 25_19_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_19_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 47, in __init__
+    self.in_l = self.out_l = self.large_g.gen_dict( 0 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 129, in gen_dict
+    _dict[key] = value
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

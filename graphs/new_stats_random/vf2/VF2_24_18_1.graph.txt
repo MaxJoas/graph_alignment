@@ -1,0 +1,34 @@
+Reading 24_18_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 24_18_1.graph
+
+Reading 24_18_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 24_18_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 193, in set_inout
+    if not self.core_s[v] == self.null_n:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

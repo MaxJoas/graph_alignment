@@ -1,0 +1,21 @@
+Reading 26_8_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 26_8_1.graph
+
+Reading 26_8_2.graph from Clemens M., Max. J, Michel K., NetworkX
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

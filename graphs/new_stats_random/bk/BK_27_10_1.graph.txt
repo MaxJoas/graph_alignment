@@ -1,0 +1,7 @@
+Reading 27_10_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 27_10_1.graph
+
+
+0.03
+
+

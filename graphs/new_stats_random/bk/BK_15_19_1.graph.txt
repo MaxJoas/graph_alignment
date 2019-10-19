@@ -1,0 +1,7 @@
+Reading 15_19_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 15_19_1.graph
+
+
+0.03
+
+

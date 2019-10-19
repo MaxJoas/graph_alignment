@@ -10,7 +10,6 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
-G = nx.Graph()
 
 
 '''first number is the number of nodes; second is the edge probability, ergo a float between 0 and 1'''
@@ -21,13 +20,15 @@ p = 0.1
 this changes the layout of the node display. Planar layout doesn't work with every graph. KK layout is pretty nice
 (better than spring_layout) most of the time.
     '''
-n_graphs_per_node = 3
+n_graphs_per_node = 20
 counter = 1
 while counter <= n_graphs_per_node:
-    for n in np.floor(np.exp(np.linspace(1,np.log(30),50))):
+    for n in range(5,30,4): # n in np.floor(np.exp(np.linspace(1,np.log(30),50))):
         for d in ['2','1']:
-            G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=False)
-
+            #G = nx.fast_gnp_random_graph(int(n), float(p), seed=None, directed=False)
+            G = nx.complete_graph(n)
+            if d == 2:
+                G = nx.complete_graph(n-4)
 
            # if int(n) < 20:
            #     pos = nx.planar_layout(G) #no edge intersections
@@ -57,7 +58,7 @@ while counter <= n_graphs_per_node:
 #            if z=="y":
 #                fig_copy.savefig("RandomGraph.png")
 #                print("\nthe random generated graph is saved as RandomGraph.png")
-            filename = './{}_{}_{}.graph'.format(int(n), counter, d)
+            filename = './{}_{}_{}.graph'.format(str(n) + str(n-4), counter, d)
             with open(filename, 'w') as f:
                 f.write("AUTHOR: Clemens M., Max. J, Michel K., NetworkX\n")
                 f.write("#nodes;" + str(nx.number_of_nodes(G)))

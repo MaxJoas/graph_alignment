@@ -1,0 +1,36 @@
+Reading 25_16_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_16_1.graph
+
+Reading 25_16_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_16_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

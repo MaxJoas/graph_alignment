@@ -56,7 +56,7 @@ class VF2():
         if self.s_in_small_g():
             self.append_result_graph( self.core_s )
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
-            return 
+            return
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
@@ -256,25 +256,25 @@ class VF2():
 # RESULT PROCESSING -----------------------------------------------------------
 
     def append_result_graph( self, result ):
-        '''creates a graph which contains the concatenated mapped nodes. 
-        Then, it adds the neighbours to the new nodes following the 
+        '''creates a graph which contains the concatenated mapped nodes.
+        Then, it adds the neighbours to the new nodes following the
         original neighbours.'''
 
         result_graph = Graph("({},{})#{}".format(
-            self.small_g.id, 
-            self.large_g.id, 
+            self.small_g.id,
+            self.large_g.id,
             len(self.result_graphs)+1
-            ), 
+            ),
             set()
             )
         for key, value in result.items():
             # print("pair {} {}".format(key, value))
-            cur_node = Node( "{}.{}".format( key.id, value.id), "{}".format( key.label ) )
+            cur_node = Node( "({},{})".format( key.id, value.id), "{}".format( key.label ) )
 
             for node in result_graph.nodes: # f.ex. 1.2
                 orig_node = Node("")
                 for n in result.keys(): # original nodes from small graph
-                    if node.id.split(".")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
+                    if node.id.replace('(','').replace(')','').split(",")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
                         orig_node = n
                         break
                 if key in orig_node.neighbours:
@@ -309,7 +309,7 @@ if __name__ == "__main__":
 
     counter = 1
     for result in vf2.result_graphs:
-        
+
         print("--- RESULT #{} ------------------------------------------".format(counter))
         print("")
         print (result.id)

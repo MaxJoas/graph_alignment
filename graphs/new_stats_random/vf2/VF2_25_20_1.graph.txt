@@ -1,0 +1,42 @@
+Reading 25_20_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_20_1.graph
+
+Reading 25_20_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_20_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 149, in restore_ds
+    self.restore_terminals(self.out_s, "out_s", self.core_s, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.05
+
+

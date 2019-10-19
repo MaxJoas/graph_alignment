@@ -1,0 +1,30 @@
+Reading 25_13_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_13_1.graph
+
+Reading 25_13_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_13_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 187, in set_inout
+    if v in n.out_neighbours :
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

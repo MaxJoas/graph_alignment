@@ -1,0 +1,19 @@
+Reading 14_14_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 14_14_1.graph
+
+Reading 14_14_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 14_14_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+0.03
+
+

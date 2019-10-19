@@ -1,0 +1,28 @@
+Reading 26_19_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 26_19_1.graph
+
+Reading 26_19_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 26_19_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 112, in compute_p
+    return self.cart_p(diff_l, max(diff_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 209, in cart_p
+    cp.add( (node, t_max) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

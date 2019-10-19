@@ -1,0 +1,7 @@
+Reading 8_13_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 8_13_1.graph
+
+
+0.03
+
+

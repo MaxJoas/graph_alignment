@@ -1,0 +1,2095 @@
+
+10	0.03
+10	0.03
+10	0.15
+10	0.01
+10	0.03
+10	0.06
+10	0.13
+10	0.26
+10	0.04
+10	0.02
+10	0.19
+10	0.01
+10	0.19
+10	0.03
+10	0.44
+10	0.05
+10	0.98
+10	0.02
+10	0.04
+10	0.01
+11	1.66
+11	0.02
+11	1.87
+11	0.02
+11	0.01
+11	0.02
+11	0.04
+11	0.01
+11	0.07
+11	0.27
+11	0.03
+11	0.03
+11	0.89
+11	0.86
+11	0.41
+11	0.01
+11	0.20
+11	0.01
+11	0.15
+11	0.03
+12	1.16
+12	0.62
+12	0.07
+12	0.15
+12	0.01
+12	0.02
+12	2.83
+12	0.10
+12	0.02
+12	0.29
+12	0.02
+12	0.03
+12	0.56
+12	0.01
+12	0.02
+12	0.97
+12	0.32
+12	0.01
+12	0.11
+12	0.04
+13	1.53
+13	0.01
+13	0.02
+13	0.08
+13	0.01
+13	0.06
+13	0.62
+13	0.07
+13	0.03
+13	0.12
+13	2.92
+13	0.23
+13	0.03
+13	0.01
+13	0.89
+13	0.05
+13	0.07
+13	0.94
+13	3.44
+13	0.13
+14	0.06
+14	0.08
+14	0.02
+14	0.04
+14	0.10
+14	0.03
+14	0.11
+14	23.17
+14	0.02
+14	1.76
+14	0.08
+14	0.03
+14	0.06
+14	0.05
+14	0.04
+14	0.05
+14	2.68
+14	0.32
+14	0.03
+14	0.04
+15	0.01
+15	0.22
+15	92.27
+15	0.13
+15	0.06
+15	0.85
+15	0.10
+15	0.02
+15	0.01
+15	1.58
+15	1.04
+15	0.02
+15	0.04
+15	17.24
+15	1.53
+15	0.21
+15	17.11
+15	15.19
+15	7.54
+15	0.26
+16	0.11
+16	0.01
+16	1.88
+16	3.51
+16	0.06
+16	5.75
+16	0.03
+16	0.02
+16	0.03
+16	0.06
+16	0.20
+16	0.07
+16	0.37
+16	0.79
+16	7.44
+16	222.69
+16	5.47
+16	0.71
+16	0.13
+16	0.05
+17	3.31
+17	0.54
+17	0.64
+17	0.77
+17	8.99
+17	1.24
+17	0.92
+17	1.03
+17	0.29
+17	0.59
+17	0.61
+17	0.02
+17	0.04
+17	2.00
+17	0.15
+17	5.14
+17	0.37
+17	0.34
+17	5.75
+17	6.61
+18	2.15
+18	1.30
+18	0.02
+18	1.56
+18	0.02
+18	1252.32
+18	0.02
+18	0.18
+18	0.14
+18	132.78
+18	0.31
+18	1.05
+18	0.23
+18	0.04
+18	4.09
+18	0.12
+18	0.30
+18	4.60
+18	0.02
+18	21.45
+19	1.56
+19	10.51
+19	5.40
+19	0.04
+19	1.77
+19	0.24
+19	0.17
+19	16.89
+19	0.78
+19	10.76
+19	0.16
+19	0.05
+19	0.61
+19	4.45
+19	0.87
+19	6.50
+19	2.31
+19	0.36
+19	0.08
+19	0.35
+20	0.05
+20	0.06
+20	342.60
+20	0.93
+20	0.48
+20	39.80
+20	0.02
+20	822.47
+20	1.56
+20	0.48
+20	0.96
+20	0.11
+20	3.94
+20	0.04
+20	5.23
+20	0.33
+20	21.95
+20	0.05
+20	0.03
+20	0.07
+21	1.20
+21	326.90
+21	0.31
+21	3.34
+21	1.10
+21	4.53
+21	0.24
+21	5.79
+21	169.28
+21	1.67
+21	0.17
+21	56.01
+21	15.14
+21	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 147, in restore_ds
+    self.restore_terminals(self.out_l, "out_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+2729.09
+21	0.60
+21	0.05
+21	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 224, in zero_look_ahead
+    for n_ in n.neighbours:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.07
+21	0.32
+21	2.74
+21	0.24
+22	0.19
+22	0.05
+22	2.00
+22	0.05
+22	0.09
+22	0.65
+22	5.41
+22	0.15
+22	3.20
+22	2.69
+22	8.76
+22	624.60
+22	1.43
+22	0.03
+22	0.04
+22	0.08
+22	0.60
+22	1.16
+22	17.31
+22	0.05
+23	2236.13
+23	1330.66
+23	8.17
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+KeyboardInterrupt
+Command exited with non-zero status 1
+40.05
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.49
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 54, in match
+    if self.s_in_small_g():
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 90, in s_in_small_g
+    if self.core_s[node] == self.null_n:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.05
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.01
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 54, in match
+    if self.s_in_small_g():
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 90, in s_in_small_g
+    if self.core_s[node] == self.null_n:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 38, in get_inout_neighbours
+    for cur_edge in self.edges:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+23	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 218, in legal_max
+    elif node > max_node:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 56, in __gt__
+    return self.id > other.id
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 38, in get_inout_neighbours
+    for cur_edge in self.edges:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 38, in get_inout_neighbours
+    for cur_edge in self.edges:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 193, in set_inout
+    if not self.core_s[v] == self.null_n:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 218, in legal_max
+    elif node > max_node:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 53, in __gt__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 193, in set_inout
+    if not self.core_s[v] == self.null_n:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 218, in legal_max
+    elif node > max_node:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 53, in __gt__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.01
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 209, in cart_p
+    cp.add( (node, t_max) )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 47, in __init__
+    self.in_l = self.out_l = self.large_g.gen_dict( 0 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 129, in gen_dict
+    _dict[key] = value
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+24	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 149, in restore_ds
+    self.restore_terminals(self.out_s, "out_s", self.core_s, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 187, in set_inout
+    if v in n.out_neighbours :
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 216, in legal_max
+    if t_dict[node] > 0 and self.core_s[node] != self.null_n:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 47, in __init__
+    self.in_l = self.out_l = self.large_g.gen_dict( 0 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 129, in gen_dict
+    _dict[key] = value
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 149, in restore_ds
+    self.restore_terminals(self.out_s, "out_s", self.core_s, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.05
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 41, in get_inout_neighbours
+    cur_node.out_neighbours.add( cur_edge.node2 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 224, in zero_look_ahead
+    for n_ in n.neighbours:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 13, in is_reverse_of
+    def is_reverse_of( self, e2 ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+25	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 97, in compute_p
+    return self.cart_p(self.out_l, self.legal_max(self.out_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 209, in cart_p
+    cp.add( (node, t_max) )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 146, in restore_ds
+    self.restore_terminals(self.in_l, "in_l", self.core_l, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 68, in match
+    p = self.compute_p(td)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 112, in compute_p
+    return self.cart_p(diff_l, max(diff_s))
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 209, in cart_p
+    cp.add( (node, t_max) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 38, in get_inout_neighbours
+    for cur_edge in self.edges:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 161, in get_node_neighbours
+    for cur_node in nodes:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+26	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 67, in match
+    td = self.set_inout( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 184, in set_inout
+    td['in_l'] += 1
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 13, in is_reverse_of
+    def is_reverse_of( self, e2 ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 44, in get_inout_neighbours
+    cur_node.in_neighbours.add( cur_edge.node1 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 66, in __hash__
+    def __hash__( self ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 38, in get_inout_neighbours
+    for cur_edge in self.edges:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 119, in is_feasible
+    self.zero_look_ahead(n, m, self.core_l),
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 225, in zero_look_ahead
+    m_ = core[n_] # Mapping of v
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 77, in match
+    self.match( tup, depth+1 )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 81, in match
+    self.restore_ds( last_mapped[0], last_mapped[1], depth )
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 149, in restore_ds
+    self.restore_terminals(self.out_s, "out_s", self.core_s, depth)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 255, in restore_terminals
+    if core[node] == self.null_n and t_dict[node] == depth:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+27	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 33, in __init__
+    self.small_g.create_fake_directions()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 67, in create_fake_directions
+    rev_edge = Edge( edge.node2, edge.node1, edge.label )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 5, in __init__
+    def __init__( self, node1, node2, label="" ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 73, in parse_graph
+    elif node.id == split_list[1]:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 26, in __eq__
+    return NotImplemented
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 69, in parse_graph
+    for node in nodes:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+28	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 36, in __init__
+    self.small_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 167, in get_node_neighbours
+    cur_node.neighbours.add( cur_edge.node1 )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 67, in __hash__
+    return hash((self.id, self.label))
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 163, in get_node_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 17, in parse_graph
+    with open(doc) as d:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 40, in get_inout_neighbours
+    if cur_node == cur_edge.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 25, in __eq__
+    if not isinstance(other, Node):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 70, in parse_graph
+    if node.id == split_list[0]:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 17, in is_reverse_of
+    return False
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 31, in __init__
+    self.large_g.create_fake_directions()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 67, in create_fake_directions
+    rev_edge = Edge( edge.node2, edge.node1, edge.label )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 5, in __init__
+    def __init__( self, node1, node2, label="" ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+29	Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 114, in parse_graph
+    if edges_contain_doubles( edges ):  #(a,b) and (b,a)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 149, in edges_contain_doubles
+    if edge1.is_reverse_of(edge2):
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 14, in is_reverse_of
+    if self.node1 == e2.node2 and self.node2 == e2.node1:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+3	0.01

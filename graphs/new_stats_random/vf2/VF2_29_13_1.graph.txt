@@ -1,0 +1,16 @@
+Reading 29_13_1.graph from Clemens M., Max. J, Michel K., NetworkX
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 273, in <module>
+    large_g = parse_graph(sys.argv[1])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 166, in get_node_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

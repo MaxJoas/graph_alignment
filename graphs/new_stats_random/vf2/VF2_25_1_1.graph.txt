@@ -1,0 +1,30 @@
+Reading 25_1_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_1_1.graph
+
+Reading 25_1_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 25_1_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 286, in <module>
+    vf2.match()
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 72, in match
+    if self.is_feasible(tup[0], tup[1], depth, td):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 120, in is_feasible
+    self.zero_look_ahead(m, n, self.core_s) ) ):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 226, in zero_look_ahead
+    if m_ == self.null_n : # If mapping does'n exist take next neighbour
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 28, in __eq__
+    return all( (self.id == other.id, self.label == other.label, self.neighbours == other.neighbours) )
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

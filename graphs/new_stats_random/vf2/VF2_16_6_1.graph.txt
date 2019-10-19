@@ -1,0 +1,19 @@
+Reading 16_6_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 16_6_1.graph
+
+Reading 16_6_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 16_6_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+5.47
+
+

@@ -8,9 +8,9 @@ from multivitamin.utils.modular_product import mod_product, cart_product, get_co
 from multivitamin.algorithms.bk_pivot_class import BK
 from multivitamin.algorithms.vf2_beauty import VF2
 
-''' 
+'''
 FLAGS:
--a BK VF2 
+-a BK VF2
 -c use algorithm for single alignment and save co-optimals
 -f save in list as input graphs
 -g guide
@@ -26,7 +26,7 @@ def main():
 
     if args.files:
         if isinstance(args.files[0], list): #this happens when parsing files from a directory
-            graphs = args.files[0] 
+            graphs = args.files[0]
         else:
             graphs = args.files
 
@@ -37,10 +37,10 @@ def main():
 
     elif args.coopt:
         if isinstance(args.coopt[0], list): #this happens when parsing files from a directory
-            graphs = args.coopt[0] 
+            graphs = args.coopt[0]
         else:
             graphs = args.coopt
-        
+
         if not len(graphs) == 2:
             raise Exception("You must provide exactly 2 graph files with '-c' ! Use '-f' if you want to align multiple graphs.")
 
@@ -80,7 +80,7 @@ def main():
 
 def save_results( guide_tree ):
     path = "/results"
-    
+
     if not os.path.isdir("{}/{}".format( os.getcwd(), path )):
         try:
             os.mkdir("{}{}".format( os.getcwd(), path ) )

@@ -1,0 +1,7 @@
+Reading 2925_20_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 2925_20_1.graph
+
+
+0.53
+
+

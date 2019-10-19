@@ -1,0 +1,28 @@
+Reading 28_11_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 28_11_1.graph
+
+Reading 28_11_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 28_11_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 33, in __init__
+    self.small_g.create_fake_directions()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 67, in create_fake_directions
+    rev_edge = Edge( edge.node2, edge.node1, edge.label )
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/edge.py", line 5, in __init__
+    def __init__( self, node1, node2, label="" ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

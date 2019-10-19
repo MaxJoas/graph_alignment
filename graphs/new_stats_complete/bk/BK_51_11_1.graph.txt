@@ -1,0 +1,7 @@
+Reading 51_11_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 51_11_1.graph
+
+
+0.02
+
+

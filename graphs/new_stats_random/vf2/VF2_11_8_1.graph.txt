@@ -1,0 +1,19 @@
+Reading 11_8_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 11_8_1.graph
+
+Reading 11_8_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 11_8_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+0.15
+
+

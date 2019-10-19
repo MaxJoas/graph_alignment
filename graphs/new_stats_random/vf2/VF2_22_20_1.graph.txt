@@ -1,0 +1,19 @@
+Reading 22_20_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 22_20_1.graph
+
+Reading 22_20_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 22_20_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+[]
+
+624.60
+
+

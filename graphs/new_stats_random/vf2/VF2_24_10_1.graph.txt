@@ -1,0 +1,28 @@
+Reading 24_10_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 24_10_1.graph
+
+Reading 24_10_2.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 24_10_2.graph
+
+
+********************************************************************
+*                                                                  *
+*                                                                  *
+********************************************************************
+
+
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 285, in <module>
+    vf2 = VF2(large_g, small_g)
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 35, in __init__
+    self.large_g.get_inout_neighbours()
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/graph.py", line 43, in get_inout_neighbours
+    if cur_node == cur_edge.node2:
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/basic/node.py", line 24, in __eq__
+    def __eq__( self, other ):
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+

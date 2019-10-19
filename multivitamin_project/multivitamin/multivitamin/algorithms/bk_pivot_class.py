@@ -28,7 +28,7 @@ class BK:
 
 
     def bk_pivot ( self, r, p, x ):
-        
+
         if not any ( [p, x] ): # when p and x are empty return r as max clique and end
 
             # print('clique: ', r)

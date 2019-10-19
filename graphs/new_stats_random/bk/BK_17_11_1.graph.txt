@@ -1,0 +1,7 @@
+Reading 17_11_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 17_11_1.graph
+
+
+0.02
+
+

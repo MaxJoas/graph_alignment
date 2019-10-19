@@ -1,0 +1,17 @@
+Reading 26_4_1.graph from Clemens M., Max. J, Michel K., NetworkX
+Successfully parsed 26_4_1.graph
+
+Reading 26_4_2.graph from Clemens M., Max. J, Michel K., NetworkX
+
+Traceback (most recent call last):
+  File "../../multivitamin_project/multivitamin/vf2_beauty.py", line 274, in <module>
+    small_g = parse_graph(sys.argv[2])
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 124, in parse_graph
+    get_node_neighbours(limit, nodes, edges)
+  File "/home/max/uni/2.sem/fortbioinf/graph_alignment/multivitamin_project/multivitamin/multivitamin/utils/parser.py", line 161, in get_node_neighbours
+    for cur_node in nodes:
+KeyboardInterrupt
+Command exited with non-zero status 1
+0.02
+
+
