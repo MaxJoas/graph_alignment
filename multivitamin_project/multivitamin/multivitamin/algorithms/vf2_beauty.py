@@ -56,7 +56,7 @@ class VF2():
         if self.s_in_small_g():
             self.append_result_graph( self.core_s )
             self.restore_ds( last_mapped[0], last_mapped[1], depth )
-            return
+            return 
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
@@ -67,8 +67,6 @@ class VF2():
                 self.compute_s_( tup[0], tup[1], depth )
 
                 self.match( tup, depth+1 )
-
-                # print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth+1, self.core_l, self.core_s ) )
 
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
 
@@ -93,8 +91,8 @@ class VF2():
         elif all(( not td['in_l'], not td['in_s'], td['out_l'], td['out_s'] )):
             return self.cart_p(self.in_l,  self.legal_max(self.in_s))
 
-        elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
-
+        # elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
+        else:
             # all mapped nodes are in m_l (large_g) or m_s (small_g)
             m_l = {n for n in self.core_l if self.core_l[n] != self.null_n}
             m_s = {n for n in self.core_s if self.core_s[n] != self.null_n}
@@ -102,9 +100,9 @@ class VF2():
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
+            
             return self.cart_p(diff_l, max(diff_s))
-
-        return set()
+        return set() # this return is not reached, if diverging from original algorithm description
 
 
     def is_feasible( self, n ,m, depth, td):
@@ -144,8 +142,6 @@ class VF2():
 
         self.core_l[n] = self.null_n
         self.core_s[m] = self.null_n
-
-        # print("Depth: {} \n Restored tup: {}".format(depth, last_mapped))
 
 
 # HELPER FUNCTIONS ------------------------------------------------------------
@@ -256,33 +252,31 @@ class VF2():
 # RESULT PROCESSING -----------------------------------------------------------
 
     def append_result_graph( self, result ):
-        '''creates a graph which contains the concatenated mapped nodes.
-        Then, it adds the neighbours to the new nodes following the
+        '''creates a graph which contains the concatenated mapped nodes. 
+        Then, it adds the neighbours to the new nodes following the 
         original neighbours.'''
 
         result_graph = Graph("({},{})#{}".format(
-            self.small_g.id,
-            self.large_g.id,
+            self.small_g.id, 
+            self.large_g.id, 
             len(self.result_graphs)+1
-            ),
+            ), 
             set()
             )
         for key, value in result.items():
-            # print("pair {} {}".format(key, value))
-            cur_node = Node( "({},{})".format( key.id, value.id), "{}".format( key.label ) )
+            cur_node = Node( "{}.{}".format( key.id, value.id), "{}".format( key.label ) )
+            cur_node.mult_id = "{} {}".format( key.mult_id, value.mult_id)
 
             for node in result_graph.nodes: # f.ex. 1.2
                 orig_node = Node("")
                 for n in result.keys(): # original nodes from small graph
-                    if node.id.replace('(','').replace(')','').split(",")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
+                    if node.id.split(".")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
                         orig_node = n
                         break
                 if key in orig_node.neighbours:
                     node.add_neighbour( cur_node )
                     cur_node.add_neighbour( node )
             result_graph.nodes.add(cur_node)
-
-        # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
 
         self.result_graphs.append( result_graph )
         self.results.append( result_graph.nodes )
@@ -309,7 +303,7 @@ if __name__ == "__main__":
 
     counter = 1
     for result in vf2.result_graphs:
-
+        
         print("--- RESULT #{} ------------------------------------------".format(counter))
         print("")
         print (result.id)

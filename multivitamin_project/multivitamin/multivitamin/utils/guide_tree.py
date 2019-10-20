@@ -2,7 +2,7 @@ import sys
 import pprint
 
 from multivitamin.basic.graph import Graph
-from multivitamin.utils.parser import parse_graph
+from multivitamin.utils.parser import parse_graph, edges_contain_doubles
 from multivitamin.utils.modular_product import mod_product, cart_product
 from multivitamin.algorithms.bk_pivot_class import BK
 from multivitamin.algorithms.vf2_beauty import VF2
@@ -20,7 +20,8 @@ class Guide_tree():
         self.algorithm = algorithm
         self.save_all = save_all
 
-        self.graph_list = graph_list
+        self.graph_abbreviations = {}
+        self.graph_list = self.make_mult_id( graph_list )
         self.intermediates = []
         self.result = Graph()
         self.newick = ""
@@ -28,12 +29,12 @@ class Guide_tree():
 
     def upgma( self ):
         if len( self.graph_list ) == 1:
-
+            
             res = self.graph_list[0]
 
             res.edges = set()
             res.create_undirected_edges()
-
+            
             self.result = res
 
             self.newick = self.graph_list[0].id
@@ -48,11 +49,12 @@ class Guide_tree():
 
                 if g1.id == g2.id:
                     continue
-
+           
                 results = self.apply_algorithm( g1, g2)
 
                 if len(max(results)) >= maximum:
                     alignment = Graph( "({},{})".format( g1.id, g2.id ), max( results ) )
+
                     maximum = len(max(results))
                     alig_one = g1
                     alig_two = g2
@@ -61,6 +63,13 @@ class Guide_tree():
         self.graph_list.remove(alig_two)
 
         alignment_graph = self.make_graph_real( alignment )
+        
+        if not list(alignment_graph.nodes)[0].label == "":
+            alignment_graph.nodes_are_labelled = True
+        if not list(alignment_graph.edges)[0].label == "":
+            alignment_graph.edges_are_labelled = True
+        if edges_contain_doubles( alignment_graph.edges ):
+            alignment_graph.is_directed = True
 
         self.graph_list.append( alignment_graph )
         self.intermediates.append( alignment_graph )
@@ -79,7 +88,7 @@ class Guide_tree():
 
 
     def apply_algorithm( self, graph1, graph2 ):
-        if self.algorithm == "BK":
+        if self.algorithm == "BK":  
             modp = mod_product( cart_product( graph1.nodes, graph2.nodes ) )
             bk = BK()
             x = set()
@@ -102,8 +111,13 @@ class Guide_tree():
         print("*                                                                  *")
         print("********************************************************************")
         print("")
+        print("---GRAPH ABBREVIATIONS--------------")
         print("")
-        print("---ALIGNMENT---------")
+        for abbrev, id in self.graph_abbreviations.items():
+            print("{}\t>>\t{}".format( abbrev, id) )
+        print("")
+        print("")
+        print("---ALIGNMENT------------------------")
         print("")
         print("*NODES (ID, LABEL, NEIGHBOURS)")
         for node in graph.nodes:
@@ -114,12 +128,35 @@ class Guide_tree():
             print("{}".format(edge))
         print("")
         print("")
-        print("---NEWICK TREE-------")
+        print("---NEWICK TREE----------------------")
         print("")
         print(graph.id)
         print("")
         print("*******************************************************************")
         print("")
+
+
+    def make_mult_id( self, graph_list ):
+        id_list = {}
+
+        for graph in graph_list:
+            if len(graph.id) < 3:
+                # i is the number of occurrences of the short graph id in the id_list dicitonary
+                i = len( [x for x in id_list.values() if x.startswith(graph.id)] ) + 1 
+                id_list[graph.id] = graph.id + str(i)
+
+            else:
+                i = len( [x for x in id_list.values() if x.startswith(graph.id[0:2])] ) + 1
+                id_list[graph.id] = graph.id[0:2] + str(i)
+            self.graph_abbreviations[id_list[graph.id]] = graph.id
+
+        for graph in graph_list:
+            for node in graph.nodes:
+                node.mult_id = "{}.{}".format( id_list[graph.id], node.id )
+
+        return graph_list
+
+
 
 
 if __name__ == '__main__':

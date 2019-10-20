@@ -1,6 +1,7 @@
 import sys
 import pprint
 
+from multivitamin.custom import check_semantics
 from multivitamin.basic.node import Node
 from multivitamin.basic.graph import Graph
 from multivitamin.utils.parser import parse_graph
@@ -46,39 +47,51 @@ class VF2():
         self.in_s = self.out_s = self.small_g.gen_dict( 0 )
         self.in_l = self.out_l = self.large_g.gen_dict( 0 )
 
+        self.result_graphs = []
         self.results = []
 
 
     def match( self, last_mapped=(Node("0", ""), Node("0", "")), depth=0 ):
 
         if self.s_in_small_g():
-
-            # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
-            #print("core_s\n{}".format(self.core_s))
-
-            # if not self.core_s in self.results:
-            # print("CALL")
-            self.results.append( self.gen_result_graph(self.core_s) )
-
-            # self.restore_ds( last_mapped[0], last_mapped[1], depth )
-
-            return self.results
+            self.append_result_graph( self.core_s )
+            self.restore_ds( last_mapped[0], last_mapped[1], depth )
+            return 
 
         td = self.set_inout( last_mapped[0], last_mapped[1], depth )
         p = self.compute_p(td)
+        
+        pprint.pprint(self.core_s)
+
+        print("")
+        pprint.pprint(self.in_l)
+        pprint.pprint(self.out_l)
+        print("")
+        pprint.pprint(self.in_s)
+        pprint.pprint(self.out_s)
+        print("")
+        print("\ndepth {}\n".format(depth))
+        
+        print("p")
+        print(p)
 
         for tup in p:
 
+            print(tup)
+            print("")
+            
+
+
             if self.is_feasible(tup[0], tup[1], depth, td):
                 self.compute_s_( tup[0], tup[1], depth )
-
-                # print(depth)
+                pprint.pprint(self.core_s)
 
                 self.match( tup, depth+1 )
 
-                #print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth, self.core_l, self.core_s ) )
+                # print("\n Call! \n\n last_mapped: {} \n\n td: {} \n\n depth: {} \n\n core_l: {} \n\n core_s {} \n\n".format( tup, td, depth+1, self.core_l, self.core_s ) )
 
         self.restore_ds( last_mapped[0], last_mapped[1], depth )
+
 
     def s_in_small_g(self):
         """
@@ -91,6 +104,7 @@ class VF2():
                 return False
         return True
 
+
     def compute_p(self, td):
 
         if all( ( td["out_l"] ,td["out_s"] ) ):
@@ -99,8 +113,8 @@ class VF2():
         elif all(( not td['in_l'], not td['in_s'], td['out_l'], td['out_s'] )):
             return self.cart_p(self.in_l,  self.legal_max(self.in_s))
 
-        elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
-
+        # elif not any((td["in_l"], td["in_s"], td["out_l"], td["out_s"])):
+        else:
             # all mapped nodes are in m_l (large_g) or m_s (small_g)
             m_l = {n for n in self.core_l if self.core_l[n] != self.null_n}
             m_s = {n for n in self.core_s if self.core_s[n] != self.null_n}
@@ -108,38 +122,44 @@ class VF2():
             # In diff_l are all nodes that are in the large graph, but not mapping
             diff_l = self.large_g.nodes - m_l
             diff_s = self.small_g.nodes - m_s  # see above
-
+            
+            print("diff")
+            print(diff_s)
             return self.cart_p(diff_l, max(diff_s))
-
+        print("case")
         return set()
+
 
     def is_feasible( self, n ,m, depth, td):
         #0-look-ahead
         if not all((
             self.zero_look_ahead(n, m, self.core_l),
             self.zero_look_ahead(m, n, self.core_s) ) ):
+            print("zero")
             return False
 
         if self.type == "isomorphism":
             # 1-look-ahead
             if not ( td["in_l"] == td["in_s"] or td["out_l"] == td["out_s"] ):
-                #print("1-look-ahead error")
                 return False
 
         elif self.type == "subgraph":
             # 1-look-ahead
+            print("one")
             if not ( td["in_l"] >= td["in_s"] or td["out_l"] >= td["out_s"] ):
                 return False
 
         elif not self.two_look_ahead(depth, td):
+            print("two")
             return False
 
-        return self.check_semantics()
+        return check_semantics( n, m ) # this method is imported from multivitamin/custom.py
+
 
     def compute_s_(self, n, m, depth):
-
         self.core_l[n] = m
         self.core_s[m] = n
+
 
     def restore_ds(self, n, m, depth):
 
@@ -151,7 +171,8 @@ class VF2():
         self.core_l[n] = self.null_n
         self.core_s[m] = self.null_n
 
-        #print("Depth: {} \n Restored tup: {}".format(depth, last_mapped))
+        # print("Depth: {} \n Restored tup: {}".format(depth, last_mapped))
+
 
 # HELPER FUNCTIONS ------------------------------------------------------------
     def set_inout(self, n, m, depth):
@@ -200,7 +221,9 @@ class VF2():
             if v in m.out_neighbours:
                 td['out_s'] += 1
                 if self.out_s[v] == 0: self.out_s[v] = depth
+        print(td)
         return td
+
 
     def cart_p( self, node_dict, t_max ):
         """creates the cartesian product """
@@ -208,6 +231,7 @@ class VF2():
         for node in node_dict:
             cp.add( (node, t_max) )
         return cp
+
 
     def legal_max(self, t_dict):
         '''returns node from t_dict with max id'''
@@ -218,6 +242,7 @@ class VF2():
             elif node > max_node:
                 max_node = node
         return max_node
+
 
     def zero_look_ahead( self, n, m, core ):
         '''every neighbour of n has to be mapped to a neighbour of m'''
@@ -238,6 +263,7 @@ class VF2():
                 return False
         return True
 
+
     def two_look_ahead(self, depth, td):
         free_n1 = len(self.large_g.nodes) - depth - td["in_l"] - td["out_l"]
         free_n2 = len(self.small_g.nodes) - depth - td["in_s"] - td["out_s"]
@@ -247,60 +273,81 @@ class VF2():
         elif self.type == "subgraph":
             return free_n1 >= free_n2
 
-    def check_semantics(self):
-        return True
 
     def restore_terminals(self, t_dict, dict_key, core, depth):
         for node in t_dict:
             if core[node] == self.null_n and t_dict[node] == depth:
                 t_dict[node] = 0
 
-    def gen_result_graph( self, result ):
-        graph = Graph("{}_{}".format(self.small_g.id, self.large_g.id))
+
+# RESULT PROCESSING -----------------------------------------------------------
+
+    def append_result_graph( self, result ):
+        '''creates a graph which contains the concatenated mapped nodes. 
+        Then, it adds the neighbours to the new nodes following the 
+        original neighbours.'''
+
+        result_graph = Graph("({},{})#{}".format(
+            self.small_g.id, 
+            self.large_g.id, 
+            len(self.result_graphs)+1
+            ), 
+            set()
+            )
         for key, value in result.items():
             # print("pair {} {}".format(key, value))
-            cur_node = Node( "{}.{}".format( key.id, value.id), "{} {}".format( key.label, value.label ) )
-            pprint.pprint(cur_node)
-            graph.nodes.add(cur_node)
-        pprint.pprint(graph.nodes)
-        return graph
+            cur_node = Node( "{}.{}".format( key.id, value.id), "{}".format( key.label ) )
+            cur_node.mult_id = "{} {}".format( key.mult_id, value.mult_id)
+
+            for node in result_graph.nodes: # f.ex. 1.2
+                orig_node = Node("")
+                for n in result.keys(): # original nodes from small graph
+                    if node.id.split(".")[:-1][0] == n.id: # comparing the first part of already mapped node id and original node id
+                        orig_node = n
+                        break
+                if key in orig_node.neighbours:
+                    node.add_neighbour( cur_node )
+                    cur_node.add_neighbour( node )
+            result_graph.nodes.add(cur_node)
+
+        # print( "\nEND_RESULT: \nType: {} \n\n{}\n".format(self.type, self.core_s ))
+
+        self.result_graphs.append( result_graph )
+        self.results.append( result_graph.nodes )
+
+
 
 
 if __name__ == "__main__":
 
-
-
     large_g = parse_graph(sys.argv[1])
     small_g = parse_graph(sys.argv[2])
 
-    print("")
-    print("********************************************************************")
-    print("*                                                                  *")
-    #print("                     RESULTS for " + sys.argv[1] )
-    print("*                                                                  *")
-    print("********************************************************************")
-    print("")
-    print("")
-
     vf2 = VF2(large_g, small_g)
     vf2.match()
-    # for result in vf2.results:
-    #     counter = 1
-    #     print("--- RESULT #{} ------------------------------------------".format(counter))
-    #     print("")
-    #     print (result)
-    #     print("")
-    #     print("")
-    #     counter += 1
 
-    #     for node in result.nodes:
-    #         print(node)
-    #     print()
-    #     for edge in result.edges:
-    #         print(edge)
-    #     print()
-    #     print()
-    #     counter += 1
+    print("")
+    print("********************************************************************")
+    print("*                                                                  *")
+    print("                    RESULTS for {} and {}".format( vf2.g.id, vf2.h.id) )
+    print("*                                                                  *")
+    print("********************************************************************")
+    print("")
     print("")
 
-    pprint.pprint(vf2.results)
+    counter = 1
+    for result in vf2.result_graphs:
+        
+        print("--- RESULT #{} ------------------------------------------".format(counter))
+        print("")
+        print (result.id)
+        print("")
+
+        for node in result.nodes:
+            print(node)
+        print("")
+        for edge in result.edges:
+            print(edge)
+        print("")
+        counter += 1
+    print("")
