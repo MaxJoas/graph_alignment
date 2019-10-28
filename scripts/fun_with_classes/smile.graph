@@ -5,18 +5,18 @@ Nodes labelled;True
 Edges labelled;False
 Directed graph;False
 
-0;C
-1;C
-2;C
-3;C
-4;C
+0;Csp3
+1;Csp3
+2;Csp3
+3;Csp3
+4;Csp3
 5;O
-6;C
-7;O
+6;Csp2
+7;Osp2
 8;C
-9;C
-10;C
-11;O
+9;Csp3
+10;Csp2
+11;Osp2
 12;O
 
 0;1
@@ -24,11 +24,11 @@ Directed graph;False
 1;2
 2;3
 3;4
-4;9
 4;5
+4;9
 5;6
-6;8
 6;7
+6;8
 9;10
 10;11
 10;12

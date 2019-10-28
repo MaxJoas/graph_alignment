@@ -1,10 +1,10 @@
-from parser import parse_graph
+#from parser import parse_graph
 import sys
 from pysmiles import read_smiles
 import networkx as nx
 #import numpy as np
 
-smiles = 'c1cccc(OC(=O)C)c1C(=O)O'
+smiles = "c1cccc(OC(=O)C)c1C(=O)O"
 mol = read_smiles(smiles, explicit_hydrogen=False, zero_order_bonds=True, reinterpret_aromatic=True)
 # explicit_hydrogen determines whether hydrogen atoms should be represented as explicit nodes in the created molecule, or implicit in the 'hcount' attribute.
 #  zero_order_bonds determines whether zero-order bonds (.) in the SMILES string should result in edges in the produced molecule.
@@ -31,8 +31,8 @@ mol = read_smiles(smiles, explicit_hydrogen=False, zero_order_bonds=True, reinte
 # [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  2.  0.  0. ]
 # [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0. ]]
 #0;C
-
-
+#C 1=sp3 1.5=c 2=sp2.
+#Essentially, the hybridisation of the carbon atom is based on the number of bonds to other carbons or identical atoms. sp3 = single bond. sp2 = double bond. sp = triple bond.
 #mol_with_H = read_smiles(smiles, explicit_hydrogen=True)
 #print(mol_with_H.nodes(data='element'))
 
@@ -45,32 +45,50 @@ def s_writer(mol):
 
     z = "y" #input("do you want to save the plot? (y=yes):\n")
 
-    if z=="y":
+    if z == "y":
         f = open('smile.graph', 'w')
         f.write("AUTHOR: Clemens M., Max. J, Michel K., NetworkX, pysmiles, ")
         f.write(str(smiles))
         f.write("\n#nodes;" + str(len(mol.nodes)))
-        f.write("\n#edges;"+ str(len(mol.edges)))
-        f.write("\nNodes labelled;"+ str("True"))
-        f.write("\nEdges labelled;"+ str("False"))
-        f.write("\nDirected graph;"+ str("False"))
+        f.write("\n#edges;" + str(len(mol.edges)))
+        f.write("\nNodes labelled;" + str("True"))
+        f.write("\nEdges labelled;" + str("False"))
+        f.write("\nDirected graph;" + str("False"))
         f.write("\n\n")
+        c = 0
         for i in (mol.nodes(data='element')):
-            _list=(str(i))
+            _list = (str(i))
             _list = _list.replace("'", "")
             _list = _list.replace("(", "")
             _list = _list.replace(")", "")
             _list = _list.replace(",", ";")
             _list = _list.replace(" ", "")
             f.write(_list)
-            #f.write(";")
-            #f.write(split_list[3])
+            _list = str(nx.adjacency_matrix(mol, weight='order').todense()[c])
+            _list = _list.replace("[", "")
+            _list = _list.replace(" ", "")
+            _list = _list.replace("]", "")
+            _list = list(_list.split("."))
+            sp2 = False
+            sp3 = False
+            for j in _list:
+                lh = j
+                print(j)
+                if j == "2":
+                    sp2 = True
+                else:
+                    if j == "50" and lh != "1":
+                        sp3 = True
+            if sp2:
+                f.write("sp2")
+            if sp3:
+                f.write("sp3")
             f.write("\n")
-            #print(_list)
+            c = c + 1
         f.write("\n")
         
         for i in (mol.edges):
-            _list=(str(i))
+            _list = (str(i))
             _list = _list.replace("'", "")
             _list = _list.replace("(", "")
             _list = _list.replace(")", "")
@@ -82,7 +100,7 @@ def s_writer(mol):
             f.write("\n")
             #print(_list)
         f.write("\n")
-        
+    f.close()
 
 
 
