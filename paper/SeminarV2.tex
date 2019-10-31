@@ -76,7 +76,9 @@ There are two algorithmns availbale for this task. The Bron Kerbosch \cite{}
 and the VF2 algorithmn \cite{}. Details on the algorithmns ca be found in the
 theory section.\\
 The main function of the package is to allign two or more graphs. This results
-in a Newick Tree \cite{} of the best allignment. Sounds exciting, so let's
+in a Newick Tree of the best allignment. and the resulting multiple alignent, which
+is represented as a graph.
+\cite{}  Sounds exciting, so let's
 get started and show how to use this baby.
 \section{Installation}
 
@@ -134,6 +136,36 @@ Directed graph;False
 \end{verbatim}
 
 \section{Graph Alignment}
+Consider the basic use without any options for the start.
+You do not have to be in the directory of the package to use mulitVitamin.
+Just type "mulitVitamin -f <pathToGraphFile1.graph> <pathToGraphFile2> <optionalMoreGraphFiles>"
+in the command line. This aligns the given graphs with the Bron Kerbosch algorithmn.
+The resulting command line seems confusing at first put follows a clear structure
+and provides all the important information about the alignment."
+in the command line. This aligns the given graphs with the Bron Kerbosch algorithmn.
+The resulting command line seems confusing at first put follows a clear structure
+and provides all the important information about the alignment.
+In order to see from which graph each node of the alignent origins, we use
+abbrevations of the names of the graph input files. A dictionary of the abbrevations
+of the original names of the graph files is shown first in the command line output.
+The you see the nodes of the alignment. Each line corresponds to one node
+of the alignment. A node in an alignment is represented by all nodes that got mathed
+to eachother. The aligned node is represented as follows:
+The id of th enode consits of the graph id (more specific of the abbrevation of the graph id) of the
+graph where the node origins from. This is followed by a dot, followed by the id
+of the original node. after a space comes the next aligned node. After all the
+id follows a tab and the label of the aligned node (if the graphs were labelled).
+After another tab the neighbors of the node are listed. The next line shows
+the same for the next node of the alignment.\\
+The next section shows the edges of the aligned graph. The format follows the format
+of the edges. It basically shows to nodes seperated by a comma and a tab. \\
+
+
+\begin{figure}[h]
+     \includegraphics[width=0.5\textwidth]{mulitOut.png}}
+  \caption{A picture of the same gull
+           looking the other way!}
+\end{figure}
 
 
 
