@@ -1,4 +1,3 @@
-
 """ Node object with an id (str), a label (str) and neighbours (set) """
 class Node():
 
@@ -88,7 +87,6 @@ class Node():
         else:
             node_id = self.mult_id
         return  node_id + "   '" + self.label + "'   (" + str(neighbours_string) + ")"
-
 
     def __repr__(self):
         return self.__str__()

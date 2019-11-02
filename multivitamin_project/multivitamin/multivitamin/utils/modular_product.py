@@ -19,7 +19,10 @@ def cart_product(G,H):
 	cart_product = {} # empty dict to store consolidated nodes as keys and tupel of old nodes as values
 	for g in G:
 		for h in H:
-			cur_node = Node( "{}.{}".format( g.id, h.id), "{} {}".format( g.label, h.label ) )
+			#check_semantics here?
+			# cur_node = Node( "{}.{}".format( g.id, h.id), "{} {}".format( g.label, h.label ) )
+			cur_node = Node( "{}.{}".format( g.id, h.id), "{}".format( g.label ) )
+			cur_node.mult_id = "{}.{}".format( g.mult_id, h.mult_id)
 			cart_product[cur_node] = (g,h)
 
 	return cart_product
@@ -28,7 +31,7 @@ def cart_product(G,H):
 
 def neighbours_in_mp ( tup1, tup2 ):
 	'''checks if the two given new nodes (of the cartesian product)
-	of two graphs are neighbours according to the rules of the modular product which'''
+	of two graphs are neighbours according to the rules of the modular product'''
 
 	if  tup2[0] in tup1[0].neighbours and  tup2[1] in tup1[1].neighbours:
 		return True
