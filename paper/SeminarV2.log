@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  24 JUN 2019 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.3)  3 NOV 2019 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **SeminarV2.tex
 (./SeminarV2.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./SeminarV2.cls
 
 LaTeX Warning: You have requested document class `SeminarV2',
@@ -138,34 +138,45 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 (./placeins.sty
 Package: placeins 2005/04/18  v 2.2
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count99
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count100
+\FV@StepNumber=\count101
+\FV@OutFile=\write3
 ) (./SeminarV2.aux)
 \openout1 = `SeminarV2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
+\scratchcounter=\count102
 \scratchdimen=\dimen116
-\scratchbox=\box28
-\nofMPsegments=\count100
-\nofMParguments=\count101
+\scratchbox=\box29
+\nofMPsegments=\count103
+\nofMParguments=\count104
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count102
+\MPscratchCnt=\count105
 \MPscratchDim=\dimen117
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
 \everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -223,70 +234,137 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--105
+Underfull \hbox (badness 10000) in paragraph at lines 142--147
 
  []
 
 
-Overfull \hbox (0.68259pt too wide) in paragraph at lines 134--135
-\OT1/cmr/m/n/10 In or-der to ex-am-ine how ex-am-ine if hu-mans com-bine two se
-n-sory stim-uli weighted
+Overfull \hbox (67.62285pt too wide) in paragraph at lines 166--166
+[]                        \OT1/cmtt/m/n/10 choose an alignment-algorithm (BK or
+ VF2) (default: BK)[] 
+ []
+
+
+Overfull \hbox (162.12202pt too wide) in paragraph at lines 166--166
+[]                         \OT1/cmtt/m/n/10 Warning: VF2 is only suited if ther
+e is true graph-subgraph isomorphism![] 
+ []
+
+
+Overfull \hbox (36.12312pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -s, --save-all        save all the graphs produced during 
+the alignment[] 
+ []
+
+
+Overfull \hbox (177.87189pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -t, --save-shorter    save an additional version of the al
+ignment graph with much shorter node ids[] 
+ []
+
+
+Overfull \hbox (41.37308pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -g, --save-guide      save the guide tree in Newick-format
+ as "tree.txt"[] 
+ []
+
+
+Overfull \hbox (120.12239pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -m FILES [FILES ...]  provide .graph files for multiple al
+ignment. '.' is a valid input[] 
+ []
+
+
+Overfull \hbox (204.12166pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -c COOPT [COOPT ...]  provide *2* graphs which will be ali
+gned. Co-optimals will be saved in ./results.[] 
  []
 
 [2]
-<erns_new.png, id=16, 632.3625pt x 892.33376pt>
-File: erns_new.png Graphic file (type png)
-<use erns_new.png>
-Package pdftex.def Info: erns_new.png  used on input line 138.
-(pdftex.def)             Requested size: 225.62817pt x 318.38057pt.
- [3 <./erns_new.png>]
-<erns_con.png, id=20, 518.93875pt x 363.3575pt>
-File: erns_con.png Graphic file (type png)
-<use erns_con.png>
-Package pdftex.def Info: erns_con.png  used on input line 157.
-(pdftex.def)             Requested size: 312.40906pt x 218.75911pt.
+Overfull \hbox (20.37326pt too wide) in paragraph at lines 166--166
+[]  \OT1/cmtt/m/n/10 -v VIEW               get a visual representation of *1* g
+iven graph[] 
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
+<multiOUT.png, id=15, 803.0pt x 684.5575pt>
+File: multiOUT.png Graphic file (type png)
+<use multiOUT.png>
+Package pdftex.def Info: multiOUT.png  used on input line 200.
+(pdftex.def)             Requested size: 173.56177pt x 147.9604pt.
+[3] [4 <./multiOUT.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 261--283
 
  []
 
-[4 <./erns_con.png>] [5] (./SeminarV2.bbl [6]) [7] (./SeminarV2.aux) ) 
+<classes.png, id=24, 223.83624pt x 365.365pt>
+File: classes.png Graphic file (type png)
+<use classes.png>
+Package pdftex.def Info: classes.png  used on input line 291.
+(pdftex.def)             Requested size: 173.56177pt x 283.31105pt.
+<node.png, id=26, 181.67876pt x 224.84pt>
+File: node.png Graphic file (type png)
+<use node.png>
+Package pdftex.def Info: node.png  used on input line 292.
+(pdftex.def)             Requested size: 173.56177pt x 214.80098pt.
+<edge.png, id=27, 141.52875pt x 144.54pt>
+File: edge.png Graphic file (type png)
+<use edge.png>
+Package pdftex.def Info: edge.png  used on input line 293.
+(pdftex.def)             Requested size: 173.56177pt x 177.26924pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 291--294
+[][] []
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 305--314
+
+ []
+
+[6] [7 <./classes.png> <./node.png> <./edge.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 319.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 319.
+ [8] [9]
+(./SeminarV2.aux) ) 
 Here is how much of TeX's memory you used:
- 2485 strings out of 494923
- 32736 string characters out of 6180742
- 89534 words of memory out of 5000000
- 5755 multiletter control sequences out of 15000+600000
- 11264 words of font info for 43 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 41i,7n,26p,1149b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on SeminarV2.pdf (7 pages, 420175 bytes).
+ 2853 strings out of 492982
+ 38455 string characters out of 6134896
+ 100804 words of memory out of 5000000
+ 6368 multiletter control sequences out of 15000+600000
+ 10781 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,7n,26p,485b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on SeminarV2.pdf (9 pages, 212419 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
