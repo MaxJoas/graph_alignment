@@ -6,6 +6,8 @@ import networkx as nx
 
 smiles = "c1cccc(OC(=O)C)c1C(=O)O"
 mol = read_smiles(smiles, explicit_hydrogen=False, zero_order_bonds=True, reinterpret_aromatic=True)
+#mol2 = read_smiles(smiles, explicit_hydrogen=True, zero_order_bonds=True, reinterpret_aromatic=True)
+
 # explicit_hydrogen determines whether hydrogen atoms should be represented as explicit nodes in the created molecule, or implicit in the 'hcount' attribute.
 #  zero_order_bonds determines whether zero-order bonds (.) in the SMILES string should result in edges in the produced molecule.
 #    reinterpret_aromatic determines whether aromaticity should be reinterpreted, and determined from the constructed molecule, or whether the aromaticity specifications from the SMILES string (lower case elements) should be taken as leading. If True, will also set bond orders to 1 for bonds that are not part of an aromatic ring and have a bond order of 1.5. If False, will create a molecule using only the information in the SMILES string.
@@ -16,30 +18,44 @@ mol = read_smiles(smiles, explicit_hydrogen=False, zero_order_bonds=True, reinte
 
 
 #print(is_directedmol.edges)
-#print(nx.adjacency_matrix(mol, weight='order').todense())
-#[[0.  1.5 0.  0.  0.  0.  0.  0.  0.  1.5 0.  0.  0. ]
-# [1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
-# [0.  1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0. ]
-# [0.  0.  1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0. ]
-# [0.  0.  0.  1.5 0.  1.  0.  0.  0.  1.5 0.  0.  0. ]
-# [0.  0.  0.  0.  1.  0.  1.  0.  0.  0.  0.  0.  0. ]
-# [0.  0.  0.  0.  0.  1.  0.  2.  1.  0.  0.  0.  0. ]
-# [0.  0.  0.  0.  0.  0.  2.  0.  0.  0.  0.  0.  0. ]
-# [0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0. ]
-# [1.5 0.  0.  0.  1.5 0.  0.  0.  0.  0.  1.  0.  0. ]
-# [0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  2.  1. ]
-# [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  2.  0.  0. ]
-# [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0. ]]
+# print(nx.adjacency_matrix(mol2, weight='order').todense())
+# mol[4]
+# mol2[20]
+# len(mol2)
+# [[0.  1.5 0.  0.  0.  0.  0.  0.  0.  1.5 0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0. ]
+#  [1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0. ]
+#  [0.  1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0. ]
+#  [0.  0.  1.5 0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0. ]
+#  [0.  0.  0.  1.5 0.  1.  0.  0.  0.  1.5 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  1.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  1.  0.  2.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  2.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  1.  1.  0. ]
+#  [1.5 0.  0.  0.  1.5 0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  2.  1.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  2.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1. ]
+#  [1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0. ]
+#  [0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0. ]]
 #0;C
 #C 1=sp3 1.5=c 2=sp2.
-#Essentially, the hybridisation of the carbon atom is based on the number of bonds to other carbons or identical atoms. sp3 = single bond. sp2 = double bond. sp = triple bond.
-#mol_with_H = read_smiles(smiles, explicit_hydrogen=True)
-#print(mol_with_H.nodes(data='element'))
+#Essentially, the hybridisation of the carbon atom is based on the number of
+#bonds to other carbons or identical atoms. sp3 = single bond. sp2 = double
+#bond. sp = triple bond.
 
+# Csp3: C mit nur Einfachbindungen
+# Csp2: C mit einer Doppelbindung (und zwei Einfachbindungen)
+# Csp: C mit einer Dreifachbindung (und einer Einfachbindung) oder zwei Doppelbindungen
+# c: aromatisches C
+# Osp3: O mit zwei Einfachbindungen
+# Osp2: O mit einer Doppelbindung
 
-#G=nx.path_graph(4)
-#nx.write_adjlist(G, nx.adjacency_matrix(mol, weight='order').todense())
-#AttributeError: 'matrix' object has no attribute 'write'
 
 def s_writer(mol):
 
@@ -63,6 +79,8 @@ def s_writer(mol):
             _list = _list.replace(")", "")
             _list = _list.replace(",", ";")
             _list = _list.replace(" ", "")
+            if mol.nodes(data='aromatic')[c]:
+                _list = _list.replace("C", "c")
             f.write(_list)
             _list = str(nx.adjacency_matrix(mol, weight='order').todense()[c])
             _list = _list.replace("[", "")
@@ -72,17 +90,21 @@ def s_writer(mol):
             sp2 = False
             sp3 = False
             for j in _list:
-                lh = j
-                print(j)
                 if j == "2":
                     sp2 = True
-                else:
-                    if j == "50" and lh != "1":
-                        sp3 = True
+                # else:
+                #     if j == "50" and lh != "1":
+                #         sp3 = True
+                # Csp3: C mit nur Einfachbindungen
+                # Csp2: C mit einer Doppelbindung (und zwei Einfachbindungen)
+                # Csp: C mit einer Dreifachbindung (und einer Einfachbindung) oder zwei Doppelbindungen
+                # c: aromatisches C
+                # Osp3: O mit zwei Einfachbindungen
+                # Osp2: O mit einer Doppelbindung
             if sp2:
                 f.write("sp2")
-            if sp3:
-                f.write("sp3")
+            # if sp3:
+            #     f.write("sp3")
             f.write("\n")
             c = c + 1
         f.write("\n")
