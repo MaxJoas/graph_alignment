@@ -26,7 +26,7 @@ do
 
   #not using built-in time command, because it's not accurate, so it seems. Using GNU time which (as of now) shows the real clock time in seconds
   echo "Processing files '$one' and '$two'..."
-  /usr/bin/time -f "%e" python $1 $one $two 1>> $out 2>> $temp #saving the time here in temp because it is needed in 2 different files
+  /usr/bin/time -f "%e" python3 $1 $one $two 1>> $out 2>> $temp #saving the time here in temp because it is needed in 2 different files
   echo >> $out
   cat $temp >> $out
   echo >> $out

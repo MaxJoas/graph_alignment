@@ -1,0 +1,38 @@
+AUTHOR: Clemens M., Max. J, Michel K., NetworkX
+#nodes;19
+#edges;11
+Nodes labelled;False
+Edges labelled;False
+Directed graph;False
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+
+3;13
+3;16
+4;9
+4;18
+8;10
+8;13
+9;16
+10;17
+11;16
+11;19
+14;17

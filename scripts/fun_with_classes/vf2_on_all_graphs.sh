@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#tries a python script on all graphs in graphs/ and puts the output in test_run.txt
+#tries a python3 script on all graphs in graphs/ and puts the output in test_run.txt
 
 #put the script to test after the bash script like './try_on_all_graphs.sh parser.py'
 #maybe the script must be made executable first: 'chmod +x try_on_all_graphs.py'
@@ -26,12 +26,12 @@ do
 
   #not using built-in time command, because it's not accurate, so it seems. Using GNU time which (as of now) shows the real clock time in seconds
   echo "Processing files '$one' and '$two'..."
-  /usr/bin/time -f "%e" python $1 $one $two 1>> $out 2>> $temp #saving the time here in temp because it is needed in 2 different files
+  /usr/bin/time -f "%e" python3 $1 $one $two 1>> $out 2>> $temp #saving the time here in temp because it is needed in 2 different files
   echo >> $out
   cat $temp >> $out
   echo >> $out
   echo >> $out
-     
+
   echo -n $(basename $file | cut -d "_" -f 1) >> $stats
   echo -ne "\t" >> $stats
   cat $temp >> $stats
