@@ -1,0 +1,20 @@
+AUTHOR: Max
+#nodes;6
+#edges;6
+Nodes labelled;True
+Edges labelled;False
+Directed graph;False
+
+1
+2
+3
+4
+5
+6
+
+1;2
+2;3
+3;4
+4;5
+5;6
+6;1
