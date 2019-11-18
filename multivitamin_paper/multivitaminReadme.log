@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7230) (preloaded format=pdflatex 2019.11.18)  18 NOV 2019 01:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7230) (preloaded format=pdflatex 2019.11.18)  18 NOV 2019 22:46
 entering extended mode
 **./multivitaminReadme.tex
 (multivitaminReadme.tex
@@ -434,17 +434,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 (/home/micheltower/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 78--85
+Underfull \hbox (badness 10000) in paragraph at lines 78--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--96
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
@@ -457,88 +457,92 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
  [1
 
-{/home/micheltower/.miktex/texmfs/data/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
+{/home/micheltower/.miktex/texmfs/data/pdftex/config/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
-[2]
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
 <multiOUT.png, id=82, 803.0pt x 684.5575pt>
 File: multiOUT.png Graphic file (type png)
 <use multiOUT.png>
-Package pdftex.def Info: multiOUT.png  used on input line 206.
+Package pdftex.def Info: multiOUT.png  used on input line 200.
 (pdftex.def)             Requested size: 202.01451pt x 172.21483pt.
 
-Overfull \hbox (14.85129pt too wide) in paragraph at lines 173--209
+Overfull \hbox (14.85129pt too wide) in paragraph at lines 167--203
 []\OT1/cmr/m/n/10 There are three mutually exclusive flags. One of them is alwa
 ys required to make multiVitamin
  []
 
 
-Overfull \hbox (3.73578pt too wide) in paragraph at lines 173--209
+Overfull \hbox (3.73578pt too wide) in paragraph at lines 167--203
 \OT1/cmr/m/n/10 "mulitVitamin -m <pathToGraphFile1.graph> <pathToGraphFile2> <o
 ptionalMoreGraphFiles>"
  []
 
-[3] [4 <./multiOUT.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 267--289
+[3] [4 <./multiOUT.png>] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 261--283
 
  []
 
-[5]
-<multivitamin_basic_uml.png, id=117, 242.8272pt x 227.1687pt>
+<multivitamin_basic_uml.png, id=119, 242.8272pt x 227.1687pt>
 File: multivitamin_basic_uml.png Graphic file (type png)
 <use multivitamin_basic_uml.png>
-Package pdftex.def Info: multivitamin_basic_uml.png  used on input line 301.
+Package pdftex.def Info: multivitamin_basic_uml.png  used on input line 295.
 (pdftex.def)             Requested size: 412.80447pt x 386.18513pt.
 
-Overfull \hbox (8.77544pt too wide) in paragraph at lines 301--303
+Overfull \hbox (8.77544pt too wide) in paragraph at lines 295--297
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--322
+[6] [7 <./multivitamin_basic_uml.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 307--316
 
  []
 
-[6] [7 <./multivitamin_basic_uml.png>] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+[8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
  [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
  (multivitaminReadme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
 Package rerunfilecheck Info: File `multivitaminReadme.out' has not changed.
-(rerunfilecheck)             Checksum: 5B12AC5C5DB823A1DE6143E696BBFC75;861.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
+(rerunfilecheck)             Checksum: 248EC55986B924E00E730B04CE81C6EF;861.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
  ) 
 Here is how much of TeX's memory you used:
- 9734 strings out of 494412
- 140267 string characters out of 3174141
- 487054 words of memory out of 3000000
- 13632 multiletter control sequences out of 15000+200000
- 10949 words of font info for 43 fonts, out of 3000000 for 9000
+ 9739 strings out of 494412
+ 140501 string characters out of 3174141
+ 489054 words of memory out of 3000000
+ 13635 multiletter control sequences out of 15000+200000
+ 11117 words of font info for 44 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 41i,7n,69p,496b,2174s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,7n,69p,496b,2224s stack positions out of 5000i,500n,10000p,200000b,50000s
 </home/micheltower/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx
 10.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/public/amsfon
 ts/cm/cmbx9.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/pu
-blic/amsfonts/cm/cmr9.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></home/micheltower/.miktex/texmfs/install/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></home/micheltower/.miktex/texmfs/install/f
-onts/type1/public/amsfonts/cm/cmtt10.pfb></home/micheltower/.miktex/texmfs/inst
-all/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on multivitaminReadme.pdf (9 pages, 259408 bytes).
+sfonts/cm/cmitt10.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></home/micheltower/.miktex/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmr6.pfb></home/micheltower/.miktex/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb></home/micheltower/.miktex/texmfs/install/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></home/micheltower/.miktex/texmfs/install/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></home/micheltower/.miktex/texmfs/ins
+tall/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/micheltower/.miktex/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on multivitaminReadme.pdf (9 pages, 267344 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
