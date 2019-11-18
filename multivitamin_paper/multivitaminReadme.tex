@@ -39,7 +39,7 @@
 %***********************************************************************
 % AUTHORS INFORMATION AREA
 %***********************************************************************
-\author{Maximilian Joas$^1$, Michel Krecké$^1$
+\author{Clemens Malkawi$^1$, Michel KreckÃ©$^1$, Maximilian Joas$^1$
 %
 % Optional short acknowledgment: remove next line if non-needed
 %\thanks{This is an optional funding source acknowledgement.}
@@ -68,51 +68,52 @@ Augustusplatz 10, 04109 Leipzig  - Germany\\}
 \section{multiVitamin}
 \mV is a software package which allows users to perform multiple alignments with graphs.
 There are two algorithms available for this task. The Bron Kerbosch \cite{}
-and the VF2 algorithm \cite{}. Details on the algorithms ca be found in the
+and the VF2 algorithm \cite{}. Details on the algorithms can be found in the
 theory section.\\
-The main function of the package is to align two or more graphs. This results in a binary alignment guide tree containing the "best" alignment procedure. The resulting multiple graph alignment is represented as a graph itself.\cite{}  
+The main function of the package is to align two or more graphs following a binary alignment guide tree containing the "best" alignment procedure. The resulting multiple graph alignment is represented as one single graph itself. Next to this main function, there is also the possibility to show all co-optimals of an alignment between 2 graphs or to view graphical representations of graphs.  
 Sounds exciting, so let's get started!
 
 \section{Installation}
 
 Clone the repo from github with 
+
 \shellcmd{git clone https://github.com/mk36fyvy/multivitamin.git}
-Navigate to the directory containing the setup.py file and type 
+
+Navigate to the directory containing the setup.py file 
+
+\shellcmd{cd [yourDir]/multivitamin/multivitamin}
+
+and type
+
 \shellcmd{pip3 install .}
-%cd multivitamin_project/multivitamin/multivitamin
+
 Done, now you can run \mV in the command shell. You can test if the installation was successful by typing
+
 \shellcmd{multiVitamin -h}
 
 
 
 \section{Graph Format}
 
-A good first step is to familiarize yourself with the graph format. A graph
-file is basically a text file, we use the extension .graph to be more specific. It is also used interiorly to identify graph files as such.
-
-Every graph consists of nodes and edges. Every node has an id, which is an unique
-integer (handled as a String internally most of the time) for each node. Optionally, nodes can be labelled. The id and label are separated by a semicolon (\texttt{;}). The edges are two connected nodes and represented
-by the ids of the two nodes separated with a semicolon.\\
+A good first step is to familiarize yourself with the graph format. A graph file is basically a text file, we use the extension '.graph'. It is also used interiorly to identify graph files as such.
 
 The file itself is structured as follows (see below for an \hyperref[fig:graph_example]{example}): \\
 
+Every graph consists of nodes and edges. Every node has an id, which is a unique integer (handled as a String internally) for each node. Optionally, nodes can be labelled. The id and label are separated by a semicolon (\texttt{;}) in the '.graph'-file. The edges are two connected nodes and represented by the ids of the two nodes separated by a semicolon.\\
+
+Now, let's walk through the overall structure of the '.graph'-file: 
+
 \begin{itemize}
-	\item In the first paragraph, there is a possibility to insert comment lines by preceding comments with \texttt{//} or writing \texttt{;comment} after the comment. These lines will be ignored by the parser.
+	\item There is a possibility to insert comment lines by preceding comments with \texttt{//} or writing \texttt{;comment} after the comment. These lines will be ignored by the parser. They can be written anywhere in the first paragraph.
 	\item The first line indicates the author of the graph. This line has to start with the word "author" to be recognized by the parser.
 	\item The second and third lines show the number of nodes and edges respectively. The parser only sees two consecutive integers at the end of the lines, so it is important that the number of nodes is provided before the number of edges.
 	\item The next three lines are booleans that indicate whether the nodes / edges are labelled and if the graph is directed. It is important to stick to the order indicated in the \hyperref[fig:graph_example]{example} below.
-	\item The blank line indicates the start of the node section. It is important to choose an integer as node id. The label can be any symbol, except for \texttt{;}.
+	\item The blank line indicates the start of the node section. It is important to choose an integer as node id. The label can contain any symbol, except for \texttt{;}.
 	\item The node section is separated from the edge section again by a blank line. If the \texttt{Directed graph} option is set to \texttt{False}, the edges are considered undirected. Internally, every edge's reverse is then added to the graph.  
 \end{itemize}
 
 \noindent
-Let's look at a small example graph for illustration. The graph has 6 nodes
-which are all labelled with a 'c' and 6 edged which are not labelled.
-Your graphs need to have exactly this format to use this package. especially
-the blank lines are important. For further example graphs go to the root
-You can also put comments in your graph files with //.
-directory and navigate to the graphs directory. Now that you are familiar with
-the graph format, we can take a look how to use the package.
+Let's look at a small example graph for illustration. The graph has 6 nodes which are all labelled with a 'c' and 6 edges which are not labelled. Your graphs need to have exactly this format to use this package. Especially the blank lines are important. You can find a decent number of further examples at \texttt{multivitamin/graph_examples}. Now that you are familiar with the graph format, we can take a look at how to use the package.
 
 
 \begin{framed}
@@ -141,16 +142,17 @@ Directed graph;False
 \end{verbatim}
 \end{framed}
 
-\section{Graph Alignment basic case}
-Consider the basic use without any optional flags for the start.
-You do \textbf{not} have to be in the directory of the package to use \mV.
-To get an overview of all the flags you can type 
+
+\section{Graph alignment basic case}
+Consider the basic use without any optional flags for the start. You do not have to be in the directory of the package to use \mV. To get an overview of all the flags you can type 
+
 \shellcmd{multiVitamin -h}
-If you have experience with command-line tools the information provided by multivitamin -h
-may be sufficient to get you started.\\
+
+If you are experienced with command-line tools the information provided by multivitamin -h might be sufficient to get you started.\\
 
 \begin{lstlisting}
-multiVitamin - A multiple alignment tool for graphs
+CHANGE THIS TO UPDATED VERSION
+%multiVitamin - A multiple alignment tool for graphs
 
 optional arguments:
   -h, --help            show this help message and exit
