@@ -1,3 +1,0 @@
-[console_scripts]
-multiVitamin = multivitamin.multiVitamin:main
-
