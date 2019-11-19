@@ -12,23 +12,35 @@
 \usepackage{framed}
 
 
-\usepackage{listings}
+\usepackage{listings,color}
 
-\lstset{%
-	language=[LaTeX]TeX,
-	basicstyle=\ttfamily,
-	breaklines=true,
-	columns=fullflexible
-}
+\definecolor{verbgray}{gray}{0.9}
 
-\newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\$ #1}\\}
+\lstnewenvironment{code}{%
+    \lstset{backgroundcolor=\color{verbgray},
+        frame=single,
+        basicstyle=\small \ttfamily,
+        framerule=0pt,
+        breaklines=true
+        }}{}
 
-\newcommand{\mV}{multiVitamin }
+%\lstset{%
+%	language=[LaTeX]TeX,
+%	basicstyle=\ttfamily,
+%	breaklines=true,
+%	columns=fullflexible,
+%    showtabs,
+%    showstringspaces=true
+%}
+
+\newcommand{\shellcmd}[1]{\smallskip\\\indent\indent\texttt{\footnotesize\$ #1}\par\vspace{5pt}}
+
+\newcommand{\mV}{ \texttt{multiVitamin} }
 
 
 %
-\voffset 0 cm \hoffset -1 cm \addtolength{\textwidth}{2cm}
-\addtolength{\textheight}{0cm}\addtolength{\leftmargin}{0cm}
+\voffset -2 cm \hoffset -2 cm \addtolength{\textwidth}{3cm}
+\addtolength{\textheight}{2cm}\addtolength{\leftmargin}{0cm}
 
 
 
@@ -60,27 +72,23 @@ Augustusplatz 10, 04109 Leipzig  - Germany\\}
 
 \maketitle
 
-\begin{abstract}
-
-
-\end{abstract}
 
 \section{multiVitamin}
 \mV is a software package which allows users to perform multiple alignments with graphs.
-There are two algorithms available for this task. The Bron Kerbosch \cite{}
-and the VF2 algorithm \cite{}. Details on the algorithms can be found in the
+There are two algorithms available for this task. The Bron Kerbosch (BK) \cite{}
+and the algorithm originally published by Cordella et al. (VF2) \cite{}. Details on the algorithms can be found in the
 theory section.\\
 The main function of the package is to align two or more graphs following a binary alignment guide tree containing the "best" alignment procedure. The resulting multiple graph alignment is represented as one single graph itself. Next to this main function, there is also the possibility to show all co-optimals of an alignment between 2 graphs or to view graphical representations of graphs.  
 Sounds exciting, so let's get started!
 
 \section{Installation}
 
-Clone the repo from github with 
+Clone the repo from github to [yourDir] with 
 \shellcmd{git clone https://github.com/mk36fyvy/multivitamin.git}
 Navigate to the directory containing the setup.py file 
 \shellcmd{cd [yourDir]/multivitamin/multivitamin}
 and type
-\shellcmd{pip3 install .}
+\shellcmd{pip3 install -e .}
 Done, now you can run \mV in the command shell. You can test if the installation was successful by typing
 \shellcmd{multiVitamin -h}
 
@@ -90,7 +98,7 @@ Done, now you can run \mV in the command shell. You can test if the installation
 
 A good first step is to familiarize yourself with the graph format. A graph file is basically a text file, we use the extension '.graph'. It is also used interiorly to identify graph files as such.
 
-The file itself is structured as follows (see below for an \hyperref[fig:graph_example]{example}): \\
+The file itself is structured as follows (see below for an example): \\
 
 Every graph consists of nodes and edges. Every node has an id, which is a unique integer (handled as a String internally) for each node. Optionally, nodes can be labelled. The id and label are separated by a semicolon (\texttt{;}) in the '.graph'-file. The edges are two connected nodes and represented by the ids of the two nodes separated by a semicolon.\\
 
@@ -110,8 +118,8 @@ Let's look at a small example graph for illustration. The graph has 6 nodes whic
 
 
 \begin{framed}
-\label{fig:graph_example}
 \begin{verbatim} 
+//this is a sample graph
 AUTHOR: Michel K.
 #nodes;6
 #edges;6
@@ -136,70 +144,180 @@ Directed graph;False
 \end{framed}
 
 
-\section{Graph alignment basic case}
-Consider the basic use without any optional flags for the start. You do not have to be in the directory of the package to use \mV. To get an overview of all the flags you can type 
+\newpage
+\section{Main functions}
+\subsection{Multiple graph alignment -m}
+Consider the basic use without any optional flags for the start. You do not have to be in the directory of the package to use \mV. To get an overview of all the flags you can type
 \shellcmd{multiVitamin -h}
 
-If you are experienced with command-line tools the information provided by multivitamin -h might be sufficient to get you started.\\
+If you are experienced with command-line tools the information provided by this command might be sufficient to get you started.\\
 
-\begin{lstlisting}
-CHANGE THIS TO UPDATED VERSION
-%multiVitamin - A multiple alignment tool for graphs
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -a ALGORITHM, --algorithm ALGORITHM
-                        choose an alignment-algorithm (BK or VF2) (default: BK)
-                         Warning: VF2 is only suited if there is true graph-subgraph isomorphism!
-  -s, --save-all        save all the graphs produced during the alignment
-                         The graphs are saved as "[newick].graph"
-  -t, --save-shorter    save an additional version of the alignment graph with much shorter node ids
-  -g, --save-guide      save the guide tree in Newick-format as "tree.txt"
+\begin{figure}[t!]
+\begin{code}
+usage: multiVitamin [ -h | -m | -c | -v | -d ] [-a] [-s] [-t] [-g]
+for example: multiVitamin -ga VF2 -m g1.graph g2.graph g3.graph
 
-required arguments:
-  these arguments are mutually exclusive
+multiVitamin - A multiple alignment tool for graphs
 
-  -m FILES [FILES ...]  provide .graph files for multiple alignment. '.' is a valid input
-  -c COOPT [COOPT ...]  provide *2* graphs which will be aligned. Co-optimals will be saved in ./results.
-  -v VIEW               get a visual representation of *1* given graph
-\end{lstlisting}
+Required arguments (These arguments are mutually exclusive):
 
-There are three mutually exclusive flags. One of them is always
-required to make multiVitamin work. For the start we look at the
-case of a multiple alignment of graphs, which will be the standard use case.
-The flag for that is -m. The other flags are explained later.
-Just type "mulitVitamin -m <pathToGraphFile1.graph> <pathToGraphFile2> <optionalMoreGraphFiles>"
-in the command line. This aligns the given graphs with the Bron Kerbosch algorithmn.
-The resulting command line seems confusing at first put follows a clear structure
-and provides all the important information about the alignment."
-in the command line. This aligns the given graphs with the Bron Kerbosch algorithmn.
-The resulting command line seems confusing at first put follows a clear structure
-and provides all the important information about the alignment.
-In order to see from which graph each node of the alignent origins, we use
-abbrevations of the names of the graph input files. A dictionary of the abbrevations
-of the original names of the graph files is shown first in the command line output.
-The you see the nodes of the alignment. Each line corresponds to one node
-of the alignment. A node in an alignment is represented by all nodes that got mathed
-to eachother. The aligned node is represented as follows:
-The id of th enode consits of the graph id (more specific of the abbrevation of the graph id) of the
-graph where the node origins from. This is followed by a colon, followed by the id
-of the original node. after a dot comes the next aligned node. After that
- follows a tab and the label of the aligned node (if the graphs were labelled).
-After another tab the neighbors of the node are listed. The next line shows
-the same for the next node of the alignment.\\
-The next section shows the edges of the aligned graph. The format follows the format
-of the edges. It basically shows to nodes seperated by a comma and a tab. \\
-Additionally to the command line output multiVitamin creates a result folder.
-This folder contains the aligned graph as .graph file. The first line of the
-.graph file shows the Newik tree of the mulitple alignment.
-This file could theoretically
-be used for further computation with mulitVitamin. The results folder contains
-also a .txt file of the abbrevations of the graph files. These abbrevations are
-used to indicate in the alignment which node origins from which graph.\\
-\begin{figure}
-     \includegraphics[width=0.5\textwidth]{multiOUT.png}
-  \caption{A sample output of a multiple graph alignment}
+-h, --help                  show this help message and exit
+-m, --multiple <files...>   provide .graph files for multiple alignment '.' 
+                              takes all .graph files in the directory as 
+                              arguments
+-c, --coopt <files...>      provide 2 graphs which will be aligned.
+                              Co-optimals will be saved in ./results
+-v, --view <files...>       get a visual representation of the given graphs 
+                              in one window. This can get confusing for 
+                              large or many graphs. Use -d if you want to 
+                              see one window per graph.
+-d, --disp-mult <files...>  get a visual representation of the given graphs 
+                              in one window per graph.
+
+Optional arguments:
+
+-a, --algorithm <BK|VF2>    indicate an alignment-algorithm (default: BK)
+                              Warning: VF2 is only suited if there is true 
+                              graph-subgraph isomorphism!
+-s, --save-all              save all the graphs produced during the 
+                              alignment. The graphs are saved as 
+                              "[newick].graph"
+-t, --save-shorter          save an additional version of the alignment 
+                              graph with much shorter node ids
+-g, --save-guide            save the guide tree in Newick-format as 
+                              "newick.txt"
+
+\end{code}
 \end{figure}
+
+
+There are three main functions resulting in four mutually exclusive flags. One of them is always required to make multiVitamin work. For starters, we look at the case of a multiple alignment of graphs, which is considered the standard use case. 
+
+Just type:
+\shellcmd{mulitVitamin -m <pathToGraphFile1.graph> <pathToGraphFile2.graph> ...}
+  
+This aligns the given graphs with the default algorithm, which is BK. The resulting terminal output provides all the important information about the alignment. An example output can be found below. 
+
+
+\begin{figure}
+    \begin{code}
+Reading graph1.graph from Clemens M., Max. J, Michel K.
+Successfully parsed graph1.graph
+
+Reading graph2.graph from Clemens M., Max. J, Michel K.
+Successfully parsed graph2.graph
+
+
+                 _ _   _       _  _                   _       
+                | | | (_)     (_)| |                 (_)      
+ _ __ ___  _   _| | |_ \ \   / / | |_  __ _ _ __ ___  _ _ __  
+| '_ ` _ \| | | | | __| \ \ / / ||  _|/ _` | '_ ` _ \| | '_ \ 
+| | | | | | |_| | | |_| |\ V /| || |_| (_| | | | | | | | | | |
+|_| |_| |_|\__,_|_|\__|_| \_/ |_| \__|\__,_|_| |_| |_|_|_| |_|
+
+                                                v1.0.0      
+
+Calculating multiple alignment with BK algorithm...
+
+*****************************************************************
+*                                                               *
+*                          RESULTS                              *
+*                                                               *
+*****************************************************************
+
+---GRAPH ABBREVIATIONS--------------
+
+gr1	>>	graph1
+gr2	>>	graph2
+
+
+---ALIGNMENT------------------------
+
+*NODES (ID, LABEL, NEIGHBOURS)
+gr1:4.gr2:2   'd'   ( gr1:1.gr2:5, gr1:2.gr2:3, gr1:5.gr2:4 )
+gr1:1.gr2:5   'a'   ( gr1:2.gr2:3, gr1:5.gr2:4, gr1:4.gr2:2, gr1:3.gr2:6 )
+gr1:2.gr2:3   'b'   ( gr1:1.gr2:5, gr1:5.gr2:4, gr1:4.gr2:2, gr1:3.gr2:6 )
+gr1:3.gr2:6   'c'   ( gr1:1.gr2:5, gr1:2.gr2:3 )
+gr1:5.gr2:4   'e'   ( gr1:1.gr2:5, gr1:2.gr2:3, gr1:4.gr2:2 )
+
+*EDGES (ID, LABEL)
+( gr1:2.gr2:3,   gr1:3.gr2:6 )   ''
+( gr1:4.gr2:2,   gr1:2.gr2:3 )   ''
+( gr1:1.gr2:5,   gr1:3.gr2:6 )   ''
+( gr1:1.gr2:5,   gr1:2.gr2:3 )   ''
+( gr1:4.gr2:2,   gr1:1.gr2:5 )   ''
+( gr1:4.gr2:2,   gr1:5.gr2:4 )   ''
+( gr1:1.gr2:5,   gr1:5.gr2:4 )   ''
+( gr1:2.gr2:3,   gr1:5.gr2:4 )   ''
+
+
+---NEWICK TREE----------------------
+
+(graph1,graph2)
+
+********************************************************************
+
+Successfully created the directory /home/micheltower/Documents/multivitamin_project/multivitamin/graph_examples/other/results
+All files will be saved here.
+Saved graph as gr1-gr2.graph
+
+Saved graph id abbreviations as graph_abbreviations.txt
+
+    \end{code}
+\end{figure}
+
+In order to assure the uniqueness of node's IDs in a multiple alignment, every node owns a \texttt{mult\_id} attribute, which comes into play here. First, every graph gets a \textit{unique abbreviation string}. It is built from the first two letters of the graph file name and an index, which is incremented each time, a two letter combination is already taken for the specific multiple alignment. 
+
+In the example,graphs 1 and 2 are called gr1 and gr2 respectively. This abbreviation is used to build the unique node \texttt{mult\_id}s.\\\par
+
+\noindent
+Let's look at the first line of the nodes section:  
+
+\begin{code}
+gr1:4.gr2:2   'd'   ( gr1:1.gr2:5, gr1:2.gr2:3, gr1:5.gr2:4 )
+\end{code}
+
+The node \texttt{gr1:4.gr2:2} originates from the alignment of \textbf{node 4 from graph1} and \textbf{node 2 from graph2}. Note that there is a '\texttt{:}' between the graph and the corresponding original node ID and a '\texttt{.}' between the nodes of different graphs. 
+
+As indicated in the terminal output, what follows written in '' is the label of the node. The label handling during alignment is specified in 
+\\\par\indent\texttt{[yourDir]/]multivitamin/multivitamin/utils/modular\_product.py}\\\par
+At the moment, if any semantic label checks are needed, you should use the VF2 algorithm. See below for more information.
+
+The neighbours of the node are indicated in parentheses, again indicated by the notation explained above.
+
+The edges section shows the edges as follows: \texttt{node1} and \texttt{node2} are indicated with their \texttt{mult\_id} followed by their label. 
+
+The last section indicates the alignment guide tree in conventional Newick format. \\\par
+
+Naturally, apart from the terminal output, \mV saves the results from the alignment. Every file generated will be saved in the \texttt{./results} folder, with '.' being your current working directory. If the folder is already present, \mV simply adds the files, if not, it creates the directory automatically.\\\par
+
+\noindent
+Files that will be created after successful multiple alignment:
+
+\bigskip
+\begin{tabular}{rp{0.65\textwidth}}
+    \textbf{graph\_abbreviations.txt} & easily parseable text file which indicates the full name and abbreviation couples of the graphs used in the alignment\\\\
+    \textbf{$<$g1-g2-...$>$.graph} & the graph resulting from the alignment (in .graph-format). The file contains a comment line indicating the guide tree by which it was obtained\\
+\end{tabular}
+\bigskip
+
+\noindent
+Files that can optionally be created by using flags:
+
+\bigskip
+\begin{tabular}{lrp{0.65\textwidth}}
+  -s  & \textbf{graph\_abbreviations.txt} & easily parseable text file which indicates the full name and abbreviation couples of the graphs used in the alignment\\\\
+ -t  & \textbf{$<$g1-g2-...$>$.graph} & the graph resulting from the alignment (in .graph-format). The file contains a comment line indicating the guide tree by which it was obtained\\\\
+-t  & \textbf{$<$g1-g2-...$>$.graph} & the graph resulting from the alignment (in .graph-format). The file contains a comment line indicating the guide tree by which it was obtained\\
+\end{tabular}
+\bigskip
+
+
+Additionally to the command line output multiVitamin creates a result folder. This folder contains the aligned graph as .graph file. The first line of the .graph file shows the Newik tree of the mulitple alignment. This file could theoretically be used for further computation with mulitVitamin. The results folder contains also a .txt file of the abbrevations of the graph files. These abbrevations are used to indicate in the alignment which node origins from which graph.\\
+
+
+
 
 
 \subsection{Graph Alignment with the Vf2}
