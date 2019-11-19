@@ -1,16 +1,20 @@
 \BOOKMARK [1][-]{section.1}{multiVitamin}{}% 1
 \BOOKMARK [1][-]{section.2}{Installation}{}% 2
 \BOOKMARK [1][-]{section.3}{Graph Format}{}% 3
-\BOOKMARK [1][-]{section.4}{Main functions}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Multiple graph alignment -m}{section.4}% 5
-\BOOKMARK [2][-]{subsection.4.2}{Graph Alignment with the Vf2}{section.4}% 6
+\BOOKMARK [1][-]{section.4}{Multiple graph alignment}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Graph alignment with BK algorithm}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{TODOGraph alignment with VF2 algorithm}{section.4}% 6
 \BOOKMARK [3][-]{subsubsection.4.2.1}{Custom.py}{subsection.4.2}% 7
-\BOOKMARK [1][-]{section.5}{Advanced Usage}{}% 8
-\BOOKMARK [1][-]{section.6}{Basic Classes}{}% 9
-\BOOKMARK [2][-]{subsection.6.1}{Node}{section.6}% 10
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Edge}{subsection.6.1}% 11
-\BOOKMARK [2][-]{subsection.6.2}{Graph Class}{section.6}% 12
-\BOOKMARK [1][-]{section.7}{Theoretical Foundations of the Algorithmns}{}% 13
-\BOOKMARK [2][-]{subsection.7.1}{Bron Kerbosch}{section.7}% 14
-\BOOKMARK [2][-]{subsection.7.2}{VF2}{section.7}% 15
-\BOOKMARK [1][-]{section.8}{Profiling}{}% 16
+\BOOKMARK [2][-]{subsection.4.3}{Optional flags}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{TODOAdditional features}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{TODOGetting alignment co-optimals}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{TODOViewing graphs}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{TODOBasic Classes}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{TODONode class}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.2}{TODOEdge class}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.3}{TODOGraph class}{section.6}% 15
+\BOOKMARK [1][-]{section.7}{TODOTheoretical background of the algorithms}{}% 16
+\BOOKMARK [2][-]{subsection.7.1}{TODOBron Kerbosch algorithm}{section.7}% 17
+\BOOKMARK [3][-]{subsubsection.7.1.1}{BK in multiple Alignment context}{subsection.7.1}% 18
+\BOOKMARK [2][-]{subsection.7.2}{TODOVF2 algorithm}{section.7}% 19
+\BOOKMARK [1][-]{section.8}{TODOProfiling}{}% 20

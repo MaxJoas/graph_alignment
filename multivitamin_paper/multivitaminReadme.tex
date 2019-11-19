@@ -8,7 +8,7 @@
 \usepackage{fancyvrb}
 \fvset{tabsize=4}
 
-\usepackage{hyperref}
+\usepackage[hidelinks=false]{hyperref}
 \usepackage{framed}
 
 
@@ -46,7 +46,17 @@
 
 \begin{document}
 %style file for Seminar manuscripts
-\title{User Manual}
+\title{
+    \vspace{7cm}
+    
+    {\Huge multiVitamin}
+    
+    \vspace{1cm}
+    
+    User Manual
+    
+    \vspace{9cm}
+}
 
 %***********************************************************************
 % AUTHORS INFORMATION AREA
@@ -72,7 +82,10 @@ Augustusplatz 10, 04109 Leipzig  - Germany\\}
 
 \maketitle
 
+\newpage
+\tableofcontents
 
+\newpage
 \section{multiVitamin}
 \mV is a software package which allows users to perform multiple alignments with graphs.
 There are two algorithms available for this task. The Bron Kerbosch (BK) \cite{}
@@ -145,15 +158,15 @@ Directed graph;False
 
 
 \newpage
-\section{Main functions}
-\subsection{Multiple graph alignment -m}
+\section{Multiple graph alignment}
+\subsection{Graph alignment with BK algorithm}
 Consider the basic use without any optional flags for the start. You do not have to be in the directory of the package to use \mV. To get an overview of all the flags you can type
 \shellcmd{multiVitamin -h}
 
 If you are experienced with command-line tools the information provided by this command might be sufficient to get you started.\\
 
 
-\begin{figure}[t!]
+\begin{figure}[h!]
 \begin{code}
 usage: multiVitamin [ -h | -m | -c | -v | -d ] [-a] [-s] [-t] [-g]
 for example: multiVitamin -ga VF2 -m g1.graph g2.graph g3.graph
@@ -200,25 +213,26 @@ Just type:
 This aligns the given graphs with the default algorithm, which is BK. The resulting terminal output provides all the important information about the alignment. An example output can be found below. 
 
 
+%Reading graph1.graph from Clemens M., Max. J, Michel K.
+%Successfully parsed graph1.graph
+%
+%Reading graph2.graph from Clemens M., Max. J, Michel K.
+%Successfully parsed graph2.graph
+%
+%
+%                 _ _   _       _  _                   _       
+%                | | | (_)     (_)| |                 (_)      
+% _ __ ___  _   _| | |_ \ \   / / | |_  __ _ _ __ ___  _ _ __  
+%| '_ ` _ \| | | | | __| \ \ / / ||  _|/ _` | '_ ` _ \| | '_ \ 
+%| | | | | | |_| | | |_| |\ V /| || |_| (_| | | | | | | | | | |
+%|_| |_| |_|\__,_|_|\__|_| \_/ |_| \__|\__,_|_| |_| |_|_|_| |_|
+%
+%                                                v1.0.0      
+%
+%Calculating multiple alignment with BK algorithm...
+
 \begin{figure}
     \begin{code}
-Reading graph1.graph from Clemens M., Max. J, Michel K.
-Successfully parsed graph1.graph
-
-Reading graph2.graph from Clemens M., Max. J, Michel K.
-Successfully parsed graph2.graph
-
-
-                 _ _   _       _  _                   _       
-                | | | (_)     (_)| |                 (_)      
- _ __ ___  _   _| | |_ \ \   / / | |_  __ _ _ __ ___  _ _ __  
-| '_ ` _ \| | | | | __| \ \ / / ||  _|/ _` | '_ ` _ \| | '_ \ 
-| | | | | | |_| | | |_| |\ V /| || |_| (_| | | | | | | | | | |
-|_| |_| |_|\__,_|_|\__|_| \_/ |_| \__|\__,_|_| |_| |_|_|_| |_|
-
-                                                v1.0.0      
-
-Calculating multiple alignment with BK algorithm...
 
 *****************************************************************
 *                                                               *
@@ -269,10 +283,10 @@ Saved graph id abbreviations as graph_abbreviations.txt
 
 In order to assure the uniqueness of node's IDs in a multiple alignment, every node owns a \texttt{mult\_id} attribute, which comes into play here. First, every graph gets a \textit{unique abbreviation string}. It is built from the first two letters of the graph file name and an index, which is incremented each time, a two letter combination is already taken for the specific multiple alignment. 
 
-In the example,graphs 1 and 2 are called gr1 and gr2 respectively. This abbreviation is used to build the unique node \texttt{mult\_id}s.\\\par
+In the example, graphs 1 and 2 are called gr1 and gr2 respectively. This abbreviation is used to build the unique node \texttt{mult\_id}s.\\\par
 
 \noindent
-Let's look at the first line of the nodes section:  
+Let's look at the first line depicting a node in the nodes section:  
 
 \begin{code}
 gr1:4.gr2:2   'd'   ( gr1:1.gr2:5, gr1:2.gr2:3, gr1:5.gr2:4 )
@@ -280,17 +294,19 @@ gr1:4.gr2:2   'd'   ( gr1:1.gr2:5, gr1:2.gr2:3, gr1:5.gr2:4 )
 
 The node \texttt{gr1:4.gr2:2} originates from the alignment of \textbf{node 4 from graph1} and \textbf{node 2 from graph2}. Note that there is a '\texttt{:}' between the graph and the corresponding original node ID and a '\texttt{.}' between the nodes of different graphs. 
 
-As indicated in the terminal output, what follows written in '' is the label of the node. The label handling during alignment is specified in 
+As indicated in the terminal output, what follows written between ' ' is the label of the node. The label handling during alignment with BK algorithm is specified in 
 \\\par\indent\texttt{[yourDir]/]multivitamin/multivitamin/utils/modular\_product.py}\\\par
-At the moment, if any semantic label checks are needed, you should use the VF2 algorithm. See below for more information.
+
+\noindent
+At the moment, if any semantic label checks are needed, you should use the VF2 algorithm. See \hyperref[title:VF2]{below} for more information.
 
 The neighbours of the node are indicated in parentheses, again indicated by the notation explained above.
 
-The edges section shows the edges as follows: \texttt{node1} and \texttt{node2} are indicated with their \texttt{mult\_id} followed by their label. 
+The edges section shows the edges as follows: \texttt{node1} and \texttt{node2} are indicated by their \texttt{mult\_id} followed by their label. 
 
 The last section indicates the alignment guide tree in conventional Newick format. \\\par
 
-Naturally, apart from the terminal output, \mV saves the results from the alignment. Every file generated will be saved in the \texttt{./results} folder, with '.' being your current working directory. If the folder is already present, \mV simply adds the files, if not, it creates the directory automatically.\\\par
+Naturally, apart from the terminal output, \mV saves the results from the alignment in actual files as well. Every generated file will be saved in the \texttt{./results} folder, with '.' being your current working directory. If the folder is already present, \mV simply adds the files, if not, it creates the directory automatically.\\\par
 
 \noindent
 Files that will be created after successful multiple alignment:
@@ -303,44 +319,20 @@ Files that will be created after successful multiple alignment:
 \bigskip
 
 \noindent
-Files that can optionally be created by using flags:
-
-\bigskip
-\begin{tabular}{lrp{0.65\textwidth}}
-  -s  & \textbf{graph\_abbreviations.txt} & easily parseable text file which indicates the full name and abbreviation couples of the graphs used in the alignment\\\\
- -t  & \textbf{$<$g1-g2-...$>$.graph} & the graph resulting from the alignment (in .graph-format). The file contains a comment line indicating the guide tree by which it was obtained\\\\
--t  & \textbf{$<$g1-g2-...$>$.graph} & the graph resulting from the alignment (in .graph-format). The file contains a comment line indicating the guide tree by which it was obtained\\
-\end{tabular}
-\bigskip
-
-
-Additionally to the command line output multiVitamin creates a result folder. This folder contains the aligned graph as .graph file. The first line of the .graph file shows the Newik tree of the mulitple alignment. This file could theoretically be used for further computation with mulitVitamin. The results folder contains also a .txt file of the abbrevations of the graph files. These abbrevations are used to indicate in the alignment which node origins from which graph.\\
+More files can be created by using optional flags. These are summarized \hyperref[title:Optional flags]{below}.
 
 
 
+\subsection{TODOGraph alignment with VF2 algorithm}
+\label{title:VF2}
+Let us still consider the basic use case with the required flag -m. This flag can be combined with all optional flags (see section advanced use). One of those optional flags is -a which specifies the algorithm that will be used for the alignment.
 
-
-\subsection{Graph Alignment with the Vf2}
-Let us still consider the basic use case with the required flag -m. This flag can
-be combined with all optional flags (see section advanced use). One of those optional
-flags is -a which specifies the algorithmn that will be used for the alignent.
-
-In order to use the VF2 algorithmn for the alignent you have to use the flag
--a with  "vf2" as parameter in additon to the specification of the input files. So the command would be
-"mulitVitamin -f <pathToGraphFile1.graph> <pathToGraphFile2> <optionalMoreGraphFiles>" -a vf2"
-This option is only suited for subgraph graph isomorphisms. So the smaller graph
-must always fit entirely in the bigger graph. Despite this restriction the
-Vf2 is able to align graphs based on the label of the node ids. So a structural
-isomorphism is not enough in this case, but the nodes that could aligned
-structurally must also fulfill some kind of semantic condition. This is
-usefull to align chemical molecules that are represented as graphs.
-This condition can be determined by the user in the custom.py
+In order to use the VF2 algorithm for the alignment you have to use the flag -a with  "vf2" as parameter in addition to the specification of the input files. So the command would be "mulitVitamin -m <pathToGraphFile1.graph> <pathToGraphFile2> <optionalMoreGraphFiles>" -a vf2" This option is only suited for subgraph graph isomorphisms. So the smaller graph must always fit entirely in the bigger graph. Despite this restriction the Vf2 is able to align graphs based on the label of the node ids. So a structural isomorphism is not enough in this case, but the nodes that could aligned structurally must also fulfill some kind of semantic condition. This is usefull to align chemical molecules that are represented as graphs. This condition can be determined by the user in the custom.py
 
 \subsubsection{Custom.py}
-The custom.py file can be found in the multivitamin directory of the root folder.
-This file contains a functino the check\_semantics function, which by default
-returns always true. The code of the custom.py file looks as follows:
-\begin{verbatim}[numbers=left,xleftmargin=5mm]
+The custom.py file can be found in the multivitamin directory of the root folder. This file contains a functino the check\_semantics function, which by default returns always true. The code of the custom.py file looks as follows:
+
+\begin{code}
 def check_semantics( n, m ):
     '''This function is used in VF2 algorithm to decide,
     whether aligning to nodes is allowed from the
@@ -364,7 +356,7 @@ def get_results_dir():
     working directory'''
 
     return "/results"
-\end{verbatim}
+\end{code}
 
 If you untoggle the single comments and out-comment the return True, you get a simple
 semantic check that only allows nodes to be aligned that have the same label.
@@ -375,71 +367,68 @@ value from get\_results\_dir(). Before we jump into the supplemtary clasees, whi
 you might want to modify for a highly sophisticated check\_semantics function, we
 want to take a look at the other flag options.
 Note: A change in the supplemtary classes is not recommended.
-\section{Advanced Usage}
-To make multiVitamin work you need one (exactely one) of the following flags:
--m, -c, -v.\\
-The -m option has been discussed in depth in the previous sections. It can be used with
-every optional flag.\\
-The -v flag allows for graphical representation of our .graph files.
-You need to proved a graph file. In most cases this will be the graph of the mulitple
-alignent. Use: "multiVitamin -v <file.graph>"
-It is not compatible with any of the optional flags.\\
-The -c flag works only for exactely two input files.
-It gives all the co-optimal alignments of the two given graphs. There exist
-cases where two graphs have more can be aligned in different, yet optimal ways.
-The -c flag calculates all these cases.
-Since -c only works with 2 graphs the Optional flags are not helpful.
-Only the -a flag could be used to use the vf2 algorithm. Note lead to high
-computation costs.
-Let us consider the optional flags now.
-If you want to save the guide tree in an extra file use -g.
-If you not only want the final multiple alignment graph, but also
-all alignments in between use -s. If you have three graphs for example graph1, graph2
-and graph3. Let us assume multiVitamin gives us a graph which multiple alignment
-is represented by this Newick tree: ((graph1,graph2),graph3). Now you
-with the option -s you will also get the alignment of graph1 and graph2 as a graph file.\\
 
-\section{Basic Classes}
-In order to implement the Bron Kerbosch and Vf2 algorithm, we used three classes.
-A graph class, a node class and a edge class. In general the classes should not be altered
-by the user. However for the sophisticated user there may be cases in which he or she
-wants to make adjustments to this classes. Therefore we will given a brief
-overview of them. Figure 2 shows simple UML diagrams of our base classes. The most important methods and attributes will be explained.
+\subsection{Optional flags}
+Apart from the flag -a which allows to specify the algorithm used for the alignment, there are some more optional flags, which can be used to let \mV save a couple more useful files at the end of the alignment. All of these files will be saved in the \texttt{results/} directory mentioned above.
+
+\noindent
+Files that can optionally be created by using flags:
+
+\bigskip
+\begin{tabular}{rp{0.9\textwidth}}
+    \textbf{-s}  & Saves all intermediate graphs that were produced along the alignment guide tree. Normally you would only get the final alignment graph out of the alignment. However, in some cases, it might be useful to get all the graphs produced in the alignment.\\\\
+    \textbf{-t}  & Saves a version of the alignment graph with much shorter node ids. Even though this makes it impossible to get information about which nodes originated from which ones in the original graphs, it might be a good idea to use this graph for further alignment to assure, that the node IDs stay readable and unique.\\\\
+    \textbf{-g}  & Saves the alignment guide tree in an easily parseable way as '\texttt{newick.txt}'\\
+\end{tabular}
+\bigskip
+
+
+\section{TODOAdditional features}
+To make multiVitamin work you need one (exactly one) of the following flags: -m, -c, -v.\\ The -m option has been discussed in depth in the previous sections. It can be used with every optional flag.\\ The -v flag allows for graphical representation of our .graph files. You need to proved a graph file. In most cases this will be the graph of the mulitple alignent. Use: "multiVitamin -v <file.graph>" It is not compatible with any of the optional flags.\\ The -c flag works only for exactely two input files. It gives all the co-optimal alignments of the two given graphs. There exist cases where two graphs have more can be aligned in different, yet optimal ways. The -c flag calculates all these cases. Since -c only works with 2 graphs the Optional flags are not helpful. Only the -a flag could be used to use the vf2 algorithm. Note lead to high computation costs. Let us consider the optional flags now. If you want to save the guide tree in an extra file use -g. If you not only want the final multiple alignment graph, but also all alignments in between use -s. If you have three graphs for example graph1, graph2 and graph3. Let us assume multiVitamin gives us a graph which multiple alignment is represented by this Newick tree: ((graph1,graph2),graph3). Now you with the option -s you will also get the alignment of graph1 and graph2 as a graph file.\\
+
+\subsection{TODOGetting alignment co-optimals}
+
+\subsection{TODOViewing graphs}
+
+\section{TODOBasic Classes}
+    In order to implement the Bron Kerbosch and Vf2 algorithm, we used three classes. A graph class, a node class and a edge class. In general the classes should not be altered by the user. However for the sophisticated user there may be cases in which he or she wants to make adjustments to this classes. Therefore we will given a brief overview of them. Figure 2 shows simple UML diagrams of our base classes. The most important methods and attributes will be explained.
+
 \begin{figure}
     %\includegraphics[width=0.5\textwidth]{classes.png}
     %\includegraphics[width=0.5\textwidth]{node.png}
     %\includegraphics[width=0.5\textwidth]{edge.png}
-	{\centering
+    {\centering
 	\includegraphics[scale=1.7]{multivitamin_basic_uml.png}
-}
-
-  \caption{A UML class diagram of the base classes}
+    }
+    \caption{A UML class diagram of the base classes}
 \end{figure}
-\subsection{Node}
-Our node objects are seen in the context of a graph. Thus every node contains information about
-its neighbours. Therefore a node has a neighbours attribute which is a set of Node objects.
-In case of directed graphs one can distingush between in and out neighbours. Thus a node object has a seperate set for these two kind of neighbours. This is useful in the Vf2 algorithmn. The mult\_id attribute gives an option to name the node in a mulitple alignment.
-\subsubsection{Edge}
-An Edge consits of two node objects and an optional label. For each Edge canbe checked if it is the reverse of another edge. This only makes sense for directed graphs.
-\subsection{Graph Class}
-Besides the obvious attributes of nodes, edges and an id, a graph objects also as an
-abbrev which is TODO. Since the Vf2 only works with directed graphs, we 
-gave our graphs the possibility to give the graph directions. Consider the Edge A-B. The 
-create\_fake\_directions method now points node A to B and node B to A.\\
-The method create\_undirected\_edges fills the edge set of the Graph with help of the neighbour set of the node class. The method get\_inout\_neighbours fills the in and outneighbour sets of the node objects in the node set.\\\\
-All classes have build in print mehtods for more readable output as well as build in 
-methods to compare the objects. So you can determine which graph is larger by the amount of 
-nodes in the nodes sets and also determine if two graphs are equal based on their id.\\
-Nodes can be also compared by its id and edges by the ids of their nodes.
-\section{Theoretical Foundations of the Algorithmns}
 
-\subsection{Bron Kerbosch}
+
+\subsection{TODONode class}
+    Our node objects are seen in the context of a graph. Thus every node contains information about its neighbours. Therefore a node has a neighbours attribute which is a set of Node objects. In case of directed graphs one can distingush between in and out neighbours. Thus a node object has a seperate set for these two kind of neighbours. This is useful in the Vf2 algorithmn. The mult\_id attribute gives an option to name the node in a mulitple alignment.
+
+
+\subsection{TODOEdge class}
+    An Edge consists of two node objects and an optional label. For each Edge canbe checked if it is the reverse of another edge. This only makes sense for directed graphs.
+
+
+\subsection{TODOGraph class}
+    Besides the obvious attributes of nodes, edges and an id, a graph objects also as an abbrev which is TODO. Since the Vf2 only works with directed graphs, we gave our graphs the possibility to give the graph directions. Consider the Edge A-B. The  create\_fake\_directions method now points node A to B and node B to A.\\ The method create\_undirected\_edges fills the edge set of the Graph with help of the neighbour set of the node class. The method get\_inout\_neighbours fills the in and outneighbour sets of the node objects in the node set.\\\\ All classes have build in print mehtods for more readable output as well as build in  methods to compare the objects. So you can determine which graph is larger by the amount of  nodes in the nodes sets and also determine if two graphs are equal based on their id.\\ Nodes can be also compared by its id and edges by the ids of their nodes.
+
+
+
+\section{TODOTheoretical background of the algorithms}
+
+\subsection{TODOBron Kerbosch algorithm}
 The Bron Kerbosch algorithm solves the problem of finding a maximal common induced subgraphs of two graphs G and H indirectly. This is done by finding the maximal clique in the modular product of G and H s. The set of nodes of the modular product of G and H  is the cartesian N(G) x N(H), with N beeing the set of al vertices of the corresponding graph. Any nodes (u,v) and (x,y), with u,x $\in$ G and v,y $\in$ H in the modular product are adjacemt if:
+
 \begin{itemize}
 	\item u and x were neighbours in G and y and x were neighbours in H
 	\item u and x were not neighbours in G and y and x were not neighbours in H
 \end{itemize}
+
 Before giving two graphs to the Bron Kerbosch to align them we need to build the modular product of these graphs. The rest of our implementaton is straight forward:
+
 \begin{Verbatim}
 def bk_pivot ( self, r, p, x ):
 	if not any ( [p, x] ):
@@ -459,10 +448,23 @@ def bk_pivot ( self, r, p, x ):
 
 \end{Verbatim}
 The goal of the Bron Kerbosch ,is as mentioned, to find the maximal clique in the modular product. A clique is a subgraph where every node is connected to every other node (=complete graph). A maximal clique is a clique so that no node can added to the subgraph such that the subgraph remains complete.\\
-At the beginning r and x are empty sets and theset p that contains all nodes of the modular product of the two input graphs. All nodes in p are candiates for extending the clique.
+The data structures are a list p, which is the list of candidates that could extend a clique, and the sets r and x. r contains all the nodes in a maximal clique and x is a set for blacklisting nodes. Blacklisting is useed to not finde the same cliques over and over again, Thus x and p are only empty when a new clique is found. \\
+Let us consider the case without pivoting first.
+%At the beginning r and x are empty sets and p contains all nodes of the modular product of the two input graphs. Then select one node v in p and check if it is part of a clique. The basic idea is to look at all the neighbours of this nodes, because these are the only nodes that can build a clique with n. In the very begining our new p_ are all the neighbours from n since p was empty at the beginning. In the first recursion step we select one of those neigbours e.g nodes in our new p. Let us call it v_. By default we know that all these nodes in p_ are neigbours from our first v. Now we intersect all the neighbours of v_ with p. By that we get a new set of candidates of which we know for user are neighbours of our original v as well as our new v_. This computationis recurively repated until the candidate list p is empty, if our blacklisting set x is also empty, we found a clique. Of course we need to do some bookkeeping of which nodes are in the clique therefore we add every node that we have contemplated to our result set r. When one recursive step finishes, we remove the node we used in the iteration from the candiates and add it to the blacklist set x. This recursive process is then repeated for the next node in our candidate set.\\
+A short note to the pivoting:
+The pivoting is solely a performance optimization. It makes the recursion tree first deep and computes the widness latet. There are several ways to chose a pivot, it can be chosen rando or as we did by maximizing the intersection of the neighbours of the currently relecant node v and the union of p and x.
 
-\subsection{VF2}
-\section{Profiling}
+\subsubsection{BK in multiple Alignment context}
+The BK only finds cliques in the modular product of two graphs. In a multiple alignment setting however we would like to get a graph. So we can align the graph further. To get a graph which one can work with out of the clique we need to modify the found clique.
+Since the nodes in the clique are already correct we only need to delete some edges.
+We allow only these edges that are in the clique as well as in one of the original input graphs.
+
+\subsection{TODOVF2 algorithm}
+In order to align multiple graphs we used a greedy algorthmn to find the best alignements. Therefore we calculated every possible pairwise alignment of n input graphs and scored these alignment. The scoring was made as follows:\\
+For the BK the more nodes the clique contained, the better was an alignment. In the  case of the VF2, we looked at the number of nodes in the small core. The higher the number the better the alignment. Once we found the best pairwise alignemtn, we repeated this process with by aligning the best pairwise alignmetn with all remainin n-2 (all input graphs without the two graph that we just aligned) graphs
+
+
+\section{TODOProfiling}
 To get an idea which algorithm is better sutied for which kind of graph (size, structure),
 we did a profiling study. Therefore we used three different kind of graphs:
 random graphs, wheel graphs and tree graphs. The graphs where generate with the help of
