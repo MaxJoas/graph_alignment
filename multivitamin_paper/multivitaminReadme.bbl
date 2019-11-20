@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{bron1973algorithm}
+Coen Bron and Joep Kerbosch.
+\newblock Algorithm 457: finding all cliques of an undirected graph.
+\newblock {\em Communications of the ACM}, 16(9):575--577, 1973.
+
+\bibitem{sansone2001improved}
+P~Foggia~C Sansone and M~Vento.
+\newblock An improved algorithm for matching large graphs.
+\newblock In {\em Proc. of the 3rd IAPR-TC-15 International Workshop on
+  Graph-based Representations}, 2001.
+
+\end{thebibliography}
