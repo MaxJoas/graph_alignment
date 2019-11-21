@@ -458,9 +458,9 @@ The two flags differ in behaviour if more than one \texttt{.graph} file is provi
     \end{itemize}
 
 
-\section{TODOTheoretical background of the algorithms}
+\section{Theoretical background of the algorithms}
 
-\subsection{TODOBron Kerbosch algorithm}
+\subsection{Bron Kerbosch algorithm}
 The Bron Kerbosch algorithm indirectly solves the problem of finding a maximal common induced subgraph of two graphs G and H. This is done by finding the maximal clique in the modular product of G and H. The set of nodes of the modular product of G and H  is the cartesian product N(G)xN(H), with N being the set of all nodes of the corresponding graph. Any nodes (u,v) and (x,y), with u,x\,$\in$\,G and v,y\,$\in$\,H in the modular product are adjacent iff:
 
 \begin{itemize}
@@ -500,31 +500,134 @@ At the beginning, r and x are empty sets and p contains all the nodes of the mod
 
 At the very beginning, our new p\_ consists of all the neighbours from n, since p was empty at the beginning. In the first recursion step we select one of those neighbours, e.g nodes in our new p. Let us call it v\_. By default, we know that all these nodes in p\_ are neighbours of v. Now we intersect all the neighbours of v\_ with p. In that way, we get a new set of candidates. Every node in this set must be neighbour of v as well as v\_. 
 
-This computation is repeated recursively until the candidate list p is empty. If our blacklisting set x is also empty, we found a clique. Of course, some bookkeeping of which nodes are in the clique has to be done. 
-\\\par
-ENDENDENDENDENDENDENDENDENDENDEND
-\\\par
-Therefore we add every node that we have contemplated to our result set r. When one recursive step finishes, we remove the node we used in the iteration from the candiates and add it to the blacklist set x. This recursive process is then repeated for the next node in our candidate set.\\
-A short note to the pivoting:
-The pivoting is solely a performance optimization. It makes the recursion tree first deep and computes the widness latet. There are several ways to chose a pivot, it can be chosen rando or as we did by maximizing the intersection of the neighbours of the currently relecant node v and the union of p and x.
+This computation is repeated recursively until the candidate list p is empty. If our blacklisting set x is also empty, we found a clique. Of course, some bookkeeping of which nodes are in the clique has to be done. Therefore we add every node that we have contemplated to our result set r. When one recursive step finishes, we remove the node we used in the iteration from the candiates p and add it to the blacklist set x. This recursive process is then repeated for the next node in our candidate set.\\\par
 
-\subsubsection{TODOBK in multiple Alignment context}
-The BK only finds cliques in the modular product of two graphs. In a multiple alignment setting however we would like to get a graph. So we can align the graph further. To get a graph which one can work with out of the clique we need to modify the found clique.
-Since the nodes in the clique are already correct we only need to delete some edges.
-We allow only these edges that are in the clique as well as in one of the original input graphs.
+\noindent
+A short note on pivoting:
+The pivoting is solely a performance optimization. It makes the recursion tree first deep and computes the wideness later. There are several ways to choose a pivot, it can be chosen at random or, as we did, by maximizing the intersection of the neighbours of the currently relevant node v and the union of p and x.
 
-\subsection{TODOVF2 algorithm}
-In order to align multiple graphs we used a greedy algorthmn to find the best alignements. Therefore we calculated every possible pairwise alignment of n input graphs and scored these alignment. The scoring was made as follows:\\
-For the BK the more nodes the clique contained, the better was an alignment. In the  case of the VF2, we looked at the number of nodes in the small core. The higher the number the better the alignment. Once we found the best pairwise alignemtn, we repeated this process with by aligning the best pairwise alignmetn with all remainin n-2 (all input graphs without the two graph that we just aligned) graphs
+\subsubsection{BK in multiple alignment context}
+BK only finds cliques in the modular product of two graphs. In a multiple alignment setting however, we would like to get a graph out of the clique, so we can use it for further alignment. To get a graph which one can work with out of the clique we need to delete the neighbours from the nodes, that are not in the subgraph anymore.
+
+\subsection{VF2 algorithm}
+As already mentioned, VF2 is an algorithm suited to finding graph isomorphism and graph-subgraph isomorphism. The inventors of the algorithms claim it to be highly memory efficient due to clever exploitation of the search space (depth-first). Since the theoretical foundations can be found in great detail in Cordella et al. \cite{sansone2001improved}, we will focus on the specific details of our implementation.
+
+The algorithm takes two graphs as an input and outputs the mapping of the two graphs.
+
+In order to understand the algorithm we need to explain some of the structures we use in the code (Python). We use two dictionaries (one for each graph) to store the mapping. The dictionary for graph 1 contains the nodes of graph 1 as keys. Their value becomes the nodes they map on in graph 2 as the mapping progresses (vice versa for graph 2). In our implementation, these dictionaries are called \texttt{core\_l} and \texttt{cores\_s} (s for small, l for large; if both graphs have the same size, the graph parsed first is referred to as the large one). If a node has not been mapped, the value of this node in the dictionary is a null node (e.g. a \texttt{Node} object with ID '-1' and empty label '').
+
+ In order to find candidate pairs we implemented terminal sets. The current terminal sets of contain all nodes that are connected to nodes in the current mapping but are not yet in the mapping themselves. In praxis we have not only one terminal set per graph, but two because we distinguish between in and out neighbours. So we have four terminal sets in sum: \texttt{t\_in\_l} (terminal set for in-neighbours of the large graph), \texttt{t\_out\_l}, \texttt{t\_in\_s}, \texttt{t\_out\_s}. 
+ 
+ The term 'set' might be misleading in our implementation, because we used dictionaries for storing which node is in which terminal set in at which depth. All nodes of each graph are keys and the recursion depth in which a node was added to a terminal set as value. The default value is 0, which means the node was not yet added to a terminal set. 
+ 
+ Additionally, we use a helper dictionary that stores how many nodes are actually in the terminal sets at a given state. 
+ 
+ Since the terminal sets and the \texttt{core\_s} and \texttt{core\_l} structures are shared across all recursion steps a state refers to the content of these structures in function of the current mapping and the currently contemplated pair of nodes, which are mapped on each other. Now you that you have achieved basic understanding of the data structures we look at the actual algorithm:
+ 
+\begin{Verbatim}
+
+def match(self, last_mapped=(Node("-1", ""), Node("-1", "")), depth=0):
+
+    if self.s_in_small_g():
+        self.append_result_graph( self.core_s )
+        self.restore_ds( last_mapped[0], last_mapped[1], depth )
+        return
+    
+    td = self.set_inout(last_mapped[0], last_mapped[1], depth)
+    p = self.compute_p(td)
+    
+    for tup in p:
+    
+        if self.is_feasible(tup[0], tup[1], depth, td):
+            self.compute_s_(tup[0], tup[1])
+            self.match(tup, depth+1)
+    
+    self.restore_ds(last_mapped[0], last_mapped[1], depth)
+
+\end{Verbatim}
+This is actual Python code from our implementation. Let us look at it line after line. 
+
+\begin{itemize}
+\item The \texttt{match} function takes the two nodes that got mapped to each other as input as well as the recursion depth. The default values are the null nodes and 0 for the depth. 
+
+\item If every node of the smaller graph is mapped to a node of the larger graph, the algorithm found a valid graph-subgraph-isomorphism and saves the mapping in a \texttt{results} list. 
+
+\item Else, VF2 counts how many nodes are in the terminal sets in the \texttt{set\_in\_out}. (Iterates through all the neighbours of the last mapped nodes and checks if these neighbours are in a terminal set)  The added nodes get the current recursion depth in the terminal dictionaries. 
+
+\item Next, it is counted how many nodes are in the terminal sets. These counts are saved for every terminal set in the dictionary \texttt{td}. We need this information for the next step.
+
+\item \texttt{compute\_p} returns a list of tuples. The tuples contain a node from each graph. The tuples are possible candidates to be mapped to each other. This list p is generated as follows: If both out terminal sets are not empty, the cartesian product is built out of the out terminal set of the large graph with the largest node of the out terminal set of the small graph. The equivalent happens for the in terminal sets if they are both not empty and the out terminal set are both empty. In case that all four terminal sets are empty, the cartesian product is built out of all the nodes that are not in the mapping of the large graph with the largest node that is not mapped in the small graph.
+
+\item Next, VF2 iterates over this list and checks for the nodes in the tuple if it is feasible to map them to each other. There need to be two conditions met for that. Consider the process with one n node of the tuple (n,m) (the process is done analogously for the other node m). 
+
+\begin{itemize}
+\item Firstly, we look at the mapping of every neighbour of n.If mapping of the neighbour is also a neighbour of m, one condition ('zero look-ahead rule') for feasibility is met. Note, that out neighbours must be out neighbours and in neighbours must be in neighbours respectively.
+
+\item The second condition is met, if the out/in terminal set of one graph has the same size as the out/in terminal set of the other graph (in case of isomorphismn, for graph-subgraph the sets of the larger graph are allowed to be bigger). 
+
+\item Finally, semantics are checked. This has already been explained above. The \texttt{is\_feasible} function only returns \texttt{True} if the conditions on the nodes' labels defined in \texttt{custom.py} are met. 
+\end{itemize}
+
+\item After this hurdle has been overcome, the mapping gets documented in \texttt{core\_s} and \texttt{core\_l}. This is done with the method \texttt{compute\_s}. Then, \texttt{match} is called again with the mapped tupel and an increased depth. 
+
+\item If the recursion returns to an upper level, the data structures are restored and the process is repeated for the next tupel. The data structure restoration is done by deleting the currently contemplated tupel from the mapping and restoring the terminal dictionaries in giving all nodes a depth of 0 that are not in the mapping, but got a depth in the last recursion step.
+\end{itemize}
 
 
-\section{TODOProfiling}
-To get an idea which algorithm is better sutied for which kind of graph (size, structure),
-we did a profiling study. Therefore we used three different kind of graphs:
-random graphs, wheel graphs and tree graphs. The graphs where generate with the help of
-the python package networkx \cite{}. We did the profiling for the follwoing number of nodes:
-(3,8,13,18,23,XX TODO).
-In case of the random graphs we created 10 different random graphs for each node count and took the average time per node count. The following figures show the results of our profiling study.
+\subsection{Multiple alignment strategy}
+In order to align multiple graphs we use a greedy algorithm to find the best alignments. Therefore, every possible pairwise alignment of n input graphs is calculated and scored. The scoring was made as follows:
+\begin{itemize}
+\item For BK, the more nodes the clique contains, the 'better'. 
+\item In the case of VF2, we look at the size of the small core. The higher the number, the better the alignment. 
+\end{itemize}
+Once the best pairwise alignment is found, the pairwise alignment and scoring process is repeated with all remaining n-2 graphs (all input graphs without the two graphs that were just aligned).
+
+\section{Profiling}
+To get an idea which algorithm is better suited for which kind of graph (size, structure), we did a profiling study. We used three different kind of graphs: random graphs, wheel graphs and tree graphs. The graphs were generated using the Python package \texttt{networkx} (\url{https://networkx.github.io/}). 
+
+We did the profiling for graphs containing 5 to 150 nodes for VF2. For the random graphs and random tree graphs, we aligned two random graphs with the same size of nodes respectively. Since for the wheel graphs this would have meant aligning the same graphs we used a graph with n nodes and one with n-4 nodes for each alignment. 
+
+For the random graphs we had 10 random graphs for each node count, to better account for time variability. Since the tree graphs were very fast we used up to 500 nodes for the profiling of the tree graphs.\par
+
+The profiling for BK was only done with graphs containing up to 10 nodes, because it was too time consuming. The following figures display the results.
+
+%vf2_all.png  vf2_all.wheel_random.png  vf2_bk_random.png  vf2_bk_tree.png  vf2_bk_wheel.png
+
+
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[scale=0.7]{vf2_all.png}
+    \end{center}
+    \caption{Elapsed time in function of alignment graphs' node set size. Representing random, tree and wheel graph alignments by VF2.}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[scale=0.7]{vf2_all.wheel_random.png}
+    \end{center}
+    \caption{Elapsed time in function of alignment graphs' node set size. Representing random and wheel graph alignments by VF2.}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[scale=0.7]{vf2_bk_random.png}
+    \end{center}
+    \caption{Elapsed time in function of alignment graphs' node set size. Representing random graph alignments by VF2 and BK.}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[scale=0.7]{vf2_bk_tree.png}
+    \end{center}
+    \caption{Elapsed time in function of alignment graphs' node set size. Representing tree graph alignments by VF2 and BK.}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[scale=0.7]{vf2_bk_wheel.png}
+    \end{center}
+    \caption{Elapsed time in function of alignment graphs' node set size. Representing wheel graph alignments by VF2 and BK.}
+\end{figure}
 
 
 % ****************************************************************************
