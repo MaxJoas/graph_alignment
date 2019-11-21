@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7230) (preloaded format=pdflatex 2019.11.18)  21 NOV 2019 03:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7230) (preloaded format=pdflatex 2019.11.18)  21 NOV 2019 12:35
 entering extended mode
 **./multivitaminReadme.tex
 (multivitaminReadme.tex
@@ -504,51 +504,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 503--503
 
  []
 
-[12] [13] [14]
-<vf2_all.png, id=298, 462.528pt x 346.896pt>
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
+
+ []
+
+[13] [14]
+<vf2_all.png, id=332, 462.528pt x 346.896pt>
 File: vf2_all.png Graphic file (type png)
 <use vf2_all.png>
-Package pdftex.def Info: vf2_all.png  used on input line 599.
+Package pdftex.def Info: vf2_all.png  used on input line 602.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
-<vf2_all.wheel_random.png, id=299, 462.528pt x 346.896pt>
+<vf2_all.wheel_random.png, id=333, 462.528pt x 346.896pt>
 File: vf2_all.wheel_random.png Graphic file (type png)
 <use vf2_all.wheel_random.png>
-Package pdftex.def Info: vf2_all.wheel_random.png  used on input line 606.
+Package pdftex.def Info: vf2_all.wheel_random.png  used on input line 609.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
-<vf2_bk_random.png, id=300, 462.528pt x 346.896pt>
+<vf2_bk_random.png, id=334, 462.528pt x 346.896pt>
 File: vf2_bk_random.png Graphic file (type png)
 <use vf2_bk_random.png>
-Package pdftex.def Info: vf2_bk_random.png  used on input line 613.
+Package pdftex.def Info: vf2_bk_random.png  used on input line 616.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
-<vf2_bk_tree.png, id=301, 462.528pt x 346.896pt>
+<vf2_bk_tree.png, id=335, 462.528pt x 346.896pt>
 File: vf2_bk_tree.png Graphic file (type png)
 <use vf2_bk_tree.png>
-Package pdftex.def Info: vf2_bk_tree.png  used on input line 620.
+Package pdftex.def Info: vf2_bk_tree.png  used on input line 623.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
-<vf2_bk_wheel.png, id=302, 462.528pt x 346.896pt>
+<vf2_bk_wheel.png, id=336, 462.528pt x 346.896pt>
 File: vf2_bk_wheel.png Graphic file (type png)
 <use vf2_bk_wheel.png>
-Package pdftex.def Info: vf2_bk_wheel.png  used on input line 627.
+Package pdftex.def Info: vf2_bk_wheel.png  used on input line 630.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
  (multivitaminReadme.bbl [15 <./vf2_all.png>] [16 <./vf2_all.wheel_random.png> 
 <./vf2_bk_random.png>] [17 <./vf2_bk_tree.png> <./vf2_bk_wheel.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 644.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 644.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 647.
+
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 647.
  (multivitaminReadme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 644.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 644.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 647.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 647.
 Package rerunfilecheck Info: File `multivitaminReadme.out' has not changed.
 (rerunfilecheck)             Checksum: 57B15B5675C79BAEFAA5D2AEE220AFBE;1349.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 644.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 647.
  ) 
 Here is how much of TeX's memory you used:
- 8653 strings out of 494412
- 125035 string characters out of 3174141
+ 8687 strings out of 494412
+ 125523 string characters out of 3174141
  366586 words of memory out of 3000000
  12451 multiletter control sequences out of 15000+200000
  11766 words of font info for 46 fonts, out of 3000000 for 9000
@@ -568,9 +574,9 @@ ll/fonts/type1/public/amsfonts/cm/cmti8.pfb></home/micheltower/.miktex/texmfs/i
 nstall/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/micheltower/.miktex/tex
 mfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb></home/micheltower/.miktex
 /texmfs/install/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on multivitaminReadme.pdf (18 pages, 417509 bytes).
+Output written on multivitaminReadme.pdf (18 pages, 422713 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
+ 449 PDF objects out of 1000 (max. 8388607)
+ 188 named destinations out of 1000 (max. 500000)
  199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

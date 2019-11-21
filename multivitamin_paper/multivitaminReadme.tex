@@ -471,7 +471,7 @@ The Bron Kerbosch algorithm indirectly solves the problem of finding a maximal c
 Before using BK algorithm, we need to build the modular product of two graphs we want to align. Our implementation of BK (with pivot) is shown in the following code snippet.
 
 \begin{figure}[h!]
-\begin{Verbatim}
+\begin{code}
 def bk_pivot ( self, r, p, x ):
 	if not any ( [p, x] ):
 		self.results.append(r)
@@ -486,7 +486,7 @@ def bk_pivot ( self, r, p, x ):
 		self.bk_pivot ( r_, p_, x_ )
 		p.remove(v)
 		x.add(v)
-\end{Verbatim}
+\end{code}
 \end{figure}
 
 \newpage
@@ -522,9 +522,10 @@ In order to understand the algorithm we need to explain some of the structures w
  
  Additionally, we use a helper dictionary that stores how many nodes are actually in the terminal sets at a given state. 
  
- Since the terminal sets and the \texttt{core\_s} and \texttt{core\_l} structures are shared across all recursion steps a state refers to the content of these structures in function of the current mapping and the currently contemplated pair of nodes, which are mapped on each other. Now you that you have achieved basic understanding of the data structures we look at the actual algorithm:
+ Since the terminal sets and the \texttt{core\_s} and \texttt{core\_l} structures are shared across all recursion steps a state refers to the content of these structures in function of the current mapping and the currently contemplated pair of nodes, which are mapped on each other. Now you that you have achieved basic understanding of the data structures we look at the actual algorithm:\\\medskip\\
  
-\begin{Verbatim}
+\begin{figure}[h!]
+\begin{code}
 
 def match(self, last_mapped=(Node("-1", ""), Node("-1", "")), depth=0):
 
@@ -544,7 +545,9 @@ def match(self, last_mapped=(Node("-1", ""), Node("-1", "")), depth=0):
     
     self.restore_ds(last_mapped[0], last_mapped[1], depth)
 
-\end{Verbatim}
+\end{code}
+\end{figure}
+
 This is actual Python code from our implementation. Let us look at it line after line. 
 
 \begin{itemize}
