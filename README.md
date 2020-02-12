@@ -64,9 +64,9 @@ multiVitamin -m .
 ```
 This will align all the .graph files (mind the extension!) in the current working directory.
 
-Examples on what our custom graph file format looks like can be found in [graph_examples](graph_examples) inside the module.
+Examples on what our custom graph file format looks like can be found in [graph_examples](graphs) inside the module.
 
 
 ## Further reading
 
-More information on how to use the module can be found [here](multivitamin_paper/multivitaminReadme.pdf.pdf).
+More information on how to use the module can be found [here](multivitamin_paper/multivitaminReadme.pdf).
