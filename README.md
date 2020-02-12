@@ -1,3 +1,7 @@
+# Update
+A more advanced version of multiVitamin is currently in development for the practical course
+of the Master of Bioinformatics at the University of Leipzig and can be found [here](https://github.com/mk36fyvy/multivitamin)
+
 # multiVitamin
 In-Terminal multiple alignment tool for graphs
 
